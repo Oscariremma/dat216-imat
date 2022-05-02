@@ -1,0 +1,39 @@
+.background{
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+.heart{
+    -fx-opacity: 0.7;
+}
+
+.productNameLabel{
+    -fx-font-size: 24;
+    -fx-font-family: "Lexend Deca";
+}
+
+.productSubtextLabel{
+    -fx-opacity: 0.8;
+    -fx-font-size: 20;
+    -fx-font-family: "Lexend Deca";
+}
+
+.addButton{
+    -fx-border-radius: 40px;
+    -fx-background-radius: 40px;
+    -fx-background-color: #c3d0d0;
+    -fx-font-size: 24;
+    -fx-font-family: "Lexend Deca";
+}
+
+.productPriceLabel{
+    -fx-font-size: 24;
+    -fx-font-family: "Lexend Deca";
+}
+
+.productPricePerUnitLabel{
+    -fx-font-size: 24;
+    -fx-font-family: "Lexend Deca";
+}

@@ -7,6 +7,9 @@
 # BlueJ files
 *.ctxt
 
+#InteliJ
+.idea/
+
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
@@ -23,4 +26,5 @@
 hs_err_pid*
 
 #Include the project backend
-!projectbackend.jar
+!lib/projectbackend.jar
+out

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="360.0" maxWidth="282.0" minHeight="360.0" minWidth="282.0" prefHeight="360.0" prefWidth="282.0" styleClass="background" stylesheets="@../css/product.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label id="productNameLabel" layoutX="34.0" layoutY="175.0" styleClass="productNameLabel" text="Banan" />
+      <Label id="productSubtextLabel" layoutX="36.0" layoutY="205.0" styleClass="productSubtextLabel" text="250 g" />
+      <ImageView id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/banan.png" />
+         </image>
+      </ImageView>
+      <ImageView id="heartImageView" fitHeight="36.0" fitWidth="36.0" layoutX="229.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" styleClass="heart">
+         <image>
+            <Image url="@../img/cards-heart-outline.png" />
+         </image>
+      </ImageView>
+      <Button id="addButton" layoutX="7.0" layoutY="297.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="266.0" styleClass="addButton" text="Lägg Till" visible="false" />
+      <Label id="productPriceLabel" layoutX="39.0" layoutY="252.0" styleClass="productPriceLabel" text="25:-" />
+      <Label id="productPricePerUnitLabel" layoutX="170.0" layoutY="252.0" styleClass="productPricePerUnitLabel" text="100:-/kg" />
+   </children>
+</AnchorPane>
