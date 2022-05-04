@@ -57,6 +57,8 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
         decrementButton.setOnMouseClicked((mouseEvent ->
                 removeProductFromCart()));
 
+        IMatDataHandler.getInstance().getShoppingCart().addShoppingCartListener(this);
+
     }
 
 
@@ -67,7 +69,7 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
 
         if (cartEvent.getShoppingItem().getAmount() > 0){
             addButton.setVisible(false);
-            amountLabel.setText(Double.toString(cartEvent.getShoppingItem().getAmount()));
+            amountLabel.setText(new DecimalFormat("#").format(cartEvent.getShoppingItem().getAmount()));
         }else {
             addButton.setVisible(true);
         }
@@ -101,6 +103,7 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
                     IMatDataHandler.getInstance().getShoppingCart().fireShoppingCartChanged(item, false);
                 }else {
                     //Otherwise, remove it from the cart
+                    item.setAmount(0);
                     IMatDataHandler.getInstance().getShoppingCart().removeItem(item);
                 }
                 return;

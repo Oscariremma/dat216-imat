@@ -6,7 +6,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root maxHeight="360.0" maxWidth="282.0" minHeight="360.0" minWidth="282.0" mouseTransparent="true" prefHeight="360.0" prefWidth="282.0" styleClass="background" stylesheets="@../css/product.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="360.0" maxWidth="282.0" minHeight="360.0" minWidth="282.0" prefHeight="360.0" prefWidth="282.0" styleClass="background" stylesheets="@../css/product.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="productNameLabel" layoutX="34.0" layoutY="175.0" styleClass="productNameLabel" text="Banan" />
       <Label fx:id="productSubtextLabel" layoutX="36.0" layoutY="205.0" styleClass="productSubtextLabel" text="250 g" />
@@ -17,12 +17,11 @@
          </image>
       </ImageView>
       <Label fx:id="productPriceLabel" layoutX="39.0" layoutY="252.0" styleClass="productPriceLabel" text="25:-" />
-      <Button fx:id="incrementButton" layoutX="205.0" layoutY="294.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="incdecrementButton" textAlignment="CENTER" textOverrun="CLIP" />
+      <Button fx:id="incrementButton" layoutX="205.0" layoutY="294.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="incdecrementButton" />
       <Button fx:id="decrementButton" layoutX="25.0" layoutY="294.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="incdecrementButton" />
-      <Label layoutX="40.0" layoutY="280.0" prefHeight="42.0" prefWidth="12.0" styleClass="incdecrementLabel" text="-" textOverrun="CLIP" />
-      <Label layoutX="213.0" layoutY="280.0" styleClass="incdecrementLabel" text="+" />
+      <Label layoutX="40.0" layoutY="280.0" mouseTransparent="true" prefHeight="42.0" prefWidth="12.0" styleClass="incdecrementLabel" text="-" textOverrun="CLIP" />
+      <Label layoutX="213.0" layoutY="280.0" mouseTransparent="true" styleClass="incdecrementLabel" text="+" />
       <Label fx:id="amountLabel" layoutX="81.0" layoutY="290.0" mouseTransparent="true" prefHeight="35.0" prefWidth="119.0" styleClass="amountLabel" text="0" textAlignment="CENTER" />
       <Button fx:id="addButton" layoutX="8.0" layoutY="287.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="266.0" styleClass="addButton" text="Lägg Till" />
-      <Button layoutX="203.0" layoutY="223.0" mnemonicParsing="false" text="Button" />
    </children>
 </fx:root>
