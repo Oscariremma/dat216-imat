@@ -10,8 +10,9 @@ public class IMat extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-
+        System.setProperty("prism.lcdtext", "false");
         Font.loadFont(this.getClass().getResourceAsStream("LexendDeca-Regular.ttf"), 40.0D);
+        Font.loadFont(this.getClass().getResourceAsStream("LexendDeca-ExtraBold.ttf"), 40.0D);
 
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("Imat");
 
@@ -25,7 +26,7 @@ public class IMat extends Application {
         //stage.setMinWidth(810);
         stage.setTitle(bundle.getString("application.name"));
         stage.setScene(scene);
-        stage.setMaximized(true);
+        //stage.setMaximized(true);
         stage.show();
 
     }

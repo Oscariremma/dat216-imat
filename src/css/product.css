@@ -20,7 +20,7 @@
     -fx-font-family: "Lexend Deca";
 }
 
-.addButton{
+.addButtons{
     -fx-border-radius: 40px;
     -fx-background-radius: 40px;
     -fx-background-color: #c3d0d0;
@@ -35,5 +35,22 @@
 
 .productPricePerUnitLabel{
     -fx-font-size: 24;
+    -fx-font-family: "Lexend Deca";
+}
+
+.incdecrementButton{
+    -fx-border-radius: 100%;
+    -fx-background-radius: 100%;
+    -fx-background-color: #18484B;
+}
+
+.incdecrementLabel{
+    -fx-text-fill: white;
+    -fx-font-size: 50;
+}
+
+.amountLabel{
+    -fx-alignment: center;
+    -fx-font-size: 40;
     -fx-font-family: "Lexend Deca";
 }

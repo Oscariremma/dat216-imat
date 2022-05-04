@@ -6,22 +6,23 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="360.0" maxWidth="282.0" minHeight="360.0" minWidth="282.0" prefHeight="360.0" prefWidth="282.0" styleClass="background" stylesheets="@../css/product.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="360.0" maxWidth="282.0" minHeight="360.0" minWidth="282.0" mouseTransparent="true" prefHeight="360.0" prefWidth="282.0" styleClass="background" stylesheets="@../css/product.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label id="productNameLabel" layoutX="34.0" layoutY="175.0" styleClass="productNameLabel" text="Banan" />
-      <Label id="productSubtextLabel" layoutX="36.0" layoutY="205.0" styleClass="productSubtextLabel" text="250 g" />
-      <ImageView id="productImageView" fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/banan.png" />
-         </image>
-      </ImageView>
-      <ImageView id="heartImageView" fitHeight="36.0" fitWidth="36.0" layoutX="229.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" styleClass="heart">
+      <Label fx:id="productNameLabel" layoutX="34.0" layoutY="175.0" styleClass="productNameLabel" text="Banan" />
+      <Label fx:id="productSubtextLabel" layoutX="36.0" layoutY="205.0" styleClass="productSubtextLabel" text="250 g" />
+      <ImageView fx:id="productImageView" fitHeight="140.0" fitWidth="180.0" layoutX="50.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="heartImageView" fitHeight="36.0" fitWidth="36.0" layoutX="229.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" styleClass="heart">
          <image>
             <Image url="@../img/cards-heart-outline.png" />
          </image>
       </ImageView>
-      <Button id="addButton" layoutX="7.0" layoutY="297.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="266.0" styleClass="addButton" text="Lägg Till" visible="false" />
-      <Label id="productPriceLabel" layoutX="39.0" layoutY="252.0" styleClass="productPriceLabel" text="25:-" />
-      <Label id="productPricePerUnitLabel" layoutX="170.0" layoutY="252.0" styleClass="productPricePerUnitLabel" text="100:-/kg" />
+      <Label fx:id="productPriceLabel" layoutX="39.0" layoutY="252.0" styleClass="productPriceLabel" text="25:-" />
+      <Button fx:id="incrementButton" layoutX="205.0" layoutY="294.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="incdecrementButton" textAlignment="CENTER" textOverrun="CLIP" />
+      <Button fx:id="decrementButton" layoutX="25.0" layoutY="294.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="incdecrementButton" />
+      <Label layoutX="40.0" layoutY="280.0" prefHeight="42.0" prefWidth="12.0" styleClass="incdecrementLabel" text="-" textOverrun="CLIP" />
+      <Label layoutX="213.0" layoutY="280.0" styleClass="incdecrementLabel" text="+" />
+      <Label fx:id="amountLabel" layoutX="81.0" layoutY="290.0" mouseTransparent="true" prefHeight="35.0" prefWidth="119.0" styleClass="amountLabel" text="0" textAlignment="CENTER" />
+      <Button fx:id="addButton" layoutX="8.0" layoutY="287.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="266.0" styleClass="addButton" text="Lägg Till" />
+      <Button layoutX="203.0" layoutY="223.0" mnemonicParsing="false" text="Button" />
    </children>
-</AnchorPane>
+</fx:root>
