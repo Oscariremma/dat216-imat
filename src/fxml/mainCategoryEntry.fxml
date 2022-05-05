@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<fx:root id="mainCategoryRootPane" maxWidth="250.0" minHeight="60.0" minWidth="250.0" prefHeight="225.0" prefWidth="250.0" stylesheets="@../css/categories.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane maxHeight="60.0" maxWidth="250.0" minHeight="60.0" minWidth="250.0" prefHeight="60.0" prefWidth="250.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="34.0" layoutY="22.0" text="Label" />
+         </children>
+      </AnchorPane>
+      <VBox layoutY="78.0" prefHeight="322.0" prefWidth="250.0" styleClass="subCategoryVbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="62.0">
+         <children>
+            <fx:include source="subCategoryEntry.fxml" />
+            <fx:include source="subCategoryEntry.fxml" />
+            <fx:include source="subCategoryEntry.fxml" />
+         </children>
+      </VBox>
+   </children>
+</fx:root>

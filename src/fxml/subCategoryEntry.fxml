@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root id="test" prefHeight="60.0" prefWidth="225.0" styleClass="subCategoryEntry" stylesheets="@../css/categories.css" type="javafx.scene.layout.AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.SubCategoryEntryController">
+   <children>
+      <Label fx:id="categoryLabel" layoutX="25.0" layoutY="13.0" mouseTransparent="true" prefHeight="35.0" prefWidth="176.0" styleClass="subCategoryText" text="Label" />
+   </children>
+</fx:root>
