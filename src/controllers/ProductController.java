@@ -5,10 +5,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.*;
 
+import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.net.URL;
 import java.text.DecimalFormat;
@@ -28,7 +30,10 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
     @FXML Button decrementButton;
     @FXML Label amountLabel;
 
-    Product product;
+    private final Product product;
+
+    private static Image filledHeartImage = new Image("/img/cards-heart.png");
+    private static Image outlineHeartImage = new Image("/img/cards-heart-outline.png");
 
 
     public ProductController (Product product){
@@ -49,13 +54,18 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
         productNameLabel.setText(product.getName());
         productPriceLabel.setText(product.getPrice() + " " + product.getUnit());
         productImageView.setImage(IMatDataHandler.getInstance().getFXImage(product));
+        updateFavoriteButtonIcon();
+        forceRefreshCartStatus();
 
         incrementButton.setOnMouseClicked((mouseEvent ->
-                addProductToCart()));
+                 addProductToCart()));
         addButton.setOnMouseClicked((mouseEvent ->
                 addProductToCart()));
         decrementButton.setOnMouseClicked((mouseEvent ->
                 removeProductFromCart()));
+
+        heartImageView.setOnMouseClicked((mouseEvent ->
+                favoriteButtonClicked()));
 
         IMatDataHandler.getInstance().getShoppingCart().addShoppingCartListener(this);
 
@@ -73,6 +83,37 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
         }else {
             addButton.setVisible(true);
         }
+    }
+
+    private void forceRefreshCartStatus(){
+        List<ShoppingItem> items = IMatDataHandler.getInstance().getShoppingCart().getItems();
+
+        //Check if product exists in cart
+        for (ShoppingItem item: items) {
+            if (item.getProduct().getProductId() == product.getProductId()){
+                if (item.getAmount() > 0){
+                    addButton.setVisible(false);
+                    amountLabel.setText(new DecimalFormat("#").format(item.getAmount()));
+                    return;
+                }
+                break;
+            }
+        }
+        addButton.setVisible(true);
+    }
+
+    private void favoriteButtonClicked(){
+        if (IMatDataHandler.getInstance().isFavorite(product)){
+            IMatDataHandler.getInstance().removeFavorite(product);
+        }else {
+            IMatDataHandler.getInstance().addFavorite(product);
+        }
+        updateFavoriteButtonIcon();
+    }
+
+    private void updateFavoriteButtonIcon(){
+        heartImageView.setImage(IMatDataHandler.getInstance().isFavorite(product)
+                ? filledHeartImage : outlineHeartImage);
     }
 
     private void addProductToCart(){
