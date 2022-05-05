@@ -18,8 +18,7 @@ public class IMat extends Application {
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("Imat");
 
         Parent root = FXMLLoader.load(getClass().getResource("fxml/imat.fxml"), bundle);
-
-
+        //Hej
         Scene scene = new Scene(root, 1920, 1080);
 
 
