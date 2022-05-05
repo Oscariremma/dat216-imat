@@ -5,12 +5,15 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
 
 public class IMat extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
         System.setProperty("prism.lcdtext", "false");
+
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> IMatDataHandler.getInstance().shutDown()));
 
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("Imat");
 
@@ -26,7 +29,6 @@ public class IMat extends Application {
         stage.setScene(scene);
         //stage.setMaximized(true);
         stage.show();
-
     }
 
     /**
