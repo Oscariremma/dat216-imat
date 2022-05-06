@@ -1,0 +1,32 @@
+@font-face {
+    font-family: "Lexend Deca";
+    src: url('../LexendDeca-Regular.ttf');
+}
+
+.logoName, .shoppingLabel, .navItem{
+    -fx-font-family: "Lexend Deca";
+}
+
+.searchBox{
+    -fx-arc-height: 50px;
+    -fx-arc-width: 50px;
+}
+
+.searchButton{
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-font-size: 20px;
+    -fx-font-family: "Lexend Deca";
+}
+
+.shoppingCartButton{
+    -fx-arc-height: 50px;
+    -fx-arc-width: 50px;
+}
+
+.searchInput{
+    -fx-font-size: 20px;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 20px;
+    -fx-padding: 4 0 0 55;
+}
