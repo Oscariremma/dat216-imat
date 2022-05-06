@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="150.0" prefWidth="1920.0" style="-fx-background-color: EFEFEF;" stylesheets="@../css/header.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#18484b" height="87.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1920.0" />
+      <Text fill="WHITE" layoutX="48.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logoName" text="iMat" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="21.0">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <TextField layoutX="385.0" layoutY="24.0" prefHeight="47.0" prefWidth="951.0" styleClass="searchInput" text="Sök på en vara..." AnchorPane.leftAnchor="388.0" />
+      <Button fx:id="searchButton" layoutX="1204.0" layoutY="27.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="130.0" styleClass="searchButton" text="Sök" AnchorPane.leftAnchor="1204.0" AnchorPane.topAnchor="27.0" />
+      <Label fx:id="homeLabel" layoutX="410.0" layoutY="110.0" styleClass="navItem" text="Hem" AnchorPane.leftAnchor="443.0" AnchorPane.topAnchor="97.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="favoriteLabel" layoutX="547.0" layoutY="97.0" styleClass="navItem" text="Favoriter" AnchorPane.leftAnchor="603.0" AnchorPane.topAnchor="97.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Line endX="-100.0" endY="47.0" layoutX="652.0" layoutY="88.0" startX="-100.0" startY="17.0" AnchorPane.leftAnchor="562.0" AnchorPane.topAnchor="104.0" />
+      <Line endX="-100.0" endY="47.0" layoutX="873.0" layoutY="88.0" startX="-100.0" startY="17.0" AnchorPane.leftAnchor="774.0" AnchorPane.topAnchor="104.0" />
+      <Label fx:id="offerLabel" layoutX="842.0" layoutY="97.0" styleClass="navItem" text="Erbjudanden" AnchorPane.leftAnchor="802.0" AnchorPane.topAnchor="97.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Line endX="-100.0" endY="47.0" layoutX="883.0" layoutY="98.0" startX="-100.0" startY="17.0" AnchorPane.leftAnchor="1027.0" AnchorPane.topAnchor="104.0" />
+      <Label layoutX="1058.0" layoutY="97.0" styleClass="navItem" text="Köphistorik" AnchorPane.leftAnchor="1060.0" AnchorPane.topAnchor="97.0">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#efefef" height="65.0" layoutX="1538.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" styleClass="shoppingCartButton" width="261.0" AnchorPane.leftAnchor="1538.0" />
+      <Label fx:id="priceTagLabel" layoutX="1721.0" layoutY="17.0" prefHeight="17.0" prefWidth="29.0" styleClass="shoppingLabel" text="25">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="1750.0" layoutY="17.0" styleClass="shoppingLabel" text="kr" AnchorPane.leftAnchor="1750.0" AnchorPane.topAnchor="17.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label fx:id="amountTagLabel" layoutX="1698.0" layoutY="45.0" prefHeight="35.0" prefWidth="29.0" styleClass="shoppingLabel" text="1" AnchorPane.leftAnchor="1698.0" AnchorPane.topAnchor="47.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="1719.0" layoutY="45.0" styleClass="shoppingLabel" text="vara" AnchorPane.topAnchor="47.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="1565.0" layoutY="47.0" styleClass="shoppingLabel" text="Kundvagn" AnchorPane.topAnchor="47.0">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="53.0" fitWidth="29.0" layoutX="399.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Desktop/dat216-imat-master/src/img/search_FILL0_wght400_GRAD0_opsz48.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="65.0" fitWidth="29.0" layoutX="1609.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../Desktop/dat216-imat-master/src/img/shopping_cart_FILL0_wght400_GRAD0_opsz48.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
