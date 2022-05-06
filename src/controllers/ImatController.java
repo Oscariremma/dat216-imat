@@ -16,6 +16,7 @@ public class ImatController extends AnchorPane implements Initializable {
 
     @FXML
     Pane test;
+   // @FXML AnchorPane categoriesSidePanel;
 
     ProductController productTest;
 

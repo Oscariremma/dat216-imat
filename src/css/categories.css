@@ -1,29 +1,37 @@
-.subCategoryEntry{
+@font-face {
+    font-family: "Lexend Deca";
+    src: url('../LexendDeca-Regular.ttf');
+}
+
+.categoryEntry{
+    -fx-font-family: "Lexend Deca";
+    -fx-font-size: 24;
     -fx-background-color: white;
-    -fx-border-width: 1;
-    -fx-border-color: black;
-}
-
-.subCategoryText{
 
 }
 
-#selected{
+
+
+.selected{
  -fx-background-color: #18484B !important;
  -fx-text-fill: white !important;
 }
 
-.subCategoryVbox{
+.subCategoryVBox{
     -fx-border-color: #18484B;
     -fx-border-width: 0 0 0 5;
     -fx-background-color: transparent;
+    -fx-spacing: 2;
+    -fx-padding: 2 2 2 2;
 
+}
+
+.mainCategoryVBox{
+    -fx-background-color: #E4E4E4;
+    -fx-spacing: 5;
 }
 
 .rootBackground{
     -fx-background-color: #E4E4E4;
-}
-
-.mainCategoryRootPane{
-    -fx-background-color: transparent;
+    -fx-background: #E4E4E4;
 }

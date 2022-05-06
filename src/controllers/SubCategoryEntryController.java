@@ -1,5 +1,6 @@
 package controllers;
 
+import interfaces.Deselectable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -7,10 +8,11 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.ProductCategory;
+import structs.SubCategoryEntryRecord;
 
 import java.io.IOException;
 
-public class SubCategoryEntryController extends AnchorPane {
+public class SubCategoryEntryController extends AnchorPane implements Deselectable {
 
     @FXML
     Label categoryLabel;
@@ -18,7 +20,7 @@ public class SubCategoryEntryController extends AnchorPane {
 
     private final ProductCategory category;
 
-    public SubCategoryEntryController(ProductCategory category, String name){
+    public SubCategoryEntryController(SubCategoryEntryRecord entry){
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/subCategoryEntry.fxml"));
         fxmlLoader.setRoot(this);
@@ -30,10 +32,23 @@ public class SubCategoryEntryController extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
-        this.category = category;
+        category = entry.category();
+        categoryLabel.setText(entry.name());
 
-
+        setOnMouseClicked(mouseEvent -> clicked());
 
     }
 
+    private void clicked(){
+        MainCategoryEntryController.deselectAllSubcategories();
+        getStyleClass().add("selected");
+        categoryLabel.getStyleClass().add("selected");
+        CategoriesSidePanelController.raiseCategorySelectedEvent(category);
+    }
+
+    @Override
+    public void Deselect() {
+        getStyleClass().remove("selected");
+        categoryLabel.getStyleClass().remove("selected");
+    }
 }
