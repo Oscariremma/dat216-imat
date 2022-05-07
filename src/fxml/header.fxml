@@ -12,7 +12,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="150.0" prefWidth="1920.0" style="-fx-background-color: EFEFEF;" stylesheets="@../css/header.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="150.0" prefWidth="1920.0" style="-fx-background-color: EFEFEF;" stylesheets="@../css/header.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" type="javafx.scene.layout.AnchorPane">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#18484b" height="87.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1920.0" />
       <Text fill="WHITE" layoutX="48.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logoName" text="iMat" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="21.0">
@@ -82,4 +82,4 @@
          </image>
       </ImageView>
    </children>
-</AnchorPane>
+</fx:root>
