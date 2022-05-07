@@ -7,5 +7,6 @@
    <children>
       <Pane fx:id="test" layoutX="659.0" layoutY="275.0" prefHeight="518.0" prefWidth="567.0" />
       <fx:include fx:id="categoriesSidePanel" source="categoriesSidePanel.fxml" />
+      <fx:include source="header.fxml" />
    </children>
 </AnchorPane>
