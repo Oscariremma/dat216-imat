@@ -6,10 +6,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane fx:id="orderHistoryAnchorPane" prefHeight="930.0" prefWidth="1550.0" style="-fx-background-color: FFFFFF;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:id="orderHistoryAnchorPane" prefHeight="930.0" prefWidth="1550.0" style="-fx-background-color: FFFFFF;" stylesheets="@../css/orderHistoryPage.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="orderHistoryLabel" layoutX="65.0" layoutY="29.0" prefHeight="85.0" prefWidth="439.0" text="Köphistorik" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="78.0">
+      <Label fx:id="orderHistoryLabel" layoutX="65.0" layoutY="29.0" prefHeight="85.0" prefWidth="439.0" styleClass="titlefont" text="Köphistorik" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="78.0">
          <font>
             <Font size="78.0" />
          </font>

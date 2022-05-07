@@ -1,0 +1,48 @@
+@font-face {
+    font-family: "Lexend Deca";
+    src: url('../LexendDeca-Regular.ttf');
+}
+
+.orderHistoryEntry{
+    -fx-background-color: #adbaba;
+    -fx-font-family: "Lexend Deca";
+    -fx-border-radius: 30px;
+    -fx-background-radius: 30px;
+}
+
+.buttons{
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-background-color: #18484b ;
+    -fx-font-size: 24;
+    -fx-text-fill: white;
+}
+.smallText{
+    -fx-font-size: 24;
+    -fx-text-fill: #000000;
+}
+
+.bigText{
+    -fx-font-size: 48;
+    -fx-text-fill: #000000;
+
+}
+.openCloseButtonBorders{
+    -fx-border-style: solid;
+    -fx-border-color: #333939;
+    -fx-border-width: 0 0 0 2px;
+}
+
+.titleBorder{
+    -fx-border-style: solid;
+    -fx-border-color: #333939;
+    -fx-border-width: 0 0 2px;
+
+}
+
+.dashedline{
+    -fx-border-style: dashed;
+    -fx-border-color: #333939;
+    -fx-border-width: 0 0 0 2px;
+
+}

@@ -1,0 +1,10 @@
+@font-face {
+    font-family: "Lexend Deca";
+    src: url('../LexendDeca-Regular.ttf');
+}
+
+.titlefont{
+    -fx-font-family: "Lexend Deca";
+    -fx-font-size: 78px;
+    -fx-text-fill: #000000;
+}
