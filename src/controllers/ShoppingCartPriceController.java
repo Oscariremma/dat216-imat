@@ -2,29 +2,22 @@ package controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 
-public class ShoppingCartPriceController implements ShoppingCartListener {
+public class ShoppingCartPriceController extends AnchorPane implements ShoppingCartListener, Initializable {
 
     @FXML
     Label priceTagLabel;
 
     public ShoppingCartPriceController(){
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/header.fxml"));
-        fxmlLoader.setRoot(this);
-        fxmlLoader.setController(this);
-
-        try {
-            fxmlLoader.load();
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
-        }
-
-        priceTagLabel.setText("0");
         IMatDataHandler.getInstance().getShoppingCart().addShoppingCartListener(this);
     }
 
@@ -35,5 +28,10 @@ public class ShoppingCartPriceController implements ShoppingCartListener {
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         this.changePriceLabel();
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        priceTagLabel.setText("0");
     }
 }
