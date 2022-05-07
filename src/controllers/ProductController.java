@@ -37,8 +37,6 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
     private static Image outlineHeartImage = new Image("/img/cards-heart-outline.png");
 
 
-    private Observer priceTag = new ShoppingCartPriceController();
-
     public ProductController (Product product){
 
 
@@ -133,9 +131,6 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
         }
         //Product does not exist in cart, add it
         IMatDataHandler.getInstance().getShoppingCart().addProduct(product);
-
-        //Updates pricetag in the shoppingCartButton
-        priceTag.update();
     }
 
     private void removeProductFromCart(){
@@ -157,9 +152,6 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
             }
         }
         //Product does not exist in cart, do nothing
-
-        //Updates pricetag in the shoppingCartButton
-        priceTag.update();
     }
 
 }

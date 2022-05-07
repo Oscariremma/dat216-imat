@@ -1,6 +1,5 @@
 package controllers;
 
-import interfaces.Observer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -9,7 +8,7 @@ import se.chalmers.cse.dat216.project.*;
 import java.io.IOException;
 
 
-public class ShoppingCartPriceController implements Observer {
+public class ShoppingCartPriceController implements ShoppingCartListener {
 
     @FXML
     Label priceTagLabel;
@@ -26,6 +25,7 @@ public class ShoppingCartPriceController implements Observer {
         }
 
         priceTagLabel.setText("0");
+        IMatDataHandler.getInstance().getShoppingCart().addShoppingCartListener(this);
     }
 
     private void changePriceLabel(){
@@ -33,7 +33,7 @@ public class ShoppingCartPriceController implements Observer {
     }
 
     @Override
-    public void update() {
+    public void shoppingCartChanged(CartEvent cartEvent) {
         this.changePriceLabel();
     }
 }
