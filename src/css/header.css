@@ -7,6 +7,9 @@
     -fx-font-family: "Lexend Deca";
 }
 
+.shoppingLabel{
+    -fx-text-alignment: right;
+}
 .searchBox{
     -fx-arc-height: 50px;
     -fx-arc-width: 50px;

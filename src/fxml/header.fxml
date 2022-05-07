@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="150.0" prefWidth="1920.0" style="-fx-background-color: EFEFEF;" stylesheets="@../css/header.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ShoppingCartPriceController">
+<AnchorPane prefHeight="150.0" prefWidth="1920.0" style="-fx-background-color: EFEFEF;" stylesheets="@../css/header.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HeaderController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#18484b" height="87.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1920.0" />
       <Text fill="WHITE" layoutX="48.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logoName" text="iMat" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="21.0">
@@ -44,7 +44,7 @@
             <Font size="32.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#efefef" height="65.0" layoutX="1538.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" styleClass="shoppingCartButton" width="261.0" AnchorPane.leftAnchor="1538.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#efefef" height="65.0" layoutX="1482.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" styleClass="shoppingCartButton" width="317.0" AnchorPane.leftAnchor="1482.0" />
       <Label fx:id="priceTagLabel" layoutX="1696.0" layoutY="17.0" prefHeight="31.0" prefWidth="54.0" styleClass="shoppingLabel" text="25">
          <font>
             <Font size="24.0" />
@@ -55,7 +55,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label fx:id="amountTagLabel" layoutX="1698.0" layoutY="45.0" prefHeight="35.0" prefWidth="29.0" styleClass="shoppingLabel" text="1" AnchorPane.leftAnchor="1698.0" AnchorPane.topAnchor="47.0">
+      <Label fx:id="amountTagLabel" layoutX="1679.0" layoutY="45.0" prefHeight="35.0" prefWidth="40.0" styleClass="shoppingLabel" text="1" AnchorPane.leftAnchor="1679.0" AnchorPane.topAnchor="47.0">
          <font>
             <Font size="24.0" />
          </font>
@@ -65,7 +65,7 @@
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="1565.0" layoutY="47.0" styleClass="shoppingLabel" text="Kundvagn" AnchorPane.topAnchor="47.0">
+      <Label layoutX="1520.0" layoutY="47.0" styleClass="shoppingLabel" text="Kundvagn" AnchorPane.topAnchor="47.0">
          <font>
             <Font size="24.0" />
          </font>
@@ -75,7 +75,7 @@
             <Image url="@../../../../Desktop/dat216-imat-master/src/img/search_FILL0_wght400_GRAD0_opsz48.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="65.0" fitWidth="29.0" layoutX="1609.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="65.0" fitWidth="29.0" layoutX="1564.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../../Desktop/dat216-imat-master/src/img/shopping_cart_FILL0_wght400_GRAD0_opsz48.png" />
          </image>

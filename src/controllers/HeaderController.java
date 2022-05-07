@@ -1,23 +1,24 @@
 package controllers;
 
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.*;
 
-import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class ShoppingCartPriceController extends AnchorPane implements ShoppingCartListener, Initializable {
+public class HeaderController extends AnchorPane implements ShoppingCartListener, Initializable {
 
     @FXML
     Label priceTagLabel;
 
-    public ShoppingCartPriceController(){
+    @FXML
+    Label amountTagLabel;
+
+    public HeaderController(){
         IMatDataHandler.getInstance().getShoppingCart().addShoppingCartListener(this);
     }
 
@@ -25,13 +26,19 @@ public class ShoppingCartPriceController extends AnchorPane implements ShoppingC
         priceTagLabel.setText(String.valueOf(IMatDataHandler.getInstance().getShoppingCart().getTotal()));
     }
 
+    private void changeAmountLabel(){
+        amountTagLabel.setText(String.valueOf(IMatDataHandler.getInstance().getShoppingCart().getItems().size()));
+    }
+
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         this.changePriceLabel();
+        this.changeAmountLabel();
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        priceTagLabel.setText("0");
+        amountTagLabel.setText(String.valueOf(IMatDataHandler.getInstance().getShoppingCart().getItems().size()));
+        priceTagLabel.setText(String.valueOf(IMatDataHandler.getInstance().getShoppingCart().getTotal()));
     }
 }

@@ -1,9 +1,7 @@
 package controllers;
 
-import interfaces.Observer;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -11,12 +9,9 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.*;
 
-import java.awt.event.MouseEvent;
 import java.io.IOException;
-import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class ProductController extends AnchorPane implements ShoppingCartListener {
 
@@ -125,6 +120,7 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
             if (item.getProduct().getProductId() == product.getProductId()){
                 //Increment the amount and fire an event
                 item.setAmount(item.getAmount()+1);
+                IMatDataHandler.getInstance().getShoppingCart().addItem(item);
                 IMatDataHandler.getInstance().getShoppingCart().fireShoppingCartChanged(item, true);
                 return;
             }
@@ -142,10 +138,12 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
                 //More than 1, decrement and fire event
                 if (item.getAmount() > 1){
                     item.setAmount(item.getAmount()-1);
+                    IMatDataHandler.getInstance().getShoppingCart().removeItem(item);
                     IMatDataHandler.getInstance().getShoppingCart().fireShoppingCartChanged(item, false);
                 }else {
                     //Otherwise, remove it from the cart
                     item.setAmount(0);
+                    IMatDataHandler.getInstance().getShoppingCart().removeItem(item);
                     IMatDataHandler.getInstance().getShoppingCart().removeItem(item);
                 }
                 return;
