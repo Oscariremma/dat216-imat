@@ -45,12 +45,7 @@
          </font>
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#efefef" height="65.0" layoutX="1482.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" styleClass="shoppingCartButton" width="317.0" AnchorPane.leftAnchor="1482.0" />
-      <Label fx:id="priceTagLabel" layoutX="1625.0" layoutY="17.0" prefHeight="31.0" prefWidth="121.0" styleClass="shoppingLabel" text="25">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="1750.0" layoutY="17.0" styleClass="shoppingLabel" text="kr" AnchorPane.leftAnchor="1750.0" AnchorPane.rightAnchor="146.0" AnchorPane.topAnchor="17.0">
+      <Label fx:id="priceTagLabel" layoutX="1608.0" layoutY="19.0" prefHeight="31.0" prefWidth="166.0" styleClass="shoppingLabel" text="25 kr">
          <font>
             <Font size="24.0" />
          </font>

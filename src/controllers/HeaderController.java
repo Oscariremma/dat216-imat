@@ -24,7 +24,7 @@ public class HeaderController extends AnchorPane implements ShoppingCartListener
     }
 
     private void changePriceLabel(){
-        priceTagLabel.setText(String.format("%.2f", IMatDataHandler.getInstance().getShoppingCart().getTotal()));
+        priceTagLabel.setText(String.format("%.2f", IMatDataHandler.getInstance().getShoppingCart().getTotal()) + " kr");
     }
 
     private void changeAmountLabel(){
@@ -43,12 +43,8 @@ public class HeaderController extends AnchorPane implements ShoppingCartListener
     }
 
     private String amountText(){
-        if(countAmountOfItems() == 1){
-            return this.countAmountOfItems() + " vara";
-        }
-        else{
-            return this.countAmountOfItems() + " varor";
-        }
+        int amount = countAmountOfItems();
+        return amount + (amount == 1 ? " vara": " varor");
     }
 
     @Override
@@ -59,7 +55,7 @@ public class HeaderController extends AnchorPane implements ShoppingCartListener
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        amountTagLabel.setText(this.amountText());
-        priceTagLabel.setText(String.format("%.2f", IMatDataHandler.getInstance().getShoppingCart().getTotal()));
+        changePriceLabel();
+        changeAmountLabel();
     }
 }
