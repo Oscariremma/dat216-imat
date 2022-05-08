@@ -120,7 +120,6 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
             if (item.getProduct().getProductId() == product.getProductId()){
                 //Increment the amount and fire an event
                 item.setAmount(item.getAmount()+1);
-                IMatDataHandler.getInstance().getShoppingCart().addItem(item);
                 IMatDataHandler.getInstance().getShoppingCart().fireShoppingCartChanged(item, true);
                 return;
             }
@@ -138,12 +137,10 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
                 //More than 1, decrement and fire event
                 if (item.getAmount() > 1){
                     item.setAmount(item.getAmount()-1);
-                    IMatDataHandler.getInstance().getShoppingCart().removeItem(item);
                     IMatDataHandler.getInstance().getShoppingCart().fireShoppingCartChanged(item, false);
                 }else {
                     //Otherwise, remove it from the cart
                     item.setAmount(0);
-                    IMatDataHandler.getInstance().getShoppingCart().removeItem(item);
                     IMatDataHandler.getInstance().getShoppingCart().removeItem(item);
                 }
                 return;
