@@ -1,0 +1,42 @@
+@font-face {
+    font-family: "Lexend Deca";
+    src: url('../LexendDeca-Regular.ttf');
+}
+.background{
+    -fx-background-color: white;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+}
+
+
+.paymentMetod{
+    -fx-font-size: 24;
+    -fx-font-family: "Lexend Deca";
+}
+
+.navigationButton{
+    -fx-border-radius: 40px;
+    -fx-background-radius: 40px;
+    -fx-background-color: #c3d0d0;
+    -fx-font-size: 24;
+    -fx-font-family: "Lexend Deca";
+}
+
+.productPriceLabel{
+    -fx-font-size: 24;
+    -fx-font-family: "Lexend Deca";
+}
+.hintText{
+    -fx-font-size: 20px;
+    -fx-background-radius: 50px;
+    -fx-border-radius: 20px;
+    -fx-padding: 4 0 0 55;
+}
+
+
+.amountLabel{
+    -fx-alignment: center;
+    -fx-font-size: 40;
+    -fx-font-family: "Lexend Deca";
+}
