@@ -6,69 +6,92 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="150.0" prefWidth="1920.0" style="-fx-background-color: EFEFEF;" stylesheets="@../css/header.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HeaderController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#18484b" height="87.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="1920.0" />
-      <Text fill="WHITE" layoutX="48.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logoName" text="iMat" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="21.0">
-         <font>
-            <Font size="36.0" />
-         </font>
-      </Text>
-      <TextField layoutX="385.0" layoutY="24.0" prefHeight="47.0" prefWidth="951.0" styleClass="searchInput" text="Sök på en vara..." AnchorPane.leftAnchor="388.0" />
-      <Button fx:id="searchButton" layoutX="1204.0" layoutY="27.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="130.0" styleClass="searchButton" text="Sök" AnchorPane.leftAnchor="1204.0" AnchorPane.topAnchor="27.0" />
-      <Label fx:id="homeLabel" layoutX="410.0" layoutY="110.0" styleClass="navItem" text="Hem" AnchorPane.leftAnchor="443.0" AnchorPane.topAnchor="97.0">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Label>
-      <Label fx:id="favoriteLabel" layoutX="547.0" layoutY="97.0" styleClass="navItem" text="Favoriter" AnchorPane.leftAnchor="603.0" AnchorPane.topAnchor="97.0">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Label>
-      <Line endX="-100.0" endY="47.0" layoutX="652.0" layoutY="88.0" startX="-100.0" startY="17.0" AnchorPane.leftAnchor="562.0" AnchorPane.topAnchor="104.0" />
-      <Line endX="-100.0" endY="47.0" layoutX="873.0" layoutY="88.0" startX="-100.0" startY="17.0" AnchorPane.leftAnchor="774.0" AnchorPane.topAnchor="104.0" />
-      <Label fx:id="offerLabel" layoutX="842.0" layoutY="97.0" styleClass="navItem" text="Erbjudanden" AnchorPane.leftAnchor="802.0" AnchorPane.topAnchor="97.0">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Label>
-      <Line endX="-100.0" endY="47.0" layoutX="883.0" layoutY="98.0" startX="-100.0" startY="17.0" AnchorPane.leftAnchor="1027.0" AnchorPane.topAnchor="104.0" />
-      <Label layoutX="1058.0" layoutY="97.0" styleClass="navItem" text="Köphistorik" AnchorPane.leftAnchor="1060.0" AnchorPane.topAnchor="97.0">
-         <font>
-            <Font size="32.0" />
-         </font>
-      </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#efefef" height="65.0" layoutX="1482.0" layoutY="15.0" stroke="BLACK" strokeType="INSIDE" styleClass="shoppingCartButton" width="317.0" AnchorPane.leftAnchor="1482.0" />
-      <Label fx:id="priceTagLabel" layoutX="1608.0" layoutY="19.0" prefHeight="31.0" prefWidth="166.0" styleClass="shoppingLabel" text="25 kr">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label fx:id="amountTagLabel" layoutX="1653.0" layoutY="46.0" prefHeight="35.0" prefWidth="121.0" styleClass="shoppingLabel" text="1 vara" AnchorPane.leftAnchor="1653.0" AnchorPane.rightAnchor="146.0" AnchorPane.topAnchor="46.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <Label layoutX="1520.0" layoutY="47.0" styleClass="shoppingLabel" text="Kundvagn" AnchorPane.topAnchor="47.0">
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-      <ImageView fitHeight="53.0" fitWidth="29.0" layoutX="399.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/searchIcon.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="65.0" fitWidth="29.0" layoutX="1564.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/shoppingCart.png" />
-         </image>
-      </ImageView>
+      <HBox alignment="CENTER" layoutX="243.0" layoutY="80.0" prefHeight="65.0" prefWidth="1299.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Pane prefHeight="65.0" prefWidth="753.0">
+               <children>
+                  <Label fx:id="homeLabel" layoutX="20.0" layoutY="12.0" styleClass="navItem" text="Hem">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="favoriteLabel" layoutX="136.0" layoutY="12.0" styleClass="navItem" text="Favoriter">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+                  <Line endX="-100.0" endY="47.0" layoutX="645.0" startX="-100.0" startY="17.0" />
+                  <Line endX="-100.0" endY="47.0" layoutX="403.0" startX="-100.0" startY="17.0" />
+                  <Label fx:id="offerLabel" layoutX="330.0" layoutY="12.0" styleClass="navItem" text="Erbjudanden">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+                  <Line endX="-100.0" endY="47.0" layoutX="205.0" startX="-100.0" startY="17.0" />
+                  <Label layoutX="560.0" layoutY="12.0" styleClass="navItem" text="Köphistorik">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+         </children>
+      </HBox>
+      <AnchorPane prefHeight="87.0" prefWidth="1920.0" styleClass="topBarBackground" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logoName" text="iMat" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="21.0">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Text>
+            <AnchorPane prefHeight="65.0" prefWidth="317.0" styleClass="shoppingCartButton" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="11.0">
+               <children>
+                  <Label fx:id="priceTagLabel" layoutX="122.0" layoutY="2.0" prefHeight="31.0" prefWidth="166.0" styleClass="shoppingLabel" text="25 kr">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="amountTagLabel" layoutX="161.0" layoutY="29.0" prefHeight="35.0" prefWidth="130.0" styleClass="shoppingLabel" text="1 vara">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="27.0" layoutY="31.0" styleClass="shoppingLabel" text="Kundvagn">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="65.0" fitWidth="29.0" layoutX="73.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/shoppingCart.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="1920.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="22.0">
+               <children>
+                  <Pane prefHeight="69.0" prefWidth="960.0">
+                     <children>
+                        <TextField layoutY="-1.0" prefHeight="47.0" prefWidth="951.0" styleClass="searchInput" text="Sök på en vara..." />
+                        <Button fx:id="searchButton" layoutX="816.0" layoutY="2.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="130.0" styleClass="searchButton" text="Sök" />
+                        <ImageView fitHeight="53.0" fitWidth="29.0" layoutX="11.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/searchIcon.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </Pane>
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
