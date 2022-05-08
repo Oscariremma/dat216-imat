@@ -1,0 +1,15 @@
+@font-face {
+    font-family: "Lexend Deca";
+    src: url('../LexendDeca-Regular.ttf');
+}
+
+.productsFlowPane{
+    -fx-hgap: 52px;
+    -fx-vgap: 52px;
+    -fx-padding: 0 80 80 80;
+}
+
+.title{
+    -fx-font-family: "Lexend Deca";
+    -fx-font-size: 48;
+}

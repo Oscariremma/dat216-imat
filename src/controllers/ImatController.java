@@ -14,16 +14,19 @@ import se.chalmers.cse.dat216.project.IMatDataHandler;
 
 public class ImatController extends AnchorPane implements Initializable {
 
-    @FXML
-    Pane test;
-   // @FXML AnchorPane categoriesSidePanel;
+    @FXML AnchorPane contentRootPane;
+    @FXML AnchorPane categoriesSidePanel;
 
-    ProductController productTest;
+    ProductsGridViewController productsGridViewController = new ProductsGridViewController();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        productTest = new ProductController(IMatDataHandler.getInstance().getProducts().get(0));
 
-        test.getChildren().add(productTest);
+        productsGridViewController.showProducts(IMatDataHandler.getInstance().getProducts(), "Test");
+        contentRootPane.getChildren().add(productsGridViewController);
+        contentRootPane.setRightAnchor(productsGridViewController, 0.0);
+        contentRootPane.setLeftAnchor(productsGridViewController, 0.0);
+        contentRootPane.setTopAnchor(productsGridViewController, 0.0);
+        contentRootPane.setBottomAnchor(productsGridViewController, 0.0);
     }
 }
