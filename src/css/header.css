@@ -8,7 +8,7 @@
 }
 
 .shoppingLabel{
-    -fx-text-alignment: right;
+    -fx-alignment: center-right;
 }
 .searchBox{
     -fx-arc-height: 50px;

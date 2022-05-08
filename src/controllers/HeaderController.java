@@ -7,6 +7,7 @@ import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.*;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 
@@ -23,11 +24,31 @@ public class HeaderController extends AnchorPane implements ShoppingCartListener
     }
 
     private void changePriceLabel(){
-        priceTagLabel.setText(String.valueOf(IMatDataHandler.getInstance().getShoppingCart().getTotal()));
+        priceTagLabel.setText(String.format("%.2f", IMatDataHandler.getInstance().getShoppingCart().getTotal()));
     }
 
     private void changeAmountLabel(){
-        amountTagLabel.setText(String.valueOf(IMatDataHandler.getInstance().getShoppingCart().getItems().size()));
+        amountTagLabel.setText(this.amountText());
+    }
+
+    private int countAmountOfItems() {
+        int totalAmount = 0;
+
+        List<ShoppingItem> items = IMatDataHandler.getInstance().getShoppingCart().getItems();
+        for (ShoppingItem item: items) {
+            totalAmount += item.getAmount();
+        }
+
+        return totalAmount;
+    }
+
+    private String amountText(){
+        if(countAmountOfItems() == 1){
+            return this.countAmountOfItems() + " vara";
+        }
+        else{
+            return this.countAmountOfItems() + " varor";
+        }
     }
 
     @Override
@@ -38,7 +59,7 @@ public class HeaderController extends AnchorPane implements ShoppingCartListener
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        amountTagLabel.setText(String.valueOf(IMatDataHandler.getInstance().getShoppingCart().getItems().size()));
-        priceTagLabel.setText(String.valueOf(IMatDataHandler.getInstance().getShoppingCart().getTotal()));
+        amountTagLabel.setText(this.amountText());
+        priceTagLabel.setText(String.format("%.2f", IMatDataHandler.getInstance().getShoppingCart().getTotal()));
     }
 }
