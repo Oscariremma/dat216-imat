@@ -8,14 +8,14 @@
 
 <AnchorPane fx:id="orderHistoryAnchorPane" prefHeight="930.0" prefWidth="1550.0" style="-fx-background-color: FFFFFF;" stylesheets="@../css/orderHistoryPage.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OrderHistoryController">
    <children>
-      <Label fx:id="orderHistoryLabel" layoutX="65.0" layoutY="29.0" prefHeight="85.0" prefWidth="439.0" styleClass="titlefont" text="Köphistorik" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="78.0">
+      <Label fx:id="orderHistoryLabel" layoutX="75.0" layoutY="49.0" prefHeight="85.0" prefWidth="439.0" styleClass="titlefont" text="Köphistorik" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="49.0">
          <font>
             <Font size="78.0" />
          </font>
       </Label>
-      <ScrollPane fx:id="orderHistoryScrollPane" hbarPolicy="NEVER" layoutX="-10.0" layoutY="204.0" prefHeight="726.0" prefWidth="1550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="204.0">
+      <ScrollPane fx:id="orderHistoryScrollPane" hbarPolicy="NEVER" layoutX="-10.0" layoutY="204.0" prefHeight="726.0" prefWidth="1550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
          <content>
-            <VBox fx:id="orderHistoryVBox" prefHeight="730.0" prefWidth="1550.0" />
+            <VBox fx:id="orderHistoryVBox" prefWidth="1550.0" />
          </content>
       </ScrollPane>
    </children>
