@@ -6,9 +6,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1400.0" stylesheets="@../css/orderHistoryEntry.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1400.0" stylesheets="@../css/orderHistoryEntry.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane fx:id="orderHistoryCollapsed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="1400.0" styleClass="orderHistoryEntry" AnchorPane.bottomAnchor="455.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -37,21 +39,6 @@
       </AnchorPane>
       <AnchorPane fx:id="orderHistoryOpen" prefHeight="550.0" prefWidth="1400.0" styleClass="orderHistoryEntry" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="orderHistoryList3" alignment="TOP_LEFT" layoutX="682.0" layoutY="126.0" prefHeight="380.0" prefWidth="295.0" styleClass="smallText" text="Label" AnchorPane.leftAnchor="682.0" AnchorPane.topAnchor="126.0">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="orderHistoryList1" alignment="TOP_LEFT" layoutX="50.0" layoutY="130.0" prefHeight="380.0" prefWidth="295.0" styleClass="smallText" text="Label" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="130.0">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="orderHistoryList2" alignment="TOP_LEFT" layoutX="349.0" layoutY="119.0" prefHeight="380.0" prefWidth="295.0" styleClass="smallText" text="Label" AnchorPane.leftAnchor="360.0" AnchorPane.topAnchor="130.0">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
             <Button fx:id="orderHistoryBuyButton" layoutX="987.0" layoutY="459.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="350.0" styleClass="buttons" text="Köp " AnchorPane.bottomAnchor="39.0" AnchorPane.rightAnchor="30.0" />
             <Button fx:id="orderHistoryPrintButton" layoutX="992.0" layoutY="361.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="350.0" styleClass="buttons" text="Skriv Ut" AnchorPane.bottomAnchor="125.0" AnchorPane.rightAnchor="30.0" />
             <ImageView layoutX="1334.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="41.0">
@@ -75,9 +62,9 @@
                </font>
             </Label>
             <Pane fx:id="orderHistoryCloseButton" layoutX="1266.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="130.0" styleClass="openCloseButtonBorders" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <Pane layoutX="1118.0" layoutY="115.0" prefHeight="0.0" prefWidth="415.0" styleClass="dashedline" AnchorPane.bottomAnchor="45.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="122.0" />
-            <Pane prefHeight="95.0" prefWidth="200.0" styleClass="titleBorder" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <VBox layoutX="40.0" layoutY="122.0" prefHeight="383.0" prefWidth="947.0" styleClass="entryRowVBox" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="413.0" AnchorPane.topAnchor="122.0" />
+            <Line endX="727.0" layoutX="673.0" layoutY="95.0" startX="-673.0" />
          </children>
       </AnchorPane>
    </children>
-</AnchorPane>
+</fx:root>
