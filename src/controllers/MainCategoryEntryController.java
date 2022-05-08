@@ -5,6 +5,7 @@ import interfaces.Deselectable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import structs.MainCategoryEntryRecord;
@@ -19,10 +20,10 @@ public class MainCategoryEntryController extends AnchorPane implements Collapsab
     @FXML AnchorPane mainCategoryAnchorPane;
     @FXML Label mainCategoryLabel;
     @FXML VBox subCategoriesVBox;
+    @FXML ImageView arrowImageView;
 
     private static List<Deselectable> allDeselectableSubcategories = new ArrayList<>();
 
-    private final double expandedHeight;
     private boolean expanded = false;
 
     public MainCategoryEntryController(MainCategoryEntryRecord entry){
@@ -44,12 +45,7 @@ public class MainCategoryEntryController extends AnchorPane implements Collapsab
             subCategoriesVBox.getChildren().add(subController);
         }
 
-        //Set to collapsed height
-
         this.getChildren().remove(subCategoriesVBox);
-        //Calculate the expanded height;
-        expandedHeight = mainCategoryAnchorPane.getHeight() + 2 + 62 * subCategoriesVBox.getChildren().size();
-
 
         mainCategoryAnchorPane.setOnMouseClicked((mouseEvent) -> clicked());
 
@@ -60,11 +56,13 @@ public class MainCategoryEntryController extends AnchorPane implements Collapsab
         if (expanded){
             mainCategoryAnchorPane.getStyleClass().remove("selected");
             mainCategoryLabel.getStyleClass().remove("selected");
+            arrowImageView.setRotate(90);
             this.getChildren().remove(subCategoriesVBox);
         }else {
             CategoriesSidePanelController.clearSelections();
             mainCategoryAnchorPane.getStyleClass().add("selected");
             mainCategoryLabel.getStyleClass().add("selected");
+            arrowImageView.setRotate(180);
             this.getChildren().add(subCategoriesVBox);
         }
 
@@ -92,6 +90,7 @@ public class MainCategoryEntryController extends AnchorPane implements Collapsab
             getChildren().remove(subCategoriesVBox);
             mainCategoryAnchorPane.getStyleClass().remove("selected");
             mainCategoryLabel.getStyleClass().remove("selected");
+            arrowImageView.setRotate(90);
             expanded = false;
         }
     }
