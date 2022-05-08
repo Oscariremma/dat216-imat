@@ -40,6 +40,11 @@
 
 }
 
+.rowText{
+    -fx-font-family: "Lexend Deca";
+    -fx-font-size: 16;
+}
+
 .entryRowVBox{
     -fx-border-style: dashed;
     -fx-border-color: #333939;
