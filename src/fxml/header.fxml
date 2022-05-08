@@ -72,12 +72,12 @@
       </Label>
       <ImageView fitHeight="53.0" fitWidth="29.0" layoutX="399.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Desktop/dat216-imat-master/src/img/search_FILL0_wght400_GRAD0_opsz48.png" />
+            <Image url="@../img/searchIcon.png" />
          </image>
       </ImageView>
       <ImageView fitHeight="65.0" fitWidth="29.0" layoutX="1564.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../Desktop/dat216-imat-master/src/img/shopping_cart_FILL0_wght400_GRAD0_opsz48.png" />
+            <Image url="@../img/shoppingCart.png" />
          </image>
       </ImageView>
    </children>
