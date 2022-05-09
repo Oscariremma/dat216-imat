@@ -9,7 +9,6 @@
     -fx-background-radius: 10px;
 }
 
-
 .paymentMetod{
     -fx-font-size: 24;
     -fx-font-family: "Lexend Deca";
@@ -23,20 +22,9 @@
     -fx-font-family: "Lexend Deca";
 }
 
-.productPriceLabel{
-    -fx-font-size: 24;
-    -fx-font-family: "Lexend Deca";
-}
 .hintText{
     -fx-font-size: 20px;
     -fx-background-radius: 50px;
     -fx-border-radius: 20px;
     -fx-padding: 4 0 0 55;
-}
-
-
-.amountLabel{
-    -fx-alignment: center;
-    -fx-font-size: 40;
-    -fx-font-family: "Lexend Deca";
 }
