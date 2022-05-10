@@ -1,7 +1,7 @@
 package controllers;
 
 import interfaces.CategorySelectedListener;
-import interfaces.Collapsable;
+import interfaces.Selectable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.AnchorPane;
@@ -19,7 +19,7 @@ public class CategoriesSidePanelController extends AnchorPane {
 
     @FXML VBox categoryVBox;
 
-    private static List<Collapsable> collapsableMainCategories = new ArrayList<>();
+    private static List<Selectable> selectableMainCategories = new ArrayList<>();
 
     private static List<CategorySelectedListener> categorySelectedListeners = new ArrayList<>();
 
@@ -40,13 +40,13 @@ public class CategoriesSidePanelController extends AnchorPane {
                 new SubCategoryEntryRecord(ProductCategory.CABBAGE, "Sallad")),
                 "Test"));
         categoryVBox.getChildren().add(tmp);
-        registerCollapsableMainCategory(tmp);
+        registerSelectableMainCategory(tmp);
         tmp = new MainCategoryEntryController(new MainCategoryEntryRecord(Arrays.asList(
                 new SubCategoryEntryRecord(ProductCategory.BERRY, "Berry"),
                 new SubCategoryEntryRecord(ProductCategory.BREAD, "Bread"),
                 new SubCategoryEntryRecord(ProductCategory.CABBAGE, "Sallad")),
                 "Test 2"));
-        registerCollapsableMainCategory(tmp);
+        registerSelectableMainCategory(tmp);
         categoryVBox.getChildren().add(tmp);
 
     }
@@ -60,10 +60,10 @@ public class CategoriesSidePanelController extends AnchorPane {
         categorySelectedListeners.add(listener);
     }
 
-    public static void raiseCategorySelectedEvent(String title ,List<ProductCategory> categories){
+    public static void raiseCategorySelectedEvent(String title , List<ProductCategory> categories, Selectable selectable){
         for (CategorySelectedListener listener : categorySelectedListeners) {
             try {
-                listener.categorySelected(title, categories);
+                listener.categorySelected(title, categories, selectable);
             }catch (Exception e){
                 System.out.println(e);
             }
@@ -80,14 +80,14 @@ public class CategoriesSidePanelController extends AnchorPane {
         }
     }
 
-    private static void registerCollapsableMainCategory(Collapsable collapsable){
-        collapsableMainCategories.add(collapsable);
+    private static void registerSelectableMainCategory(Selectable selectable){
+        selectableMainCategories.add(selectable);
     }
 
     private static void collapseAllMainCategories(){
-        for (Collapsable col: collapsableMainCategories) {
+        for (Selectable col: selectableMainCategories) {
             try {
-                col.Collapse();
+                col.Deselect();
             }catch (Exception e){
                 System.out.println(e);
             }

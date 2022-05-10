@@ -6,4 +6,5 @@ public interface HeaderNavigationListener {
     void goToOrderHistory();
     void goToCart();
     void goToSearchResult(String quarry);
+    void goBack();
 }

@@ -24,6 +24,7 @@ public class HeaderController extends AnchorPane implements ShoppingCartListener
     @FXML Label favoriteLabel;
     @FXML Label orderHistoryLabel;
     @FXML Label logoLabel;
+    @FXML Label backLabel;
 
     @FXML TextField searchTextField;
 
@@ -74,6 +75,7 @@ public class HeaderController extends AnchorPane implements ShoppingCartListener
         favoriteLabel.setOnMouseClicked(mouseEvent -> triggerGoToFavorites());
         orderHistoryLabel.setOnMouseClicked(mouseEvent -> triggerGoToOrderHistory());
         logoLabel.setOnMouseClicked(mouseEvent -> triggerGoToHome());
+        backLabel.setOnMouseClicked(mouseEvent -> triggerGoBack());
 
         searchTextField.setOnKeyReleased(keyEvent -> {
             if (keyEvent.getCode().equals(KeyCode.ENTER)) triggerSearch();
@@ -142,6 +144,16 @@ public class HeaderController extends AnchorPane implements ShoppingCartListener
         }
 
 
+    }
+
+    private void triggerGoBack(){
+        for (HeaderNavigationListener listener : navigationListeners) {
+            try {
+                listener.goBack();
+            }catch (Exception e){
+                System.out.println(e);
+            }
+        }
     }
 
 }

@@ -38,6 +38,7 @@
             </Pane>
          </children>
       </HBox>
+      <Label fx:id="backLabel" layoutY="89.0" prefHeight="57.0" prefWidth="130.0" styleClass="navItem" text="Tillbaka" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="90.0" />
       <AnchorPane prefHeight="87.0" prefWidth="1920.0" styleClass="topBarBackground" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="logoLabel" styleClass="logoName" text="iMat" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="21.0">
