@@ -32,5 +32,6 @@
     -fx-font-size: 24px;
     -fx-font-family: "Lexend Deca";
 }
-
-
+.buttomHover: hover{
+background-color: #f1f1f1;
+}
