@@ -46,17 +46,17 @@
                   <Image url="@../img/Polygon-triangel.png" />
                </image>
             </ImageView>
-            <Label fx:id="orderHistoryName1" layoutX="51.0" layoutY="21.0" styleClass="bigText" text="Kasse 1" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="16.0">
+            <Label fx:id="orderNameLabel" layoutX="51.0" layoutY="21.0" styleClass="bigText" text="Kasse 1" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="16.0">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label fx:id="orderHistoryDate1" layoutX="376.0" layoutY="42.0" styleClass="smallText" text="YYYY/MM/DD" AnchorPane.leftAnchor="440.0" AnchorPane.topAnchor="32.0">
+            <Label fx:id="orderDateLabel" layoutX="376.0" layoutY="42.0" styleClass="smallText" text="YYYY/MM/DD" AnchorPane.leftAnchor="440.0" AnchorPane.topAnchor="32.0">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="orderHistoryTotal1" layoutX="769.0" layoutY="43.0" styleClass="smallText" text="123kr - 123 Artiklar " AnchorPane.leftAnchor="860.0" AnchorPane.topAnchor="32.0">
+            <Label fx:id="orderTotalLabel" layoutX="769.0" layoutY="43.0" styleClass="smallText" text="123kr - 123 Artiklar " AnchorPane.leftAnchor="860.0" AnchorPane.topAnchor="32.0">
                <font>
                   <Font size="24.0" />
                </font>

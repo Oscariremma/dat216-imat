@@ -7,6 +7,10 @@
     -fx-font-family: "Lexend Deca";
 }
 
+.logoName{
+    -fx-text-fill: white;
+}
+
 .shoppingLabel{
     -fx-alignment: center-right;
 }
@@ -23,8 +27,16 @@
 }
 
 .shoppingCartButton{
+    -fx-border-color: black;
+    -fx-border-radius: 40px;
+    -fx-background-radius: 40px;
+    -fx-background-color: white;
     -fx-arc-height: 50px;
     -fx-arc-width: 50px;
+}
+
+.topBarBackground{
+    -fx-background-color: #18484b;
 }
 
 .searchInput{

@@ -9,10 +9,15 @@
     -fx-background-radius: 10px;
 }
 
-
-.paymentMetod{
+.normalText{
     -fx-font-size: 24;
     -fx-font-family: "Lexend Deca";
+    -fx-font-weight: bold;
+}
+
+.bigText{
+    -fx-font-size: 48;
+    -fx-text-fill: #000000;
 }
 
 .navigationButton{
@@ -22,21 +27,10 @@
     -fx-font-size: 24;
     -fx-font-family: "Lexend Deca";
 }
-
-.productPriceLabel{
-    -fx-font-size: 24;
+.searchButton{
+    -fx-font-weight: bold;
+    -fx-font-size: 24px;
     -fx-font-family: "Lexend Deca";
 }
-.hintText{
-    -fx-font-size: 20px;
-    -fx-background-radius: 50px;
-    -fx-border-radius: 20px;
-    -fx-padding: 4 0 0 55;
-}
 
 
-.amountLabel{
-    -fx-alignment: center;
-    -fx-font-size: 40;
-    -fx-font-family: "Lexend Deca";
-}

@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import se.chalmers.cse.dat216.project.ProductCategory;
 import structs.MainCategoryEntryRecord;
 import structs.SubCategoryEntryRecord;
 
@@ -24,6 +25,8 @@ public class MainCategoryEntryController extends AnchorPane implements Collapsab
 
     private static List<Deselectable> allDeselectableSubcategories = new ArrayList<>();
 
+    private final List<ProductCategory> productCategories = new ArrayList<>();
+    
     private boolean expanded = false;
 
     public MainCategoryEntryController(MainCategoryEntryRecord entry){
@@ -37,12 +40,15 @@ public class MainCategoryEntryController extends AnchorPane implements Collapsab
             throw new RuntimeException(exception);
         }
 
+        
+        
         mainCategoryLabel.setText(entry.name());
 
         for (SubCategoryEntryRecord subEntry: entry.subCategories()) {
             SubCategoryEntryController subController = new SubCategoryEntryController(subEntry);
             registrerDeselectableSubCategory(subController);
             subCategoriesVBox.getChildren().add(subController);
+            productCategories.add(subEntry.category());
         }
 
         this.getChildren().remove(subCategoriesVBox);
@@ -58,15 +64,17 @@ public class MainCategoryEntryController extends AnchorPane implements Collapsab
             mainCategoryLabel.getStyleClass().remove("selected");
             arrowImageView.setRotate(90);
             this.getChildren().remove(subCategoriesVBox);
+            CategoriesSidePanelController.raiseDeselectedEvent();
+            expanded = false;
         }else {
             CategoriesSidePanelController.clearSelections();
             mainCategoryAnchorPane.getStyleClass().add("selected");
             mainCategoryLabel.getStyleClass().add("selected");
             arrowImageView.setRotate(180);
             this.getChildren().add(subCategoriesVBox);
+            CategoriesSidePanelController.raiseCategorySelectedEvent(mainCategoryLabel.getText(), productCategories);
+            expanded = true;
         }
-
-        expanded = !expanded;
     }
 
     private static void registrerDeselectableSubCategory(Deselectable deselectable){
