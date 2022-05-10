@@ -3,8 +3,14 @@
     src: url('../LexendDeca-Regular.ttf');
 }
 
-.titlefont{
+.title{
     -fx-font-family: "Lexend Deca";
     -fx-font-size: 78px;
     -fx-text-fill: #000000;
+}
+
+.nothingHereLabel{
+    -fx-font-family: "Lexend Deca";
+    -fx-font-size: 48;
+    -fx-text-fill: #4d4d4d;
 }

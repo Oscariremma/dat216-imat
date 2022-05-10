@@ -4,11 +4,11 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
-
+<?import javafx.scene.layout.VBox?>
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="930.0" prefWidth="1530.0" stylesheets="@../css/productsGridView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane fitToWidth="true" hbarPolicy="NEVER" layoutY="1.0" prefHeight="268.0" prefWidth="367.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" layoutY="1.0" prefHeight="268.0" prefWidth="367.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <content>
           <AnchorPane>
                <children>
@@ -18,5 +18,10 @@
             </AnchorPane>
         </content>
       </ScrollPane>
+      <VBox fx:id="nothingHereVBox" alignment="CENTER" mouseTransparent="true" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label focusTraversable="false" styleClass="nothingHereLabel" text="Det finns inget här" />
+         </children>
+      </VBox>
    </children>
 </fx:root>

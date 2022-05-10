@@ -4,19 +4,23 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="orderHistoryAnchorPane" prefHeight="930.0" prefWidth="1550.0" style="-fx-background-color: FFFFFF;" stylesheets="@../css/orderHistoryPage.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="OrderHistoryController">
+<fx:root fx:id="orderHistoryAnchorPane" prefHeight="930.0" prefWidth="1550.0" stylesheets="@../css/orderHistoryPage.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="orderHistoryLabel" layoutX="75.0" layoutY="50.0" prefHeight="85.0" prefWidth="439.0" styleClass="titlefont" text="Köphistorik" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="50.0">
-         <font>
-            <Font size="78.0" />
-         </font>
-      </Label>
-      <ScrollPane fx:id="orderHistoryScrollPane" hbarPolicy="NEVER" layoutX="-10.0" layoutY="204.0" prefHeight="726.0" prefWidth="1550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0">
+      <ScrollPane fx:id="orderHistoryScrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="-10.0" layoutY="204.0" prefHeight="726.0" prefWidth="1550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
-            <VBox fx:id="orderHistoryVBox" prefWidth="1550.0" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox fx:id="orderHistoryVBox" prefWidth="1550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" />
+                  <Label fx:id="orderHistoryLabel" prefHeight="85.0" prefWidth="439.0" styleClass="title" text="Köphistorik" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="50.0" />
+               </children>
+            </AnchorPane>
          </content>
       </ScrollPane>
+      <VBox fx:id="nothingHereVBox" alignment="CENTER" mouseTransparent="true" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label focusTraversable="false" styleClass="nothingHereLabel" text="Det finns inget här" />
+         </children>
+      </VBox>
    </children>
-</AnchorPane>
+</fx:root>

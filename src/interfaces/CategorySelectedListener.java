@@ -2,6 +2,9 @@ package interfaces;
 
 import se.chalmers.cse.dat216.project.ProductCategory;
 
+import java.util.List;
+
 public interface CategorySelectedListener {
-    void categorySelected(ProductCategory category);
+    void categorySelected(String title, List<ProductCategory> categories);
+    void goToHome();
 }

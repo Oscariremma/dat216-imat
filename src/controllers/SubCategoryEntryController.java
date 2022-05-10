@@ -11,6 +11,8 @@ import se.chalmers.cse.dat216.project.ProductCategory;
 import structs.SubCategoryEntryRecord;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SubCategoryEntryController extends AnchorPane implements Deselectable {
 
@@ -43,7 +45,7 @@ public class SubCategoryEntryController extends AnchorPane implements Deselectab
         MainCategoryEntryController.deselectAllSubcategories();
         getStyleClass().add("selected");
         categoryLabel.getStyleClass().add("selected");
-        CategoriesSidePanelController.raiseCategorySelectedEvent(category);
+        CategoriesSidePanelController.raiseCategorySelectedEvent(categoryLabel.getText() ,Arrays.asList(category));
     }
 
     @Override

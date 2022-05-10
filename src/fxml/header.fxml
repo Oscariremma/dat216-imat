@@ -10,33 +10,26 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="150.0" prefWidth="1920.0" style="-fx-background-color: EFEFEF;" stylesheets="@../css/header.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HeaderController">
    <children>
       <HBox alignment="CENTER" layoutX="243.0" layoutY="80.0" prefHeight="65.0" prefWidth="1299.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <children>
-            <Pane prefHeight="65.0" prefWidth="753.0">
+            <Pane prefHeight="65.0" prefWidth="518.0">
                <children>
-                  <Label fx:id="homeLabel" layoutX="20.0" layoutY="12.0" styleClass="navItem" text="Hem">
+                  <Label fx:id="homeLabel" layoutX="15.0" prefHeight="65.0" prefWidth="84.0" styleClass="navItem" text="Hem">
                      <font>
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <Label fx:id="favoriteLabel" layoutX="136.0" layoutY="12.0" styleClass="navItem" text="Favoriter">
+                  <Label fx:id="favoriteLabel" layoutX="132.0" prefHeight="65.0" prefWidth="166.0" styleClass="navItem" text="Favoriter">
                      <font>
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <Line endX="-100.0" endY="47.0" layoutX="645.0" startX="-100.0" startY="17.0" />
-                  <Line endX="-100.0" endY="47.0" layoutX="403.0" startX="-100.0" startY="17.0" />
-                  <Label fx:id="offerLabel" layoutX="330.0" layoutY="12.0" styleClass="navItem" text="Erbjudanden">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </Label>
-                  <Line endX="-100.0" endY="47.0" layoutX="205.0" startX="-100.0" startY="17.0" />
-                  <Label layoutX="560.0" layoutY="12.0" styleClass="navItem" text="Köphistorik">
+                  <Line endX="-100.0" endY="47.0" layoutX="398.0" startX="-100.0" startY="17.0" />
+                  <Line endX="-100.0" endY="47.0" layoutX="210.0" startX="-100.0" startY="17.0" />
+                  <Label fx:id="orderHistoryLabel" layoutX="318.0" prefHeight="66.0" prefWidth="193.0" styleClass="navItem" text="Köphistorik">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -47,11 +40,11 @@
       </HBox>
       <AnchorPane prefHeight="87.0" prefWidth="1920.0" styleClass="topBarBackground" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="logoName" text="iMat" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="21.0">
+            <Label fx:id="logoLabel" styleClass="logoName" text="iMat" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="21.0">
                <font>
                   <Font size="36.0" />
                </font>
-            </Text>
+            </Label>
             <AnchorPane prefHeight="65.0" prefWidth="317.0" styleClass="shoppingCartButton" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="11.0">
                <children>
                   <Label fx:id="priceTagLabel" layoutX="122.0" layoutY="2.0" prefHeight="31.0" prefWidth="166.0" styleClass="shoppingLabel" text="25 kr">
@@ -76,11 +69,11 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="1920.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="22.0">
+            <HBox alignment="CENTER" prefHeight="45.0" prefWidth="1920.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0" AnchorPane.topAnchor="22.0">
                <children>
                   <Pane prefHeight="69.0" prefWidth="960.0">
                      <children>
-                        <TextField layoutY="-1.0" prefHeight="47.0" prefWidth="951.0" styleClass="searchInput" text="Sök på en vara..." />
+                        <TextField fx:id="searchTextField" layoutY="-1.0" prefHeight="47.0" prefWidth="951.0" promptText="Sök på en vara..." styleClass="searchInput" />
                         <Button fx:id="searchButton" layoutX="816.0" layoutY="2.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="130.0" styleClass="searchButton" text="Sök" />
                         <ImageView fitHeight="53.0" fitWidth="29.0" layoutX="11.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
                            <image>

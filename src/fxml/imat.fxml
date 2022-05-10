@@ -4,8 +4,7 @@
 
 <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ImatController">
    <children>
-      <fx:include fx:id="categoriesSidePanel" layoutY="150.0" source="categoriesSidePanel.fxml" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="150.0" />
       <fx:include source="header.fxml" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <AnchorPane fx:id="contentRootPane" layoutX="370.0" layoutY="147.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="9999.0" prefWidth="9999.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="370.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0" />
+      <AnchorPane fx:id="contentRootPane" layoutX="370.0" layoutY="147.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="9999.0" prefWidth="9999.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="150.0" />
    </children>
 </AnchorPane>
