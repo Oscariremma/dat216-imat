@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<fx:root fx:id="deliveryItem" prefHeight="230.0" prefWidth="230.0" styleClass="deliveryBox" stylesheets="@../css/delivery.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fx:id="deliveryWayImage" fitHeight="132.0" fitWidth="101.0" layoutX="65.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/store-icon.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="deliveryWayLabel" layoutX="75.0" layoutY="159.0" styleClass="deliveryLabel" text="Butik">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </Label>
+   </children>
+</fx:root>

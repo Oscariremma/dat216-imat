@@ -18,10 +18,14 @@ public class DeliveryController extends AnchorPane {
     @FXML
     FlowPane times;
 
+    @FXML
+    FlowPane deliveryFlowPane;
+
     Calendar date = Calendar.getInstance();
 
     public static List<DeliveryDateController> deliveryDates = new ArrayList<>();
     public static List<DeliveryTimeController> deliveryTimes = new ArrayList<>();
+    public static List<DeliveryWayController> deliveryWay = new ArrayList<>();
 
     public DeliveryController(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/delivery.fxml"));
@@ -46,8 +50,17 @@ public class DeliveryController extends AnchorPane {
             deliveryTimes.add(item);
         }
 
+        DeliveryWayController toHome = new DeliveryWayController("Hem", "./img/local-shipping.png");
+        deliveryFlowPane.getChildren().add(toHome);
+        deliveryWay.add(toHome);
+
+        DeliveryWayController toShop = new DeliveryWayController("Butik", "./img/store-icon.png" );
+        deliveryFlowPane.getChildren().add(toShop);
+        deliveryWay.add(toShop);
+
         deliveryDates.get(0).selectItem();
         deliveryTimes.get(0).selectItem();
+        deliveryWay.get(0).selectItem();
 
     }
 
@@ -61,6 +74,12 @@ public class DeliveryController extends AnchorPane {
     public static void deselectAllTimes() {
         for (int i = 0; i < 8; i++){
             deliveryTimes.get(i).Deselect();
+        }
+    }
+
+    public static void deselectAllDelivery() {
+        for (int i = 0; i < 2; i++){
+            deliveryWay.get(i).Deselect();
         }
     }
 }

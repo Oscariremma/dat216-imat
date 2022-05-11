@@ -3,11 +3,11 @@
     src: url('../LexendDeca-Regular.ttf');
 }
 
-.labels, .timeLabel{
+.labels, .timeLabel, .deliveryLabel{
     -fx-font-family: "Lexend Deca";
 }
 
-.chooseBox{
+.chooseBox, .deliveryBox{
     -fx-background-color: #F2F2F2;
     -fx-border-style: solid;
     -fx-border-radius: 20px;
@@ -37,6 +37,12 @@
 }
 
 .timesFlowPane{
+    -fx-hgap: 20px;
+    -fx-vgap: 10px;
+    -fx-padding: 0 15px 0px 45px;
+}
+
+.deliveryWayFlowPane{
     -fx-hgap: 20px;
     -fx-vgap: 10px;
     -fx-padding: 0 15px 0px 45px;
