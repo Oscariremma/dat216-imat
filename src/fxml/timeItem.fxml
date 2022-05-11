@@ -4,8 +4,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<fx:root fx:id="timeItem" prefHeight="55.0" prefWidth="145.0" styleClass="time" stylesheets="@../css/delivery.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="timeItem" prefHeight="55.0" prefWidth="145.0" styleClass="timeAnchorPane" stylesheets="@../css/timeItem.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="timeLabel" layoutX="14.0" layoutY="15.0" styleClass="timeLabel" text="11:00 - 12:00">
          <font>

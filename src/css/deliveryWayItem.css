@@ -1,0 +1,13 @@
+@font-face {
+    font-family: "Lexend Deca";
+    src: url('../LexendDeca-Regular.ttf');
+}
+
+.deliveryBox{
+    -fx-border-radius: 10;
+    -fx-border-style: solid;
+}
+
+.deliveryLabel{
+    -fx-font-family: "Lexend Deca";
+}

@@ -48,10 +48,6 @@ public class DeliveryWayController extends AnchorPane implements Selectable {
     @Override
     public void Select() {
         DeliveryController.deselectAllDelivery();
-        selectItem();
-    }
-
-    public void selectItem() {
         deliveryWayImage.setImage(new Image(imagePath + "-inverted.png"));
         deliveryWayLabel.getStyleClass().add("selectedLabel");
         deliveryItem.getStyleClass().add("selected");

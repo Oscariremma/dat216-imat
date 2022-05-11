@@ -3,14 +3,12 @@
     src: url('../LexendDeca-Regular.ttf');
 }
 
-.dateAnchorPane{
+.timeAnchorPane{
     -fx-border-radius: 10;
     -fx-border-style: solid;
 }
 
-.dayLabel, .dateNumberLabel{
-    -fx-alignment: center;
-    -fx-font-size: 20px;
+.timeLabel{
     -fx-font-family: "Lexend Deca";
 }
 

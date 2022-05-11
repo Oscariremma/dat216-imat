@@ -20,7 +20,7 @@ public class DeliveryDateController extends AnchorPane implements Selectable {
     @FXML
     Label date;
 
-    String[] weekDays = new String[]{"Lör", "Sön", "Mån", "Tis", "Ons", "Tors", "Fre"};
+    String[] daysOfWeek = new String[]{"Lör", "Sön", "Mån", "Tis", "Ons", "Tors", "Fre"};
 
     public DeliveryDateController(int dateNumber, int dayName){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/dateItem.fxml"));
@@ -33,7 +33,7 @@ public class DeliveryDateController extends AnchorPane implements Selectable {
             throw new RuntimeException(exception);
         }
 
-        day.setText(String.valueOf(weekDays[dayName]));
+        day.setText(String.valueOf(daysOfWeek[dayName]));
         date.setText(String.valueOf(dateNumber));
 
         setOnMouseClicked(mouseEvent -> clicked());
@@ -46,7 +46,9 @@ public class DeliveryDateController extends AnchorPane implements Selectable {
     @Override
     public void Select() {
         DeliveryController.deselectAllDates();
-        selectItem();
+        day.getStyleClass().add("selectedLabel");
+        date.getStyleClass().add("selectedLabel");
+        item.getStyleClass().add("selected");
     }
 
     @Override
@@ -56,9 +58,4 @@ public class DeliveryDateController extends AnchorPane implements Selectable {
         item.getStyleClass().remove("selected");
     }
 
-    public void selectItem(){
-        day.getStyleClass().add("selectedLabel");
-        date.getStyleClass().add("selectedLabel");
-        item.getStyleClass().add("selected");
-    }
 }

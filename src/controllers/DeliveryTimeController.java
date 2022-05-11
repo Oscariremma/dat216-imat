@@ -42,10 +42,6 @@ public class DeliveryTimeController extends AnchorPane implements Selectable {
     @Override
     public void Select() {
         DeliveryController.deselectAllTimes();
-        selectItem();
-    }
-
-    public void selectItem() {
         timeLabel.getStyleClass().add("selectedLabel");
         timeItem.getStyleClass().add("selected");
     }
