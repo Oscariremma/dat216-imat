@@ -11,6 +11,14 @@
     -fx-text-fill: white;
 }
 
+.navItem{
+    -fx-font-size: 32px;
+}
+
+.logoName:hover, .navItem:hover{
+    -fx-cursor: HAND;
+}
+
 .shoppingLabel{
     -fx-alignment: center-right;
 }

@@ -1,7 +1,6 @@
 package controllers;
 
-import interfaces.Collapsable;
-import interfaces.Deselectable;
+import interfaces.Selectable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -16,14 +15,14 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainCategoryEntryController extends AnchorPane implements Collapsable {
+public class MainCategoryEntryController extends AnchorPane implements Selectable {
 
     @FXML AnchorPane mainCategoryAnchorPane;
     @FXML Label mainCategoryLabel;
     @FXML VBox subCategoriesVBox;
     @FXML ImageView arrowImageView;
 
-    private static List<Deselectable> allDeselectableSubcategories = new ArrayList<>();
+    private static List<Selectable> allSelectableSubcategories = new ArrayList<>();
 
     private final List<ProductCategory> productCategories = new ArrayList<>();
     
@@ -45,8 +44,8 @@ public class MainCategoryEntryController extends AnchorPane implements Collapsab
         mainCategoryLabel.setText(entry.name());
 
         for (SubCategoryEntryRecord subEntry: entry.subCategories()) {
-            SubCategoryEntryController subController = new SubCategoryEntryController(subEntry);
-            registrerDeselectableSubCategory(subController);
+            SubCategoryEntryController subController = new SubCategoryEntryController(subEntry, this);
+            registerSelectableSubCategory(subController);
             subCategoriesVBox.getChildren().add(subController);
             productCategories.add(subEntry.category());
         }
@@ -60,30 +59,21 @@ public class MainCategoryEntryController extends AnchorPane implements Collapsab
 
     private void clicked(){
         if (expanded){
-            mainCategoryAnchorPane.getStyleClass().remove("selected");
-            mainCategoryLabel.getStyleClass().remove("selected");
-            arrowImageView.setRotate(90);
-            this.getChildren().remove(subCategoriesVBox);
+            Deselect();
             CategoriesSidePanelController.raiseDeselectedEvent();
-            expanded = false;
         }else {
-            CategoriesSidePanelController.clearSelections();
-            mainCategoryAnchorPane.getStyleClass().add("selected");
-            mainCategoryLabel.getStyleClass().add("selected");
-            arrowImageView.setRotate(180);
-            this.getChildren().add(subCategoriesVBox);
-            CategoriesSidePanelController.raiseCategorySelectedEvent(mainCategoryLabel.getText(), productCategories);
-            expanded = true;
+            Select();
+            CategoriesSidePanelController.raiseCategorySelectedEvent(mainCategoryLabel.getText(), productCategories, this);
         }
     }
 
-    private static void registrerDeselectableSubCategory(Deselectable deselectable){
-        allDeselectableSubcategories.add(deselectable);
+    private static void registerSelectableSubCategory(Selectable selectable){
+        allSelectableSubcategories.add(selectable);
     }
 
     public static void deselectAllSubcategories(){
-        for (Deselectable des :
-                allDeselectableSubcategories) {
+        for (Selectable des :
+                allSelectableSubcategories) {
             try {
                 des.Deselect();
             }catch (Exception e){
@@ -93,7 +83,19 @@ public class MainCategoryEntryController extends AnchorPane implements Collapsab
     };
 
     @Override
-    public void Collapse() {
+    public void Select() {
+        if (!expanded){
+            CategoriesSidePanelController.clearSelections();
+            getChildren().add(subCategoriesVBox);
+            mainCategoryAnchorPane.getStyleClass().add("selected");
+            mainCategoryLabel.getStyleClass().add("selected");
+            arrowImageView.setRotate(180);
+            expanded = true;
+        }
+    }
+
+    @Override
+    public void Deselect() {
         if (expanded){
             getChildren().remove(subCategoriesVBox);
             mainCategoryAnchorPane.getStyleClass().remove("selected");

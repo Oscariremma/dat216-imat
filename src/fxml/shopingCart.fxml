@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -7,11 +8,20 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label prefHeight="50.0" prefWidth="115.0" text="Kundvagn" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="12.0">
+      <Label prefHeight="60.0" prefWidth="213.0" styleClass="bigText" stylesheets="@../css/shopingCart.css" text="Kundvagn" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="12.0">
          <font>
             <Font size="22.0" />
          </font></Label>
-      <Button layoutX="52.0" layoutY="353.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" text="&lt;&lt;&lt;" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="25.0" />
-      <Button layoutX="494.0" layoutY="354.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" text="&gt;&gt;&gt;" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="25.0" />
+      <Button layoutX="52.0" layoutY="353.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="207.0" stylesheets="@../css/shopingCart.css" text="&lt;&lt;Tillbaka" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="25.0">
+         <styleClass>
+            <String fx:value="navigationButton" />
+            <String fx:value="buttomHover" />
+         </styleClass></Button>
+      <Button layoutX="494.0" layoutY="354.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="207.0" stylesheets="@../css/shopingCart.css" text="Till betalning&gt;&gt;" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="25.0">
+         <styleClass>
+            <String fx:value="navigationButton" />
+            <String fx:value="buttomHover" />
+         </styleClass></Button>
+      <Label layoutX="189.0" layoutY="155.0" prefHeight="60.0" prefWidth="223.0" styleClass="normalText" stylesheets="@../css/shopingCart.css" text="Kundvagn är tumt" />
    </children>
 </AnchorPane>
