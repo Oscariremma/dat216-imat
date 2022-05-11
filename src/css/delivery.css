@@ -2,35 +2,36 @@
     font-family: "Lexend Deca";
     src: url('../LexendDeca-Regular.ttf');
 }
-.background{
-    -fx-background-color: white;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.8), 10, 0, 0, 0);
-    -fx-border-radius: 10px;
-    -fx-background-radius: 10px;
-}
 
-.normalText{
-    -fx-font-size: 24;
-    -fx-font-family: "Lexend Deca";
-    -fx-font-weight: bold;
-}
-
-.bigText{
-    -fx-font-size: 48;
-    -fx-text-fill: #000000;
-}
-
-.navigationButton{
-    -fx-border-radius: 40px;
-    -fx-background-radius: 40px;
-    -fx-background-color: #c3d0d0;
-    -fx-font-size: 24;
-    -fx-font-family: "Lexend Deca";
-}
-.searchButton{
-    -fx-font-weight: bold;
-    -fx-font-size: 24px;
+.labels{
     -fx-font-family: "Lexend Deca";
 }
 
+.chooseBox{
+    -fx-background-color: #F2F2F2;
+    -fx-border-style: solid;
+    -fx-border-radius: 20px;
+}
 
+.chooseDelivery{
+    -fx-border-style: solid;
+}
+
+.selected{
+    -fx-background-color: #18484B;
+    -fx-text-fill: white;
+}
+
+.selectedLabel{
+    -fx-text-fill: white;
+}
+
+.deliveryPrice{
+    -fx-alignment: center-right;
+}
+
+.days{
+    -fx-hgap: 20px;
+    -fx-vgap: 10px;
+    -fx-padding: 0 15px 0px 45px;
+}

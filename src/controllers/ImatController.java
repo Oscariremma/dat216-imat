@@ -22,13 +22,14 @@ public class ImatController extends AnchorPane implements Initializable, Categor
     CategoriesSidePanelController categoriesSidePanel = new CategoriesSidePanelController();
     ProductsGridViewController productsGridViewController = new ProductsGridViewController();
     OrderHistoryController orderHistoryController = new OrderHistoryController();
+    DeliveryController deliveryController = new DeliveryController();
 
     private static final double categoriesSidePanelWidth = 370;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        goToHome();
+        goToCart();
 
         HeaderController.registerNavigationListener(this);
         CategoriesSidePanelController.registerCategorySelectedListener(this);
@@ -103,6 +104,7 @@ public class ImatController extends AnchorPane implements Initializable, Categor
     @Override
     public void goToCart() {
         //todo
+        setViewTo(deliveryController, false);
     }
 
     @Override

@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
 <?import java.lang.Double?>
-
-<?import javafx.scene.control.Button?>
-
+<?import java.lang.String?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
@@ -16,14 +13,13 @@
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="1400.0" prefWidth="1920" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fxml.Delivery">
+<fx:root prefHeight="1400.0" prefWidth="1920" stylesheets="@../css/delivery.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="410.0" layoutY="147.0" text="Leverans">
+                  <Label layoutX="410.0" layoutY="147.0" styleClass="labels" text="Leverans">
                      <font>
                         <Font size="72.0" />
                      </font>
@@ -31,7 +27,7 @@
                   <Pane layoutX="410.0" layoutY="55.0" prefHeight="70.0" prefWidth="374.0" AnchorPane.topAnchor="46.0">
                      <children>
                         <Polygon fill="#18484b" layoutX="-534.0" layoutY="-196.0" points="534.0, 196.0, 534.0, 266.0, 702.0, 266.0, 742.0, 231.0, 702.0, 196.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Label layoutX="38.0" layoutY="18.0" text="Leverans" textFill="WHITE">
+                        <Label layoutX="38.0" layoutY="18.0" styleClass="labels" text="Leverans" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
@@ -52,14 +48,14 @@
                               <Double fx:value="196.0" />
                            </points>
                         </Polygon>
-                        <Label layoutX="220.0" layoutY="18.0" text="Betalning">
+                        <Label layoutX="212.0" layoutY="18.0" styleClass="labels" text="Betalning">
                            <font>
                               <Font size="24.0" />
                            </font>
                         </Label>
                      </children>
                   </Pane>
-                  <Label layoutX="410.0" layoutY="252.0" text="Adressuppgifter">
+                  <Label layoutX="410.0" layoutY="252.0" prefHeight="41.0" prefWidth="1239.0" styleClass="labels" text="Adressuppgifter - (Uppgifterna sparas automatiskt till nästa köp)">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -84,14 +80,24 @@
                         <Font size="32.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="410.0" layoutY="546.0" text="Leveranstid">
+                  <Label layoutX="410.0" layoutY="546.0" styleClass="labels" text="Leveranstid">
                      <font>
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <AnchorPane layoutX="410.0" layoutY="607.0" prefHeight="231.0" prefWidth="414.0">
+                  <AnchorPane layoutX="410.0" layoutY="607.0" prefHeight="231.0" prefWidth="414.0" styleClass="chooseBox">
                      <children>
-                        <Label layoutX="150.0" layoutY="8.0" text="Välj dag">
+                        <Label layoutX="142.0" layoutY="7.0" styleClass="labels" text="Välj dag">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                        <FlowPane fx:id="days" layoutX="2.0" layoutY="60.0" prefHeight="173.0" prefWidth="411.0" styleClass="days" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="59.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="907.0" layoutY="607.0" prefHeight="231.0" prefWidth="414.0" styleClass="chooseBox">
+                     <children>
+                        <Label layoutX="150.0" layoutY="8.0" styleClass="labels" text="Välj tid">
                            <font>
                               <Font size="32.0" />
                            </font>
@@ -99,17 +105,7 @@
                         <FlowPane layoutY="57.0" prefHeight="174.0" prefWidth="414.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="57.0" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="907.0" layoutY="607.0" prefHeight="231.0" prefWidth="414.0">
-                     <children>
-                        <Label layoutX="150.0" layoutY="8.0" text="Välj tid">
-                           <font>
-                              <Font size="32.0" />
-                           </font>
-                        </Label>
-                        <FlowPane layoutY="57.0" prefHeight="174.0" prefWidth="414.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="57.0" />
-                     </children>
-                  </AnchorPane>
-                  <Label layoutX="410.0" layoutY="895.0" text="Leveranssätt">
+                  <Label layoutX="410.0" layoutY="895.0" styleClass="labels" text="Leveranssätt">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -125,17 +121,25 @@
                            <font>
                               <Font size="32.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="labels" />
+                              <String fx:value="selectedLabel" />
+                           </styleClass>
                         </Label>
                      </children>
+                     <styleClass>
+                        <String fx:value="chooseDelivery" />
+                        <String fx:value="selected" />
+                     </styleClass>
                   </AnchorPane>
-                  <AnchorPane layoutX="687.0" layoutY="962.0" prefHeight="230.0" prefWidth="230.0">
+                  <AnchorPane layoutX="687.0" layoutY="962.0" prefHeight="230.0" prefWidth="230.0" styleClass="chooseDelivery">
                      <children>
                         <ImageView fitHeight="77.0" fitWidth="83.0" layoutX="77.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../img/storefront.png" />
                            </image>
                         </ImageView>
-                        <Label layoutX="80.0" layoutY="149.0" text="Butik">
+                        <Label layoutX="80.0" layoutY="149.0" styleClass="labels" text="Butik">
                            <font>
                               <Font size="32.0" />
                            </font>
@@ -145,76 +149,35 @@
                   <AnchorPane layoutX="410.0" layoutY="1245.0" prefHeight="44.0" prefWidth="212.0">
                      <children>
                         <Polygon fill="#18484b" layoutX="-477.0" layoutY="-198.0" points="689.0, 198.0, 689.0, 254.0, 510.0, 254.0, 477.0, 226.0, 510.0, 198.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Label layoutX="63.0" layoutY="5.0" text="Tillbaka" textFill="WHITE">
+                        <Label layoutX="63.0" layoutY="5.0" styleClass="labels" text="Tillbaka" textFill="WHITE">
                            <font>
                               <Font size="32.0" />
                            </font>
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Label layoutX="1054.0" layoutY="1250.0" prefHeight="47.0" prefWidth="384.0" text="Leveranskostnad: 25:-">
+                  <Label layoutX="939.0" layoutY="1252.0" prefHeight="47.0" prefWidth="432.0" text="Leveranskostnad: 25:-">
                      <font>
                         <Font size="32.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="labels" />
+                        <String fx:value="deliveryPrice" />
+                     </styleClass>
                   </Label>
-                  <Polygon fill="#18484b" layoutX="1755.0" layoutY="1045.0" points="-361.0, 202.0, -361.0, 258.0, -91.0, 258.0, -60.0, 229.0, -91.0, 202.0" stroke="BLACK" strokeType="INSIDE" />
-                  <Label layoutX="1410.0" layoutY="1252.0" text="Nästa - Betalning" textFill="WHITE">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </Label>
+                  <AnchorPane layoutX="1386.0" layoutY="1245.0" prefHeight="56.0" prefWidth="300.0">
+                     <children>
+                        <Polygon fill="#18484b" layoutX="361.0" layoutY="-202.0" points="-361.0, 202.0, -361.0, 258.0, -44.0, 258.0, -12.0, 230.6666259765625, -44.0, 202.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Label layoutX="29.0" layoutY="10.0" prefHeight="41.0" prefWidth="281.0" styleClass="labels" text="Nästa - Betalning" textFill="WHITE">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </content>
       </ScrollPane>
-
-<AnchorPane prefHeight="725.0" prefWidth="1400.0" styleClass="background" stylesheets="@../css/delivery.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
-   <children>
-      <Label layoutX="18.0" layoutY="23.0" prefHeight="47.0" prefWidth="186.0" styleClass="bigText" text="Leverans" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="12.0">
-         <font>
-            <Font size="33.0" />
-         </font>
-      </Label>
-      <Button fx:id="navigationButton" layoutX="451.0" layoutY="326.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="247.0" styleClass="navigationButton" text="till betalning &gt;&gt;" AnchorPane.bottomAnchor="50.0" AnchorPane.rightAnchor="50.0">
-         <tooltip>
-            <Tooltip text="Empty Tooltip" />
-         </tooltip>
-      </Button>
-      <Button layoutX="40.0" layoutY="327.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="247.0" styleClass="navigationButton" text="Tillbaka" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0">
-         <tooltip>
-            <Tooltip text="Empty Tooltip" />
-         </tooltip>
-      </Button>
-      <Label layoutX="49.0" layoutY="82.0" styleClass="normalText" text="Adress uppgifter" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="100.0" />
-      <Label layoutX="48.0" layoutY="271.0" styleClass="normalText" text="Leveranstid" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="240.0" />
-      <Label layoutX="42.0" layoutY="249.0" styleClass="normalText" text="Leveranssätt" AnchorPane.bottomAnchor="260.0" AnchorPane.leftAnchor="12.0" />
-      <TextField layoutX="129.0" layoutY="95.0" prefWidth="300.0" text="Förnamn*" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="140.0" />
-      <TextField layoutX="301.0" layoutY="96.0" prefWidth="300.0" text="Efternamn*" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="140.0" />
-      <TextField layoutX="129.0" layoutY="131.0" prefWidth="300.0" text="Gatuadress*" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="170.0" />
-      <TextField layoutX="330.0" layoutY="236.0" prefWidth="300.0" text="Postnummer*" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="170.0" />
-      <Pane layoutX="119.0" layoutY="277.0" AnchorPane.bottomAnchor="200.0" />
-      <Pane layoutX="228.0" layoutY="278.0" AnchorPane.bottomAnchor="200.0" />
-      <Button layoutX="216.0" layoutY="284.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="164.0" styleClass="searchButton" text="12:00-14:00" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="290.0" />
-      <Button layoutX="13.0" layoutY="290.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="164.0" styleClass="searchButton" text="10:00-12:00" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="290.0" />
-      <Button layoutX="10.0" layoutY="350.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="164.0" styleClass="searchButton" text="14:00-16:00" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="350.0" />
-      <Button layoutX="108.0" layoutY="378.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="164.0" styleClass="searchButton" text="16:00-18:00" AnchorPane.leftAnchor="180.0" AnchorPane.topAnchor="350.0" />
-      <Label layoutX="639.0" layoutY="271.0" styleClass="normalText" text="Leveransdag" AnchorPane.leftAnchor="639.0" AnchorPane.topAnchor="240.0" />
-      <Button layoutX="716.0" layoutY="288.0" mnemonicParsing="false" styleClass="searchButton" text="Mondag" AnchorPane.rightAnchor="577.0" AnchorPane.topAnchor="290.0" />
-      <Button layoutX="893.0" layoutY="285.0" mnemonicParsing="false" styleClass="searchButton" text="Tisdag" AnchorPane.rightAnchor="465.0" AnchorPane.topAnchor="290.0" />
-      <Button layoutX="1078.0" layoutY="286.0" mnemonicParsing="false" styleClass="searchButton" text="Onsdag" AnchorPane.rightAnchor="340.0" AnchorPane.topAnchor="290.0" />
-      <Button layoutX="1229.0" layoutY="287.0" mnemonicParsing="false" styleClass="searchButton" text="Torsdag" AnchorPane.rightAnchor="210.0" AnchorPane.topAnchor="290.0" />
-      <Button layoutX="1297.0" layoutY="287.0" mnemonicParsing="false" styleClass="searchButton" text="Fredag" AnchorPane.rightAnchor="91.0" AnchorPane.topAnchor="290.0" />
-      <ImageView fitHeight="158.0" fitWidth="199.0" layoutX="502.0" layoutY="435.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/store%20icon.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="553.0" layoutY="577.0" styleClass="normalText" text="Butik" />
-      <Label layoutX="308.0" layoutY="560.0" styleClass="normalText" text="Hem" />
-      <ImageView fitHeight="156.0" fitWidth="176.0" layoutX="253.0" layoutY="433.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../img/delivery-icon-1.png" />
-         </image>
-      </ImageView>
    </children>
-</AnchorPane>
+</fx:root>
