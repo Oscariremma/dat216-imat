@@ -21,6 +21,8 @@ public class DeliveryWayController extends AnchorPane implements Selectable {
     @FXML
     AnchorPane deliveryItem;
 
+    String imagePath;
+
     public DeliveryWayController(String wayToDeliver, String image){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/chooseDeliveryWay.fxml"));
         fxmlLoader.setRoot(this);
@@ -32,6 +34,7 @@ public class DeliveryWayController extends AnchorPane implements Selectable {
             throw new RuntimeException(exception);
         }
 
+        imagePath = image.replace(".png","");
         deliveryWayLabel.setText(wayToDeliver);
         deliveryWayImage.setImage(new Image(image));
 
@@ -49,12 +52,14 @@ public class DeliveryWayController extends AnchorPane implements Selectable {
     }
 
     public void selectItem() {
+        deliveryWayImage.setImage(new Image(imagePath + "-inverted.png"));
         deliveryWayLabel.getStyleClass().add("selectedLabel");
         deliveryItem.getStyleClass().add("selected");
     }
 
     @Override
     public void Deselect() {
+        deliveryWayImage.setImage(new Image(imagePath + ".png"));
         deliveryWayLabel.getStyleClass().remove("selectedLabel");
         deliveryItem.getStyleClass().remove("selected");
     }
