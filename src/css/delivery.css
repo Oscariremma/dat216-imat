@@ -19,7 +19,6 @@
 
 .selected{
     -fx-background-color: #18484B;
-    -fx-text-fill: white;
 }
 
 .selectedLabel{

@@ -3,7 +3,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<fx:root prefHeight="65.0" prefWidth="61.0" styleClass="item" stylesheets="@../css/deliveryItem.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="item" prefHeight="65.0" prefWidth="61.0" styleClass="item" stylesheets="@../css/deliveryItem.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Label fx:id="day" layoutY="3.0" prefHeight="17.0" prefWidth="63.0" styleClass="day" text="Mån" />
       <Label fx:id="date" layoutY="32.0" prefHeight="17.0" prefWidth="62.0" styleClass="date" text="16" />

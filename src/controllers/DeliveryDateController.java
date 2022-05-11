@@ -1,5 +1,6 @@
 package controllers;
 
+import interfaces.Selectable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -9,7 +10,10 @@ import javafx.scene.layout.AnchorPane;
 import java.io.IOException;
 
 
-public class DeliveryDateController extends AnchorPane{
+public class DeliveryDateController extends AnchorPane implements Selectable {
+
+    @FXML
+    AnchorPane item;
 
     @FXML
     Label day;
@@ -32,7 +36,34 @@ public class DeliveryDateController extends AnchorPane{
 
         day.setText(String.valueOf(weekDays[dayName]));
         date.setText(String.valueOf(dateNumber));
+
+        setOnMouseClicked(mouseEvent -> clicked());
     }
 
+    private void clicked() {
+        this.Select();
+    }
 
+    public void deselectLabels(){
+        day.getStyleClass().remove("selectedLabel");
+        date.getStyleClass().remove("selectedLabel");
+    }
+
+    @Override
+    public void Select() {
+        DeliveryController.deselectAllChoices();
+        day.getStyleClass().add("selectedLabel");
+        date.getStyleClass().add("selectedLabel");
+        item.getStyleClass().add("selected");
+    }
+
+    @Override
+    public void Deselect() {
+
+    }
+
+    public void selectItem(){
+        day.getStyleClass().add("selectedLabel");
+        date.getStyleClass().add("selectedLabel");
+    }
 }
