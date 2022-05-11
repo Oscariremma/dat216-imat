@@ -44,26 +44,22 @@ public class DeliveryDateController extends AnchorPane implements Selectable {
         this.Select();
     }
 
-    public void deselectLabels(){
-        day.getStyleClass().remove("selectedLabel");
-        date.getStyleClass().remove("selectedLabel");
-    }
-
     @Override
     public void Select() {
         DeliveryController.deselectAllChoices();
-        day.getStyleClass().add("selectedLabel");
-        date.getStyleClass().add("selectedLabel");
-        item.getStyleClass().add("selected");
+        selectItem();
     }
 
     @Override
     public void Deselect() {
-
+        day.getStyleClass().remove("selectedLabel");
+        date.getStyleClass().remove("selectedLabel");
+        item.getStyleClass().remove("selected");
     }
 
     public void selectItem(){
         day.getStyleClass().add("selectedLabel");
         date.getStyleClass().add("selectedLabel");
+        item.getStyleClass().add("selected");
     }
 }

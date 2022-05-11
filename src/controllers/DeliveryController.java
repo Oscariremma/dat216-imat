@@ -36,15 +36,13 @@ public class DeliveryController extends AnchorPane {
             deliveryDates.add(item);
        }
 
-        deliveryDates.get(0).getStyleClass().add("selected");
         deliveryDates.get(0).selectItem();
 
     }
 
     public static void deselectAllChoices() {
         for (int i = 0; i < 8; i++){
-            deliveryDates.get(i).getStyleClass().remove("selected");
-            deliveryDates.get(i).deselectLabels();
+            deliveryDates.get(i).Deselect();
         }
     }
 }
