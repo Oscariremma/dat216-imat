@@ -95,14 +95,14 @@
                         <FlowPane fx:id="days" layoutX="2.0" layoutY="60.0" prefHeight="173.0" prefWidth="411.0" styleClass="days" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="59.0" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="907.0" layoutY="607.0" prefHeight="231.0" prefWidth="414.0" styleClass="chooseBox">
+                  <AnchorPane layoutX="907.0" layoutY="607.0" prefHeight="231.0" prefWidth="740.0" styleClass="chooseBox">
                      <children>
-                        <Label layoutX="150.0" layoutY="8.0" styleClass="labels" text="Välj tid">
+                        <Label layoutX="315.0" layoutY="8.0" styleClass="labels" text="Välj tid">
                            <font>
                               <Font size="32.0" />
                            </font>
                         </Label>
-                        <FlowPane layoutY="57.0" prefHeight="174.0" prefWidth="414.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="57.0" />
+                        <FlowPane fx:id="times" layoutX="1.0" layoutY="54.0" prefHeight="175.0" prefWidth="737.0" styleClass="timesFlowPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                      </children>
                   </AnchorPane>
                   <Label layoutX="410.0" layoutY="895.0" styleClass="labels" text="Leveranssätt">

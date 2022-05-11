@@ -3,7 +3,7 @@
     src: url('../LexendDeca-Regular.ttf');
 }
 
-.labels{
+.labels, .timeLabel{
     -fx-font-family: "Lexend Deca";
 }
 
@@ -18,7 +18,8 @@
 }
 
 .selected{
-    -fx-background-color: #18484B;
+    -fx-background-color: #18484B !important;
+    -fx-border-radius: 10;
 }
 
 .selectedLabel{
@@ -33,4 +34,16 @@
     -fx-hgap: 20px;
     -fx-vgap: 10px;
     -fx-padding: 0 15px 0px 45px;
+}
+
+.timesFlowPane{
+    -fx-hgap: 20px;
+    -fx-vgap: 10px;
+    -fx-padding: 0 15px 0px 45px;
+}
+
+.time{
+    -fx-background-color: #F2F2F2;
+    -fx-border-style: solid;
+    -fx-border-radius: 20px;
 }

@@ -3,7 +3,6 @@ package controllers;
 import interfaces.Selectable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
@@ -24,7 +23,7 @@ public class DeliveryDateController extends AnchorPane implements Selectable {
     String[] weekDays = new String[]{"Lör", "Sön", "Mån", "Tis", "Ons", "Tors", "Fre"};
 
     public DeliveryDateController(int dateNumber, int dayName){
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/deliveryChoices.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/dateItem.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -46,7 +45,7 @@ public class DeliveryDateController extends AnchorPane implements Selectable {
 
     @Override
     public void Select() {
-        DeliveryController.deselectAllChoices();
+        DeliveryController.deselectAllDates();
         selectItem();
     }
 
