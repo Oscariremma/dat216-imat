@@ -1,15 +1,18 @@
 package controllers;
 
-import interfaces.BackNavigationListener;
+import helpers.BreadcrumbGenerator;
+import interfaces.NavigationRequestListener;
+import interfaces.NavigationRequestSender;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.FlowPane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
+import structs.BreadcrumbItem;
+import structs.NavigationRequest;
+import structs.NavigationType;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -17,18 +20,20 @@ import java.util.Dictionary;
 import java.util.Hashtable;
 import java.util.List;
 
-public class ProductsGridViewController extends AnchorPane {
+public class ProductsGridViewController extends AnchorPane implements NavigationRequestSender {
 
 
     @FXML Label titleLabel;
     @FXML FlowPane productsFlowPane;
     @FXML VBox nothingHereVBox;
 
+    @FXML HBox breadcrumbsHBox;
+
     @FXML Button backButton;
 
     private Dictionary<Integer,ProductController> productControllerCache = new Hashtable<>();
 
-    private static List<BackNavigationListener> backNavigationListeners = new ArrayList<>();
+    private static List<NavigationRequestListener> navigationRequestListeners = new ArrayList<>();
 
     public ProductsGridViewController(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/productsGridView.fxml"));
@@ -45,12 +50,14 @@ public class ProductsGridViewController extends AnchorPane {
             productControllerCache.put(product.getProductId(), new ProductController(product));
         }
 
-        backButton.setOnMouseClicked(mouseEvent -> triggerGoBack());
+        backButton.setOnMouseClicked(mouseEvent -> triggerNavigationRequest(new NavigationRequest(NavigationType.Back, null)));
 
     }
 
-    public void setContent(String title, List<Product> products){
+    public void setContent(String title, List<Product> products, List<BreadcrumbItem> breadcrumbs){
         productsFlowPane.getChildren().clear();
+
+        BreadcrumbGenerator.generateBreadcrumbs(breadcrumbs, breadcrumbsHBox, this);
 
         titleLabel.setText(title);
 
@@ -73,14 +80,16 @@ public class ProductsGridViewController extends AnchorPane {
 
     }
 
-    public static void registerBackNavigationListener(BackNavigationListener listener){
-        backNavigationListeners.add(listener);
+
+
+    public static void registernavigationRequestListener(NavigationRequestListener listener){
+        navigationRequestListeners.add(listener);
     }
 
-    private void triggerGoBack(){
-        for (BackNavigationListener listener : backNavigationListeners) {
+    public void triggerNavigationRequest(NavigationRequest request){
+        for (NavigationRequestListener listener : navigationRequestListeners) {
             try {
-                listener.goBack();
+                listener.goToNavigationRequest(request);
             }catch (Exception e){
                 System.out.println(e);
             }

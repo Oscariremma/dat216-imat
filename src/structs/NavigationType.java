@@ -6,6 +6,7 @@ public enum NavigationType {
     Favorites,
     Category,
     Search,
-    Cart
+    Cart,
+    Back
 
 }

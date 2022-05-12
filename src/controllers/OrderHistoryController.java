@@ -1,30 +1,35 @@
 package controllers;
 
-import interfaces.BackNavigationListener;
+import helpers.BreadcrumbGenerator;
+import interfaces.NavigationRequestListener;
+import interfaces.NavigationRequestSender;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Order;
+import structs.BreadcrumbItem;
+import structs.NavigationRequest;
+import structs.NavigationType;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
-import java.util.ResourceBundle;
 
-public class OrderHistoryController extends AnchorPane {
+public class OrderHistoryController extends AnchorPane implements NavigationRequestSender {
 
-    private static List<BackNavigationListener> backNavigationListeners = new ArrayList<>();
+    private static List<NavigationRequestListener> navigationRequestListeners = new ArrayList<>();
 
     @FXML VBox orderHistoryVBox;
     @FXML VBox nothingHereVBox;
     @FXML Button backButton;
+    @FXML HBox breadcrumbsHBox;
 
-    public OrderHistoryController(){
+    public OrderHistoryController(List<BreadcrumbItem> breadcrumbs){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/orderHistoryPage.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -36,7 +41,8 @@ public class OrderHistoryController extends AnchorPane {
         }
         refreshOrders();
 
-        backButton.setOnMouseClicked(mouseEvent -> triggerGoBack());
+        backButton.setOnMouseClicked(mouseEvent -> triggerNavigationRequest(new NavigationRequest(NavigationType.Back, null)));
+        BreadcrumbGenerator.generateBreadcrumbs(breadcrumbs, breadcrumbsHBox, this);
 
     }
 
@@ -53,14 +59,14 @@ public class OrderHistoryController extends AnchorPane {
         }
     }
 
-    public static void registerBackNavigationListener(BackNavigationListener listener){
-        backNavigationListeners.add(listener);
+    public static void registernavigationRequestListener(NavigationRequestListener listener){
+        navigationRequestListeners.add(listener);
     }
 
-    private void triggerGoBack(){
-        for (BackNavigationListener listener : backNavigationListeners) {
+    public void triggerNavigationRequest(NavigationRequest request){
+        for (NavigationRequestListener listener : navigationRequestListeners) {
             try {
-                listener.goBack();
+                listener.goToNavigationRequest(request);
             }catch (Exception e){
                 System.out.println(e);
             }

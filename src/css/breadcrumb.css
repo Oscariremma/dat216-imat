@@ -1,0 +1,15 @@
+.breadcrumb{
+    -fx-font-family: "Lexend Deca";
+    -fx-font-size: 36;
+    -fx-text-fill: #5C5C5C;
+    -fx-padding: 0 10 0 0;
+}
+
+.clickableBreadcrumb{
+    -fx-underline: true;
+}
+
+.clickableBreadcrumb:hover{
+    -fx-cursor: HAND;
+
+}

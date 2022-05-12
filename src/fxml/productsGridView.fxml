@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
 <fx:root maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="930.0" prefWidth="1530.0" stylesheets="@../css/productsGridView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
@@ -16,6 +17,7 @@
                   <Label fx:id="titleLabel" layoutX="101.0" layoutY="65.0" styleClass="title" text="Label" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="50.0" />
                   <FlowPane fx:id="productsFlowPane" maxHeight="9000.0" prefHeight="962.0" prefWidth="1495.0" styleClass="productsFlowPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" />
                   <Button fx:id="backButton" layoutX="1244.0" layoutY="65.0" mnemonicParsing="false" styleClass="backButton" text="Tillbaka" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="65.0" />
+                  <HBox fx:id="breadcrumbsHBox" alignment="CENTER_LEFT" layoutX="75.0" layoutY="14.0" prefHeight="42.0" prefWidth="600.0" stylesheets="@../css/breadcrumb.css" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="15.0" />
                </children>
             </AnchorPane>
         </content>

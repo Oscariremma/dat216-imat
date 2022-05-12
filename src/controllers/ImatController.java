@@ -1,9 +1,6 @@
 package controllers;
 
-import interfaces.BackNavigationListener;
-import interfaces.CategorySelectedListener;
-import interfaces.HeaderNavigationListener;
-import interfaces.Selectable;
+import interfaces.*;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 
@@ -14,10 +11,11 @@ import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ProductCategory;
+import structs.BreadcrumbItem;
 import structs.NavigationRequest;
 import structs.NavigationType;
 
-public class ImatController extends AnchorPane implements Initializable, CategorySelectedListener, HeaderNavigationListener, BackNavigationListener {
+public class ImatController extends AnchorPane implements Initializable, CategorySelectedListener, HeaderNavigationListener, NavigationRequestListener {
 
     @FXML AnchorPane contentRootPane;
 
@@ -25,12 +23,15 @@ public class ImatController extends AnchorPane implements Initializable, Categor
 
     CategoriesSidePanelController categoriesSidePanel = new CategoriesSidePanelController();
     ProductsGridViewController productsGridViewController = new ProductsGridViewController();
-    OrderHistoryController orderHistoryController = new OrderHistoryController();
+    OrderHistoryController orderHistoryController = new OrderHistoryController(Arrays.asList(homeWithNav,
+            new BreadcrumbItem("Köphistorik", null)));
     DeliveryController deliveryController = new DeliveryController();
 
     private static final double categoriesSidePanelWidth = 370;
 
     private Stack<NavigationRequest> navigationHistory = new Stack<>();
+
+    private static final BreadcrumbItem homeWithNav = new BreadcrumbItem("Hem", new NavigationRequest(NavigationType.Home, null));
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -39,8 +40,8 @@ public class ImatController extends AnchorPane implements Initializable, Categor
 
         HeaderController.registerNavigationListener(this);
         CategoriesSidePanelController.registerCategorySelectedListener(this);
-        ProductsGridViewController.registerBackNavigationListener(this);
-        OrderHistoryController.registerBackNavigationListener(this);
+        ProductsGridViewController.registernavigationRequestListener(this);
+        OrderHistoryController.registernavigationRequestListener(this);
     }
 
     private void setViewTo(AnchorPane pane, boolean showCategories){
@@ -94,6 +95,7 @@ public class ImatController extends AnchorPane implements Initializable, Categor
             }
             case Search -> goToSearchResult((String) args[0]);
             case Cart -> goToCart();
+            case Back -> goBack();
         }
     }
 
@@ -113,8 +115,8 @@ public class ImatController extends AnchorPane implements Initializable, Categor
         for (ProductCategory category : categories) {
             products.addAll(IMatDataHandler.getInstance().getProducts(category));
         }
-
-        productsGridViewController.setContent(title, products);
+        //todo
+        productsGridViewController.setContent(title, products, null);
 
         setViewTo(productsGridViewController, true);
 
@@ -130,7 +132,7 @@ public class ImatController extends AnchorPane implements Initializable, Categor
         products.addAll(IMatDataHandler.getInstance().getProducts());
         Collections.shuffle(products);
 
-        productsGridViewController.setContent("Populära varor", new ArrayList<>(products.subList(0,10)));
+        productsGridViewController.setContent("Populära varor", new ArrayList<>(products.subList(0,10)), Arrays.asList(new BreadcrumbItem("Hem", null)));
 
         CategoriesSidePanelController.clearSelections();
         setViewTo(productsGridViewController, true);
@@ -143,7 +145,7 @@ public class ImatController extends AnchorPane implements Initializable, Categor
             navigationHistory.add(new NavigationRequest(NavigationType.Favorites, null));
 
         CategoriesSidePanelController.clearSelections();
-        productsGridViewController.setContent("Favoriter", IMatDataHandler.getInstance().favorites());
+        productsGridViewController.setContent("Favoriter", IMatDataHandler.getInstance().favorites(), Arrays.asList(homeWithNav, new BreadcrumbItem("Favoriter", null)));
         setViewTo(productsGridViewController, true);
     }
 
@@ -178,7 +180,8 @@ public class ImatController extends AnchorPane implements Initializable, Categor
 
         CategoriesSidePanelController.clearSelections();
         productsGridViewController.setContent("Sökresultat för \"" + quarry + "\"",
-                IMatDataHandler.getInstance().findProducts(quarry));
+                IMatDataHandler.getInstance().findProducts(quarry),
+                Arrays.asList(homeWithNav, new BreadcrumbItem("Sökresultat", null)));
         setViewTo(productsGridViewController, true);
     }
 }
