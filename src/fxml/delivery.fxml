@@ -103,11 +103,6 @@
                         <FlowPane fx:id="timeFlowPane" layoutX="1.0" layoutY="54.0" prefHeight="175.0" prefWidth="737.0" styleClass="timesFlowPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                      </children>
                   </AnchorPane>
-                  <Label layoutX="410.0" layoutY="895.0" styleClass="labels" text="Leveranssätt">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </Label>
                   <AnchorPane layoutX="410.0" layoutY="1245.0" prefHeight="44.0" prefWidth="212.0">
                      <children>
                         <Polygon fill="#18484b" layoutX="-477.0" layoutY="-198.0" points="689.0, 198.0, 689.0, 254.0, 510.0, 254.0, 477.0, 226.0, 510.0, 198.0" stroke="BLACK" strokeType="INSIDE" />
@@ -137,7 +132,6 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <FlowPane fx:id="deliveryFlowPane" layoutX="383.0" layoutY="957.0" prefHeight="249.0" prefWidth="844.0" styleClass="deliveryWayFlowPane" />
                </children>
             </AnchorPane>
          </content>
