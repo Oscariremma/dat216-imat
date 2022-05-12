@@ -1,7 +1,9 @@
 package controllers;
 
+import interfaces.BackNavigationListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -22,7 +24,11 @@ public class ProductsGridViewController extends AnchorPane {
     @FXML FlowPane productsFlowPane;
     @FXML VBox nothingHereVBox;
 
+    @FXML Button backButton;
+
     private Dictionary<Integer,ProductController> productControllerCache = new Hashtable<>();
+
+    private static List<BackNavigationListener> backNavigationListeners = new ArrayList<>();
 
     public ProductsGridViewController(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/productsGridView.fxml"));
@@ -38,6 +44,8 @@ public class ProductsGridViewController extends AnchorPane {
         for (Product product : IMatDataHandler.getInstance().getProducts()) {
             productControllerCache.put(product.getProductId(), new ProductController(product));
         }
+
+        backButton.setOnMouseClicked(mouseEvent -> triggerGoBack());
 
     }
 
@@ -63,6 +71,20 @@ public class ProductsGridViewController extends AnchorPane {
         }
 
 
+    }
+
+    public static void registerBackNavigationListener(BackNavigationListener listener){
+        backNavigationListeners.add(listener);
+    }
+
+    private void triggerGoBack(){
+        for (BackNavigationListener listener : backNavigationListeners) {
+            try {
+                listener.goBack();
+            }catch (Exception e){
+                System.out.println(e);
+            }
+        }
     }
 
 

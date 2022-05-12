@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,11 +15,12 @@
                <children>
                   <Label fx:id="titleLabel" layoutX="101.0" layoutY="65.0" styleClass="title" text="Label" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="50.0" />
                   <FlowPane fx:id="productsFlowPane" maxHeight="9000.0" prefHeight="962.0" prefWidth="1495.0" styleClass="productsFlowPane" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="200.0" />
+                  <Button fx:id="backButton" layoutX="1244.0" layoutY="65.0" mnemonicParsing="false" styleClass="backButton" text="Tillbaka" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="65.0" />
                </children>
             </AnchorPane>
         </content>
       </ScrollPane>
-      <VBox fx:id="nothingHereVBox" alignment="CENTER" mouseTransparent="true" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="nothingHereVBox" alignment="CENTER" mouseTransparent="true" prefHeight="200.0" prefWidth="100.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label focusTraversable="false" styleClass="nothingHereLabel" text="Det finns inget här" />
          </children>

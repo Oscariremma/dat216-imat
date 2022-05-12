@@ -14,3 +14,13 @@
     -fx-font-size: 48;
     -fx-text-fill: #4d4d4d;
 }
+
+.backButton{
+    -fx-font-family: "Lexend Deca";
+    -fx-font-size: 32;
+    -fx-text-fill: white;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-background-color: #18484B;
+    -fx-padding: 15 30 15 30;
+}

@@ -1,5 +1,6 @@
 package controllers;
 
+import interfaces.BackNavigationListener;
 import interfaces.CategorySelectedListener;
 import interfaces.HeaderNavigationListener;
 import interfaces.Selectable;
@@ -16,7 +17,7 @@ import se.chalmers.cse.dat216.project.ProductCategory;
 import structs.NavigationRequest;
 import structs.NavigationType;
 
-public class ImatController extends AnchorPane implements Initializable, CategorySelectedListener, HeaderNavigationListener {
+public class ImatController extends AnchorPane implements Initializable, CategorySelectedListener, HeaderNavigationListener, BackNavigationListener {
 
     @FXML AnchorPane contentRootPane;
 
@@ -38,6 +39,8 @@ public class ImatController extends AnchorPane implements Initializable, Categor
 
         HeaderController.registerNavigationListener(this);
         CategoriesSidePanelController.registerCategorySelectedListener(this);
+        ProductsGridViewController.registerBackNavigationListener(this);
+        OrderHistoryController.registerBackNavigationListener(this);
     }
 
     private void setViewTo(AnchorPane pane, boolean showCategories){
@@ -73,9 +76,13 @@ public class ImatController extends AnchorPane implements Initializable, Categor
 
         //Remove current page from history
         navigationHistory.pop();
+        goToNavigationRequest(navigationHistory.peek());
 
-        Object[] args = navigationHistory.peek().args();
-        switch (navigationHistory.peek().navigationType()){
+    }
+
+    public void goToNavigationRequest(NavigationRequest request){
+        Object[] args = request.args();
+        switch (request.navigationType()){
 
             case Home -> goToHome();
             case OrderHistory -> goToOrderHistory();
@@ -88,8 +95,6 @@ public class ImatController extends AnchorPane implements Initializable, Categor
             case Search -> goToSearchResult((String) args[0]);
             case Cart -> goToCart();
         }
-
-
     }
 
 
