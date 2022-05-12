@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="930.0" prefWidth="1530.0" stylesheets="@../css/productsGridView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="930.0" prefWidth="1530.0" stylesheets="@../css/productsGridView.css" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ScrollPane fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" layoutY="1.0" prefHeight="268.0" prefWidth="367.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <content>
@@ -22,7 +22,7 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <VBox fx:id="nothingHereVBox" alignment="CENTER" mouseTransparent="true" prefHeight="200.0" prefWidth="100.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox fx:id="nothingHereVBox" alignment="CENTER" mouseTransparent="true" prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label focusTraversable="false" styleClass="nothingHereLabel" text="Det finns inget här" />
          </children>

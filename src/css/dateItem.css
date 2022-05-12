@@ -4,8 +4,9 @@
 }
 
 .dateAnchorPane{
-    -fx-border-radius: 10;
+    -fx-border-radius: 10px;
     -fx-border-style: solid;
+    -fx-background-radius: 10px;
 }
 
 .dayLabel, .dateNumberLabel{

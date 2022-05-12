@@ -25,12 +25,12 @@
 .bigText{
     -fx-font-size: 48;
     -fx-text-fill: #000000;
-
 }
 .openCloseButtonBorders{
     -fx-border-style: solid;
     -fx-border-color: #333939;
     -fx-border-width: 0 0 0 2px;
+
 }
 
 .titleBorder{

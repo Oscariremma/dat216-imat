@@ -53,3 +53,12 @@
     -fx-border-style: solid;
     -fx-border-radius: 20px;
 }
+
+.adressLabel{
+    -fx-font-family: "Lexend Deca";
+    -fx-border-style: solid;
+    -fx-border-radius: 20px;
+    -fx-padding: 2px 5px 2px 5px;
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+}

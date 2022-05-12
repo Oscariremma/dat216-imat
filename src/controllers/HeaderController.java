@@ -130,6 +130,8 @@ public class HeaderController extends AnchorPane implements ShoppingCartListener
 
     private void triggerSearch(){
         if (searchTextField.getText().length() > 0){
+            searchTextField.setStyle(null);
+            searchTextField.setPromptText("Sök på en vara...");
             for (HeaderNavigationListener listener : navigationListeners) {
                 try {
                     listener.goToSearchResult(searchTextField.getText());
@@ -138,7 +140,9 @@ public class HeaderController extends AnchorPane implements ShoppingCartListener
                 }
             }
         }else {
-            //todo Add error when search quarry is empty
+            searchTextField.setStyle("-fx-border-color: red; -fx-border-width: 2");
+            searchTextField.setPromptText("Sökrutan är tom!");
+            //todo Add error when search quarry is empty (Maybe better color for colorblindness)
         }
 
 
