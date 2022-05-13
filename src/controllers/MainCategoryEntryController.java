@@ -1,5 +1,6 @@
 package controllers;
 
+import interfaces.NavigationRequestSender;
 import interfaces.Selectable;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,8 +9,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.ProductCategory;
-import structs.MainCategoryEntryRecord;
-import structs.SubCategoryEntryRecord;
+import structs.*;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -22,13 +22,19 @@ public class MainCategoryEntryController extends AnchorPane implements Selectabl
     @FXML VBox subCategoriesVBox;
     @FXML ImageView arrowImageView;
 
-    private static List<Selectable> allSelectableSubcategories = new ArrayList<>();
+    private static final List<Selectable> allSelectableSubcategories = new ArrayList<>();
 
     private final List<ProductCategory> productCategories = new ArrayList<>();
     
     private boolean expanded = false;
 
-    public MainCategoryEntryController(MainCategoryEntryRecord entry){
+    private final NavigationRequest navigationRequestCategories;
+
+    private final NavigationRequestSender requestSender;
+
+    private final List<BreadcrumbItem> breadcrumbItems = new ArrayList<>();
+
+    public MainCategoryEntryController(MainCategoryEntryRecord entry, NavigationRequestSender requestSender){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/mainCategoryEntry.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -39,18 +45,32 @@ public class MainCategoryEntryController extends AnchorPane implements Selectabl
             throw new RuntimeException(exception);
         }
 
-        
+        this.requestSender = requestSender;
+        navigationRequestCategories = new NavigationRequest(NavigationType.Category, new Object[]{entry.name(),
+                productCategories, this, breadcrumbItems});
         
         mainCategoryLabel.setText(entry.name());
 
+        //Breadcrumbs for main category
+        breadcrumbItems.add(new BreadcrumbItem("Hem", new NavigationRequest(NavigationType.Home, null)));
+        breadcrumbItems.add(new BreadcrumbItem(entry.name(), null));
+
+        //Breadcrumbs for sub category
+        List<BreadcrumbItem> subCategoryBreadcrumbs = new ArrayList<>();
+        subCategoryBreadcrumbs.add(new BreadcrumbItem("Hem", new NavigationRequest(NavigationType.Home, null)));
+        subCategoryBreadcrumbs.add(new BreadcrumbItem(entry.name(), navigationRequestCategories));
+
         for (SubCategoryEntryRecord subEntry: entry.subCategories()) {
-            SubCategoryEntryController subController = new SubCategoryEntryController(subEntry, this);
+            SubCategoryEntryController subController = new SubCategoryEntryController(subEntry, this, requestSender, subCategoryBreadcrumbs);
             registerSelectableSubCategory(subController);
             subCategoriesVBox.getChildren().add(subController);
             productCategories.add(subEntry.category());
         }
 
         this.getChildren().remove(subCategoriesVBox);
+
+
+
 
         mainCategoryAnchorPane.setOnMouseClicked((mouseEvent) -> clicked());
 
@@ -60,10 +80,10 @@ public class MainCategoryEntryController extends AnchorPane implements Selectabl
     private void clicked(){
         if (expanded){
             Deselect();
-            CategoriesSidePanelController.raiseDeselectedEvent();
+            requestSender.triggerNavigationRequest(new NavigationRequest(NavigationType.Home, null));
         }else {
             Select();
-            CategoriesSidePanelController.raiseCategorySelectedEvent(mainCategoryLabel.getText(), productCategories, this);
+            requestSender.triggerNavigationRequest(navigationRequestCategories);
         }
     }
 

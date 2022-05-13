@@ -15,7 +15,7 @@ import structs.BreadcrumbItem;
 import structs.NavigationRequest;
 import structs.NavigationType;
 
-public class ImatController extends AnchorPane implements Initializable, CategorySelectedListener, HeaderNavigationListener, NavigationRequestListener {
+public class ImatController extends AnchorPane implements Initializable, HeaderNavigationListener, NavigationRequestListener {
 
     @FXML AnchorPane contentRootPane;
 
@@ -39,7 +39,7 @@ public class ImatController extends AnchorPane implements Initializable, Categor
         goToCart();
 
         HeaderController.registerNavigationListener(this);
-        CategoriesSidePanelController.registerCategorySelectedListener(this);
+        CategoriesSidePanelController.registernavigationRequestListener(this);
         ProductsGridViewController.registernavigationRequestListener(this);
         OrderHistoryController.registernavigationRequestListener(this);
     }
@@ -89,7 +89,7 @@ public class ImatController extends AnchorPane implements Initializable, Categor
             case OrderHistory -> goToOrderHistory();
             case Favorites -> goToFavorites();
             case Category -> {
-                categorySelected((String) args[0], (List<ProductCategory>) args[1], (Selectable) args[2]);
+                categorySelected((String) args[0], (List<ProductCategory>) args[1], (Selectable) args[2], (List<BreadcrumbItem>) args[3]);
                 CategoriesSidePanelController.clearSelections();
                 ((Selectable) args[2]).Select();
             }
@@ -99,9 +99,7 @@ public class ImatController extends AnchorPane implements Initializable, Categor
         }
     }
 
-
-    @Override
-    public void categorySelected(String title, List<ProductCategory> categories, Selectable selectable) {
+    public void categorySelected(String title, List<ProductCategory> categories, Selectable selectable, List<BreadcrumbItem> breadcrumbItems) {
         //Log navigation if last isn't category or args differ
         if (navigationHistory.size() == 0 ||
                 navigationHistory.peek().navigationType() != NavigationType.Category ||
@@ -110,13 +108,14 @@ public class ImatController extends AnchorPane implements Initializable, Categor
         }
 
 
+
         List<Product> products = new ArrayList<>();
 
         for (ProductCategory category : categories) {
             products.addAll(IMatDataHandler.getInstance().getProducts(category));
         }
-        //todo
-        productsGridViewController.setContent(title, products, null);
+
+        productsGridViewController.setContent(title, products, breadcrumbItems);
 
         setViewTo(productsGridViewController, true);
 
