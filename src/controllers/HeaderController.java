@@ -28,6 +28,7 @@ public class HeaderController extends AnchorPane implements ShoppingCartListener
     @FXML TextField searchTextField;
 
     @FXML Button searchButton;
+    @FXML AnchorPane cartAnchorPane;
 
     private static List<HeaderNavigationListener> navigationListeners = new ArrayList<>();
 
@@ -80,7 +81,7 @@ public class HeaderController extends AnchorPane implements ShoppingCartListener
         });
 
          searchButton.setOnMouseClicked(mouseEvent -> triggerSearch());
-
+        cartAnchorPane.setOnMouseClicked(mouseEvent -> triggerGoToCart());
 
     }
 

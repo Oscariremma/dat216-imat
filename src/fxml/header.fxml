@@ -40,29 +40,29 @@
       </HBox>
       <AnchorPane prefHeight="87.0" prefWidth="1920.0" styleClass="topBarBackground" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="logoLabel" styleClass="logoName" text="iMat" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="21.0">
+            <Label fx:id="logoLabel" focusTraversable="false" styleClass="logoName" text="iMat" AnchorPane.leftAnchor="48.0" AnchorPane.topAnchor="21.0">
                <font>
                   <Font size="36.0" />
                </font>
             </Label>
-            <AnchorPane prefHeight="65.0" prefWidth="317.0" styleClass="shoppingCartButton" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="11.0">
+            <AnchorPane fx:id="cartAnchorPane" prefHeight="65.0" prefWidth="317.0" styleClass="shoppingCartButton" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="11.0">
                <children>
-                  <Label fx:id="priceTagLabel" layoutX="122.0" layoutY="2.0" prefHeight="31.0" prefWidth="166.0" styleClass="shoppingLabel" text="25 kr">
+                  <Label fx:id="priceTagLabel" focusTraversable="false" layoutX="122.0" layoutY="2.0" mouseTransparent="true" prefHeight="31.0" prefWidth="166.0" styleClass="shoppingLabel" text="25 kr">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label fx:id="amountTagLabel" layoutX="161.0" layoutY="29.0" prefHeight="35.0" prefWidth="130.0" styleClass="shoppingLabel" text="1 vara">
+                  <Label fx:id="amountTagLabel" focusTraversable="false" layoutX="161.0" layoutY="29.0" mouseTransparent="true" prefHeight="35.0" prefWidth="130.0" styleClass="shoppingLabel" text="1 vara">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <Label layoutX="27.0" layoutY="31.0" styleClass="shoppingLabel" text="Kundvagn">
+                  <Label focusTraversable="false" layoutX="27.0" layoutY="31.0" mouseTransparent="true" styleClass="shoppingLabel" text="Kundvagn">
                      <font>
                         <Font size="24.0" />
                      </font>
                   </Label>
-                  <ImageView fitHeight="65.0" fitWidth="29.0" layoutX="73.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="65.0" fitWidth="29.0" layoutX="73.0" layoutY="3.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../img/shoppingCart.png" />
                      </image>
