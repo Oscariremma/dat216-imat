@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<fx:root minHeight="-Infinity" prefHeight="77.0" prefWidth="1213.0" styleClass="cartItemAnchorPane" stylesheets="@../css/cart.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane layoutX="489.0" layoutY="7.0" prefHeight="73.0" prefWidth="278.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="decrementButton" layoutX="20.0" layoutY="14.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="incdecrementButton" />
+            <Button fx:id="incrementButton" layoutX="209.0" layoutY="13.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="incdecrementButton" />
+            <Label layoutX="35.0" mouseTransparent="true" prefHeight="42.0" prefWidth="12.0" styleClass="incdecrementLabel" text="-" textOverrun="CLIP" />
+            <Label layoutX="217.0" mouseTransparent="true" prefHeight="54.0" prefWidth="35.0" styleClass="incdecrementLabel" text="+" />
+            <Label fx:id="amountLabel" layoutX="80.0" layoutY="12.0" mouseTransparent="true" prefHeight="35.0" prefWidth="119.0" styleClass="amountLabel" text="0" textAlignment="CENTER" />
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="productImageView" fitHeight="60.0" fitWidth="70.0" layoutX="14.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="7.0" />
+      <Label fx:id="productNameLabel" layoutX="108.0" layoutY="18.0" prefHeight="43.0" prefWidth="252.0" styleClass="productName" text="Namn" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="108.0" AnchorPane.topAnchor="18.0" />
+      <Label fx:id="priceLabel" layoutX="373.0" layoutY="14.0" prefHeight="50.0" prefWidth="208.0" styleClass="productPrice" text="123kr/kg" AnchorPane.leftAnchor="373.0" AnchorPane.topAnchor="14.0" />
+      <Label fx:id="productTotalLabel" layoutX="570.0" layoutY="12.0" prefHeight="50.0" prefWidth="252.0" styleClass="productTotalPrice" text="Totalt: 123kr" AnchorPane.rightAnchor="300.0" />
+   </children>
+</fx:root>

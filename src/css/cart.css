@@ -1,0 +1,83 @@
+@font-face {
+    font-family: "Lexend Deca";
+    src: url('../LexendDeca-Regular.ttf');
+}
+
+.title{
+    -fx-font-family: "Lexend Deca";
+    -fx-font-size: 78px;
+    -fx-text-fill: #000000;
+}
+
+.nothingHereLabel{
+    -fx-font-family: "Lexend Deca";
+    -fx-font-size: 48;
+    -fx-text-fill: #4d4d4d;
+}
+
+.backButton{
+    -fx-font-family: "Lexend Deca";
+    -fx-font-size: 32;
+    -fx-text-fill: white;
+    -fx-border-radius: 50px;
+    -fx-background-radius: 50px;
+    -fx-background-color: #18484B;
+    -fx-padding: 15 30 15 30;
+}
+
+.incdecrementButton{
+    -fx-border-radius: 100%;
+    -fx-background-radius: 100%;
+    -fx-background-color: #18484B;
+}
+
+.buttonCircle{
+    -fx-fill: #E3E3E3;
+}
+
+.incdecrementLabel{
+    -fx-text-fill: white;
+    -fx-font-size: 50;
+}
+
+.amountLabel{
+    -fx-alignment: center;
+    -fx-font-size: 40;
+    -fx-font-family: "Lexend Deca";
+}
+
+.productName{
+    -fx-font-size: 32;
+    -fx-font-family: "Lexend Deca";
+}
+
+.productPrice{
+    -fx-font-size: 32;
+    -fx-font-family: "Lexend Deca";
+    -fx-text-fill: #464646;
+}
+
+.productTotalPrice{
+    -fx-font-size: 32;
+    -fx-font-family: "Lexend Deca";
+}
+
+.nextButtonLabel{
+    -fx-font-size: 32;
+    -fx-font-family: "Lexend Deca";
+}
+
+.cartTotal{
+    -fx-font-size: 32;
+    -fx-font-family: "Lexend Deca";
+}
+
+.cartItemAnchorPane{
+    -fx-border-width: 0 0 3 0;
+    -fx-border-color: #18484B;
+}
+
+.cartVBox{
+    -fx-border-width: 3 0 0 0;
+    -fx-border-color: #18484B;
+}

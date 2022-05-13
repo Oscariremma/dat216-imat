@@ -29,6 +29,7 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
             new BreadcrumbItem("Köphistorik", null)));
     DeliveryController deliveryController = new DeliveryController();
     ModalProductInfoController modalProductInfoController = new ModalProductInfoController();
+    CartController cartController = new CartController();
 
     private static final double categoriesSidePanelWidth = 370;
 
@@ -47,9 +48,6 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
-
-        goToCart();
-
         HeaderController.registerNavigationListener(this);
         CategoriesSidePanelController.registernavigationRequestListener(this);
         ProductsGridViewController.registernavigationRequestListener(this);
@@ -57,6 +55,9 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
         ModalProductInfoController.registernavigationRequestListener(this);
         ProductController.registernavigationRequestListener(this);
         OrderHistoryRow.registernavigationRequestListener(this);
+        CartController.registernavigationRequestListener(this);
+
+        goToHome();
     }
 
     private void setViewTo(AnchorPane pane, boolean showCategories){
@@ -110,6 +111,9 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
             }
             case Search -> goToSearchResult((String) args[0]);
             case Cart -> goToCart();
+            case Delivery -> goToDelivery();
+            case Payment -> goToPayment();
+            case CheckoutDone -> goToCheckoutDone();
             case Back -> goBack();
             case ShowModalInfo -> showProductInfoModal((Product) args[0]);
             case CloseModal -> closeProductInfoModal();
@@ -122,7 +126,7 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
         if (navigationHistory.size() == 0 ||
                 navigationHistory.peek().navigationType() != NavigationType.Category ||
                 !navigationHistory.peek().args()[0].equals(title) && !navigationHistory.peek().args()[1].equals(categories)) {
-            navigationHistory.add(new NavigationRequest(NavigationType.Category, new Object[]{title, categories, selectable}));
+            navigationHistory.add(new NavigationRequest(NavigationType.Category, new Object[]{title, categories, selectable, breadcrumbItems}));
         }
 
 
@@ -194,6 +198,26 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
     @Override
     public void goToCart() {
         if (navigationHistory.size() == 0 || navigationHistory.peek().navigationType() != NavigationType.Cart)
+            navigationHistory.add(new NavigationRequest(NavigationType.Cart, null));
+        cartController.refreshCartItems();
+        setViewTo(cartController, true);
+    }
+
+    public void goToDelivery(){
+        if (navigationHistory.size() == 0 || navigationHistory.peek().navigationType() != NavigationType.Delivery)
+            navigationHistory.add(new NavigationRequest(NavigationType.Cart, null));
+        setViewTo(deliveryController, false);
+    }
+
+    public void goToPayment(){
+        if (navigationHistory.size() == 0 || navigationHistory.peek().navigationType() != NavigationType.Payment)
+            navigationHistory.add(new NavigationRequest(NavigationType.Cart, null));
+        //todo
+        setViewTo(deliveryController, false);
+    }
+
+    public void goToCheckoutDone(){
+        if (navigationHistory.size() == 0 || navigationHistory.peek().navigationType() != NavigationType.CheckoutDone)
             navigationHistory.add(new NavigationRequest(NavigationType.Cart, null));
         //todo
         setViewTo(deliveryController, false);

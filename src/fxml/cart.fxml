@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+
+<fx:root prefHeight="930.0" prefWidth="1550.0" stylesheets="@../css/cart.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ScrollPane fx:id="cartScrollPane" fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" layoutX="-10.0" layoutY="204.0" prefHeight="726.0" prefWidth="1550.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox fx:id="cartVBox" prefWidth="1550.0" styleClass="cartVBox" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="200.0" />
+                  <Label fx:id="cartTitleLabel" prefHeight="85.0" prefWidth="439.0" styleClass="title" text="Kundvagn" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="50.0" />
+                  <Button fx:id="backButton" mnemonicParsing="false" styleClass="backButton" text="Tillbaka" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="65.0" />
+                  <HBox fx:id="breadcrumbsHBox" alignment="CENTER_LEFT" layoutX="21.0" layoutY="14.0" prefHeight="42.0" prefWidth="600.0" stylesheets="@../css/breadcrumb.css" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="15.0" />
+                  <Label fx:id="cartTotalLabel" layoutX="1164.0" layoutY="765.0" prefHeight="47.0" prefWidth="306.0" styleClass="cartTotal" text="Totalt: 1234 kr" AnchorPane.bottomAnchor="116.0" AnchorPane.rightAnchor="78.0" />
+                  <AnchorPane fx:id="nextButtonAnchorPane" layoutX="1164.0" layoutY="831.0" prefHeight="56.0" prefWidth="300.0" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="35.0">
+                     <children>
+                        <Polygon fill="#18484b" layoutX="361.0" layoutY="-202.0" mouseTransparent="true" points="-361.0, 202.0, -361.0, 258.0, -44.0, 258.0, -12.0, 230.0, -44.0, 202.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Label layoutX="34.0" layoutY="8.0" mouseTransparent="true" prefHeight="41.0" prefWidth="281.0" styleClass="nextButtonLabel" text="Nästa - Kassan" textFill="WHITE">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+      <VBox fx:id="nothingHereVBox" alignment="CENTER" mouseTransparent="true" prefHeight="200.0" prefWidth="100.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label focusTraversable="false" styleClass="nothingHereLabel" text="Det finns inget här" />
+         </children>
+      </VBox>
+   </children>
+</fx:root>

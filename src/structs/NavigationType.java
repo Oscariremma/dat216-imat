@@ -7,6 +7,9 @@ public enum NavigationType {
     Category,
     Search,
     Cart,
+    Delivery,
+    Payment,
+    CheckoutDone,
     Back,
     ShowModalInfo,
     CloseModal
