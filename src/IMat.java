@@ -1,4 +1,6 @@
 import java.util.ResourceBundle;
+
+import controllers.ImatController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,9 +19,8 @@ public class IMat extends Application {
 
         ResourceBundle bundle = java.util.ResourceBundle.getBundle("Imat");
 
-        Parent root = FXMLLoader.load(getClass().getResource("fxml/imat.fxml"), bundle);
-        //Hej
-        Scene scene = new Scene(root, 1920, 1080);
+        Parent root = new ImatController();
+        Scene scene = new Scene(root, 1920, 1040);
 
 
         //stage.setMinHeight(520);

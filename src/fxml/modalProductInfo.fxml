@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+
+<fx:root prefHeight="1049.0" prefWidth="1825.0" stylesheets="@../css/modalProductInfo.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Pane fx:id="backgroundPane" prefHeight="200.0" prefWidth="200.0" styleClass="background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <HBox fx:id="backgroundHBox" alignment="CENTER" fillHeight="false" prefHeight="100.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane fx:id="modalAnchorPane" prefHeight="837.0" prefWidth="770.0" styleClass="modalAnchorPane">
+               <children>
+                  <Line endX="347.0" layoutX="385.0" layoutY="662.0" startX="-342.0" />
+                  <Label layoutX="56.0" layoutY="673.0" styleClass="productInfoLabel" text="Produktinformation" />
+                  <TextArea editable="false" layoutX="58.0" layoutY="722.0" prefHeight="136.0" prefWidth="681.0" styleClass="productDescriptionText" text="2L Dummy text&#10;0.5g Useless &#10;2.2g Tasty" />
+                  <Label fx:id="productNameLabel" layoutX="56.0" layoutY="532.0" styleClass="productNameLabel" text="Label" />
+                  <Label fx:id="productSubTextLabel" layoutX="58.0" layoutY="573.0" styleClass="productSubtextLabel" text="250g" />
+                  <Label fx:id="productPriceLabel" layoutX="332.0" layoutY="594.0" styleClass="productPriceLabel" text="Label" />
+                  <AnchorPane layoutX="479.0" layoutY="573.0" prefHeight="73.0" prefWidth="278.0">
+                     <children>
+                        <Button fx:id="decrementButton" layoutX="20.0" layoutY="14.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="incdecrementButton" />
+                        <Button fx:id="incrementButton" layoutX="209.0" layoutY="13.0" maxHeight="50.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" styleClass="incdecrementButton" />
+                        <Label layoutX="35.0" mouseTransparent="true" prefHeight="42.0" prefWidth="12.0" styleClass="incdecrementLabel" text="-" textOverrun="CLIP" />
+                        <Label layoutX="217.0" mouseTransparent="true" prefHeight="54.0" prefWidth="35.0" styleClass="incdecrementLabel" text="+" />
+                        <Label fx:id="amountLabel" layoutX="80.0" layoutY="12.0" mouseTransparent="true" prefHeight="35.0" prefWidth="119.0" styleClass="amountLabel" text="0" textAlignment="CENTER" />
+                        <Button fx:id="addButton" mnemonicParsing="false" prefHeight="73.0" prefWidth="278.0" styleClass="addButton" text="Lägg Till" />
+                     </children>
+                  </AnchorPane>
+                  <ImageView fx:id="productImageView" fitHeight="333.0" fitWidth="529.0" layoutX="255.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="516.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="141.0" AnchorPane.topAnchor="100.0" />
+                  <AnchorPane layoutX="34.0" layoutY="454.0" prefHeight="66.0" prefWidth="65.0">
+                     <children>
+                        <Circle fx:id="favoriteCircleButton" fill="DODGERBLUE" layoutX="32.0" layoutY="32.0" radius="27.0" stroke="BLACK" strokeType="INSIDE" styleClass="buttonCircle" />
+                        <ImageView fx:id="heartImageView" fitHeight="42.0" fitWidth="35.0" layoutX="15.0" layoutY="15.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/cards-heart-outline.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane layoutX="674.0" layoutY="14.0" prefHeight="66.0" prefWidth="65.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0">
+                     <children>
+                        <Circle fx:id="closeCircleButton" fill="DODGERBLUE" layoutX="32.0" layoutY="32.0" radius="27.0" stroke="BLACK" strokeType="INSIDE" styleClass="buttonCircle" />
+                        <Line endX="27.0" endY="32.0" layoutX="20.0" layoutY="14.0" mouseTransparent="true" startX="-2.0" startY="3.0" strokeWidth="3.0" />
+                        <Line endX="-2.0" endY="32.0" layoutX="20.0" layoutY="14.0" mouseTransparent="true" startX="27.0" startY="3.0" strokeWidth="3.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </children>
+</fx:root>

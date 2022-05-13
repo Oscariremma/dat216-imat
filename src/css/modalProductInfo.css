@@ -1,0 +1,76 @@
+.productNameLabel{
+    -fx-font-size: 32;
+    -fx-font-family: "Lexend Deca";
+}
+
+.productSubtextLabel{
+    -fx-opacity: 0.8;
+    -fx-font-size: 20;
+    -fx-font-family: "Lexend Deca";
+}
+
+.addButton{
+    -fx-border-radius: 40px;
+    -fx-background-radius: 40px;
+    -fx-background-color: #c3d0d0;
+    -fx-font-size: 24;
+    -fx-font-family: "Lexend Deca";
+}
+
+.productPriceLabel{
+    -fx-font-size: 24;
+    -fx-font-family: "Lexend Deca";
+}
+
+.productPricePerUnitLabel{
+    -fx-font-size: 24;
+    -fx-font-family: "Lexend Deca";
+}
+
+.productInfoLabel{
+    -fx-font-size: 28;
+    -fx-font-family: "Lexend Deca";
+}
+
+.productDescriptionText{
+    -fx-font-family: "Lexend Deca";
+    -fx-font-size: 24;
+    -fx-border-width: 0;
+    -fx-background-color: -fx-control-inner-background;
+    -fx-background-insets: 0;
+    -fx-effect: NONE;
+}
+
+.background{
+    -fx-opacity: 0.4;
+    -fx-background-color: #454545;
+
+}
+
+.modalAnchorPane{
+    -fx-border-radius: 25;
+    -fx-background-radius: 25;
+    -fx-background-color: white;
+    -fx-opacity: 1;
+}
+
+.incdecrementButton{
+    -fx-border-radius: 100%;
+    -fx-background-radius: 100%;
+    -fx-background-color: #18484B;
+}
+
+.buttonCircle{
+    -fx-fill: #E3E3E3;
+}
+
+.incdecrementLabel{
+    -fx-text-fill: white;
+    -fx-font-size: 50;
+}
+
+.amountLabel{
+    -fx-alignment: center;
+    -fx-font-size: 40;
+    -fx-font-family: "Lexend Deca";
+}

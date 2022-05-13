@@ -2,8 +2,10 @@ package controllers;
 
 import interfaces.*;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.*;
 
@@ -15,7 +17,7 @@ import structs.BreadcrumbItem;
 import structs.NavigationRequest;
 import structs.NavigationType;
 
-public class ImatController extends AnchorPane implements Initializable, HeaderNavigationListener, NavigationRequestListener {
+public class ImatController extends AnchorPane implements HeaderNavigationListener, NavigationRequestListener {
 
     @FXML AnchorPane contentRootPane;
 
@@ -26,6 +28,7 @@ public class ImatController extends AnchorPane implements Initializable, HeaderN
     OrderHistoryController orderHistoryController = new OrderHistoryController(Arrays.asList(homeWithNav,
             new BreadcrumbItem("Köphistorik", null)));
     DeliveryController deliveryController = new DeliveryController();
+    ModalProductInfoController modalProductInfoController = new ModalProductInfoController();
 
     private static final double categoriesSidePanelWidth = 370;
 
@@ -33,8 +36,17 @@ public class ImatController extends AnchorPane implements Initializable, HeaderN
 
     private static final BreadcrumbItem homeWithNav = new BreadcrumbItem("Hem", new NavigationRequest(NavigationType.Home, null));
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public ImatController(){
+
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/imat.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+
+        try {
+            fxmlLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
 
         goToCart();
 
@@ -42,6 +54,9 @@ public class ImatController extends AnchorPane implements Initializable, HeaderN
         CategoriesSidePanelController.registernavigationRequestListener(this);
         ProductsGridViewController.registernavigationRequestListener(this);
         OrderHistoryController.registernavigationRequestListener(this);
+        ModalProductInfoController.registernavigationRequestListener(this);
+        ProductController.registernavigationRequestListener(this);
+        OrderHistoryRow.registernavigationRequestListener(this);
     }
 
     private void setViewTo(AnchorPane pane, boolean showCategories){
@@ -96,6 +111,9 @@ public class ImatController extends AnchorPane implements Initializable, HeaderN
             case Search -> goToSearchResult((String) args[0]);
             case Cart -> goToCart();
             case Back -> goBack();
+            case ShowModalInfo -> showProductInfoModal((Product) args[0]);
+            case CloseModal -> closeProductInfoModal();
+
         }
     }
 
@@ -119,6 +137,22 @@ public class ImatController extends AnchorPane implements Initializable, HeaderN
 
         setViewTo(productsGridViewController, true);
 
+    }
+
+    private void showProductInfoModal(Product product){
+        modalProductInfoController.setProduct(product);
+        if (!getChildren().contains(modalProductInfoController)){
+            getChildren().add(modalProductInfoController);
+            setLeftAnchor(modalProductInfoController, 0.0);
+            setTopAnchor(modalProductInfoController, 0.0);
+            setRightAnchor(modalProductInfoController, 0.0);
+            setBottomAnchor(modalProductInfoController, 0.0);
+        }
+        modalProductInfoController.toFront();
+    }
+
+    private void closeProductInfoModal(){
+        if (getChildren().contains(modalProductInfoController)) getChildren().remove(modalProductInfoController);
     }
 
     @Override

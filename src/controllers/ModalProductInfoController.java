@@ -8,6 +8,9 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.Pane;
+import javafx.scene.shape.Circle;
 import se.chalmers.cse.dat216.project.*;
 import structs.NavigationRequest;
 import structs.NavigationType;
@@ -17,7 +20,8 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductController extends AnchorPane implements ShoppingCartListener {
+public class ModalProductInfoController extends AnchorPane implements ShoppingCartListener{
+
 
 
     @FXML Label productPriceLabel;
@@ -29,19 +33,21 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
     @FXML Button incrementButton;
     @FXML Button decrementButton;
     @FXML Label amountLabel;
+    @FXML Pane backgroundPane;
+    @FXML Circle favoriteCircleButton;
+    @FXML Circle closeCircleButton;
+    @FXML AnchorPane modalAnchorPane;
+    @FXML HBox backgroundHBox;
 
-    private final Product product;
-
+    private Product product;
     private static List<NavigationRequestListener> navigationRequestListeners = new ArrayList<>();
 
     private static Image filledHeartImage = new Image("/img/cards-heart.png");
     private static Image outlineHeartImage = new Image("/img/cards-heart-outline.png");
 
+    public ModalProductInfoController(){
 
-    public ProductController (Product product){
-
-
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/product.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/modalProductInfo.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
@@ -51,46 +57,53 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
             throw new RuntimeException(exception);
         }
 
-        this.product = product;
 
-        productNameLabel.setText(product.getName());
-        productPriceLabel.setText(product.getPrice() + " " + product.getUnit());
-        productImageView.setImage(IMatDataHandler.getInstance().getFXImage(product));
-        updateFavoriteButtonIcon();
-        forceRefreshCartStatus();
 
-        incrementButton.setOnMouseClicked((mouseEvent ->{
-            addProductToCart();
-            mouseEvent.consume();
-        }));
-        addButton.setOnMouseClicked((mouseEvent -> {
-             addProductToCart();
-             mouseEvent.consume();
+        incrementButton.setOnMouseClicked((mouseEvent ->
+                addProductToCart()));
+        addButton.setOnMouseClicked((mouseEvent ->
+                addProductToCart()));
+        decrementButton.setOnMouseClicked((mouseEvent ->
+                removeProductFromCart()));
+        favoriteCircleButton.setOnMouseClicked((mouseEvent ->
+                favoriteButtonClicked()));
 
-        }));
-        decrementButton.setOnMouseClicked((mouseEvent ->{
-            removeProductFromCart();
-            mouseEvent.consume();
-        }));
+        backgroundPane.setOnMouseClicked(mouseEvent -> {
+                    triggerNavigationRequest(new NavigationRequest(NavigationType.CloseModal, null));
+                    mouseEvent.consume();
+                });
 
-        heartImageView.setOnMouseClicked((mouseEvent ->{
-            favoriteButtonClicked();
-            mouseEvent.consume();
-        }
-        ));
-
-        setOnMouseClicked(mouseEvent -> {
-            triggerNavigationRequest(new NavigationRequest(NavigationType.ShowModalInfo, new Object[]{product}));
+        backgroundHBox.setOnMouseClicked(mouseEvent -> {
+            triggerNavigationRequest(new NavigationRequest(NavigationType.CloseModal, null));
             mouseEvent.consume();
         });
 
+
+        closeCircleButton.setOnMouseClicked(mouseEvent -> {
+            triggerNavigationRequest(new NavigationRequest(NavigationType.CloseModal, null));
+            mouseEvent.consume();
+        });
+
+        modalAnchorPane.setOnMouseClicked(mouseEvent -> mouseEvent.consume());
+
         IMatDataHandler.getInstance().getShoppingCart().addShoppingCartListener(this);
 
+
+    }
+
+    public void setProduct(Product product){
+        this.product = product;
+        forceRefreshCartStatus();
+        updateFavoriteButtonIcon();
+        productNameLabel.setText(product.getName());
+        productPriceLabel.setText(product.getPrice() + " " + product.getUnit());
+        productImageView.setImage(IMatDataHandler.getInstance().getFXImage(product));
     }
 
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
+        if (product == null) return;
         //Ignore other items
         if (cartEvent.getShoppingItem().getProduct().getProductId() != product.getProductId()) return;
 
@@ -103,6 +116,7 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
     }
 
     private void forceRefreshCartStatus(){
+        if (product == null) return;
         List<ShoppingItem> items = IMatDataHandler.getInstance().getShoppingCart().getItems();
 
         //Check if product exists in cart
@@ -120,6 +134,7 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
     }
 
     private void favoriteButtonClicked(){
+        if (product == null) return;
         if (IMatDataHandler.getInstance().isFavorite(product)){
             IMatDataHandler.getInstance().removeFavorite(product);
         }else {
@@ -129,11 +144,13 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
     }
 
     private void updateFavoriteButtonIcon(){
+        if (product == null) return;
         heartImageView.setImage(IMatDataHandler.getInstance().isFavorite(product)
                 ? filledHeartImage : outlineHeartImage);
     }
 
     private void addProductToCart(){
+        if (product == null) return;
         List<ShoppingItem> items = IMatDataHandler.getInstance().getShoppingCart().getItems();
 
         //Check if product exists in cart
@@ -150,6 +167,7 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
     }
 
     private void removeProductFromCart(){
+        if (product == null) return;
         List<ShoppingItem> items = IMatDataHandler.getInstance().getShoppingCart().getItems();
 
         //Check if product exists in cart
