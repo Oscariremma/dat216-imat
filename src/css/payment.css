@@ -1,0 +1,23 @@
+@font-face {
+    font-family: "Lexend Deca";
+    src: url('../LexendDeca-Regular.ttf');
+}
+
+.progressLabel, .title, .cardLabel{
+    -fx-font-family: "Lexend Deca";
+}
+
+.radiobutton{
+    -fx-border-style: solid;
+    -fx-border-radius: 100px;
+}
+
+.paymentBox{
+    -fx-border-style: solid;
+    -fx-border-radius: 15px;
+}
+
+.selectedRadioButton{
+    -fx-background-color: #18484b;
+    -fx-background-radius: 100px;
+}

@@ -77,7 +77,7 @@ public class DeliveryController extends AnchorPane {
         // Pre-selects the first options, in each flowpane.
         deliveryDates.get(0).Select();
         deliveryTimes.get(0).Select();
-        deliveryCost.setText("Leveranskostnad: " + String.format("%.2f", IMatDataHandler.getInstance().getShoppingCart().getTotal()) + " kr");
+
     }
 
     private void textfieldChangeListener() {
