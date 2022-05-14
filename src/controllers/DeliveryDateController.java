@@ -7,6 +7,9 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.util.HashMap;
 
 
 public class DeliveryDateController extends AnchorPane implements Selectable {
@@ -20,9 +23,19 @@ public class DeliveryDateController extends AnchorPane implements Selectable {
     @FXML
     Label date;
 
-    String[] daysOfWeek = new String[]{"Lör", "Sön", "Mån", "Tis", "Ons", "Tors", "Fre"};
+    private LocalDate completeDate;
 
-    public DeliveryDateController(int dateNumber, int dayName){
+    HashMap<DayOfWeek, String> dateMap = new HashMap<DayOfWeek, String>() {{
+        put(DayOfWeek.valueOf("MONDAY"), "Mån");
+        put(DayOfWeek.valueOf("TUESDAY"), "Tis");
+        put(DayOfWeek.valueOf("WEDNESDAY"), "Ons");
+        put(DayOfWeek.valueOf("THURSDAY"), "Tors");
+        put(DayOfWeek.valueOf("FRIDAY"), "Fre");
+        put(DayOfWeek.valueOf("SATURDAY"), "Lör");
+        put(DayOfWeek.valueOf("SUNDAY"), "Sön");
+    }};
+
+    public DeliveryDateController(int dateNumber, DayOfWeek dayName, LocalDate completeDate){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/dateItem.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -33,7 +46,9 @@ public class DeliveryDateController extends AnchorPane implements Selectable {
             throw new RuntimeException(exception);
         }
 
-        day.setText(String.valueOf(daysOfWeek[dayName]));
+        this.completeDate = completeDate;
+
+        day.setText(String.valueOf(dateMap.get(dayName)));
         date.setText(String.valueOf(dateNumber));
 
         setOnMouseClicked(mouseEvent -> clicked());
@@ -49,6 +64,7 @@ public class DeliveryDateController extends AnchorPane implements Selectable {
         day.getStyleClass().add("selectedLabel");
         date.getStyleClass().add("selectedLabel");
         item.getStyleClass().add("selected");
+        DeliveryController.deliveryDate = completeDate;
     }
 
     @Override

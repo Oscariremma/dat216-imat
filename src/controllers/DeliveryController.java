@@ -2,12 +2,19 @@ package controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import se.chalmers.cse.dat216.project.IMatDataHandler;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 public class DeliveryController extends AnchorPane {
@@ -16,12 +23,29 @@ public class DeliveryController extends AnchorPane {
     FlowPane dayFlowPane;
 
     @FXML
+    Label deliveryCost;
+
+    @FXML
     FlowPane timeFlowPane;
 
-    Calendar date = Calendar.getInstance();
+    @FXML
+    TextField firstNameTextField;
+
+    @FXML
+    TextField lastNameTextField;
+
+    @FXML
+    TextField addressTextField;
+
+    @FXML
+    TextField postCodeTextField;
+
 
     public static List<DeliveryDateController> deliveryDates = new ArrayList<>();
     public static List<DeliveryTimeController> deliveryTimes = new ArrayList<>();
+
+    public static LocalDate deliveryDate;
+    public static String deliveryTime;
 
     public DeliveryController(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/delivery.fxml"));
@@ -35,7 +59,7 @@ public class DeliveryController extends AnchorPane {
         }
 
         for (int i = 0; i < 8; i++){
-            DeliveryDateController item = new DeliveryDateController((date.get(Calendar.DAY_OF_MONTH) + i + 1), (date.get(Calendar.DAY_OF_WEEK) + i + 1) % 7);
+            DeliveryDateController item = new DeliveryDateController((LocalDateTime.parse(LocalDateTime.now().plusDays(i + 1).toString()).getDayOfMonth()), LocalDateTime.parse(LocalDateTime.now().plusDays(i + 1).toString()).getDayOfWeek(), (LocalDate.parse(LocalDate.now().plusDays(i + 1).toString())));
             dayFlowPane.getChildren().add(item);
             deliveryDates.add(item);
        }
@@ -46,11 +70,21 @@ public class DeliveryController extends AnchorPane {
             deliveryTimes.add(item);
         }
 
+        displayExistingUserInformation();
+
+        textfieldChangeListener();
 
         // Pre-selects the first options, in each flowpane.
         deliveryDates.get(0).Select();
         deliveryTimes.get(0).Select();
+        deliveryCost.setText("Leveranskostnad: " + String.format("%.2f", IMatDataHandler.getInstance().getShoppingCart().getTotal()) + " kr");
+    }
 
+    private void textfieldChangeListener() {
+        firstNameTextField.textProperty().addListener((observableValue, oldValue, newValue) -> UserInformationController.setFirstName(firstNameTextField));
+        lastNameTextField.textProperty().addListener((observableValue, oldValue, newValue) -> UserInformationController.setLastName(lastNameTextField));
+        addressTextField.textProperty().addListener((observableValue, oldValue, newValue) -> UserInformationController.setAddress(addressTextField));
+        postCodeTextField.textProperty().addListener((observableValue, oldValue, newValue) -> UserInformationController.setPostCode(postCodeTextField));
     }
 
     public static void deselectAllDates() {
@@ -65,4 +99,11 @@ public class DeliveryController extends AnchorPane {
         }
     }
 
+    private void displayExistingUserInformation(){
+        firstNameTextField.setText(IMatDataHandler.getInstance().getCustomer().getFirstName());
+        lastNameTextField.setText(IMatDataHandler.getInstance().getCustomer().getLastName());
+        addressTextField.setText(IMatDataHandler.getInstance().getCustomer().getAddress());
+        postCodeTextField.setText(IMatDataHandler.getInstance().getCustomer().getPostCode());
+
+    }
 }
