@@ -3,6 +3,22 @@
     src: url('../LexendDeca-Regular.ttf');
 }
 
+.progressBar{
+    -fx-font-size: 24px;
+}
+
+.bigTitle{
+    -fx-font-size: 72px;
+}
+
+.information{
+    -fx-font-size: 32px;
+}
+
+.next, .back{
+    -fx-font-size: 32px;
+}
+
 .labels{
     -fx-font-family: "Lexend Deca";
 }
@@ -28,6 +44,7 @@
 
 .deliveryPrice{
     -fx-alignment: center-right;
+    -fx-font-size: 32px;
 }
 
 .daysFlowPane{
@@ -56,6 +73,7 @@
 
 .adressLabel{
     -fx-font-family: "Lexend Deca";
+    -fx-font-size: 20px;
     -fx-border-style: solid;
     -fx-border-radius: 20px;
     -fx-padding: 2px 5px 2px 5px;

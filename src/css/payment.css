@@ -7,6 +7,22 @@
     -fx-font-family: "Lexend Deca";
 }
 
+.progressLabel, .cardTitle, .swishTitle{
+    -fx-font-size: 24px;
+}
+
+.cardUnderTitle, .swishUnderTitle{
+    -fx-font-size: 20px;
+}
+
+.bigTitle{
+    -fx-font-size: 72px;
+}
+
+.paymentLabel{
+    -fx-font-size: 32px;
+}
+
 .radiobutton{
     -fx-border-style: solid;
     -fx-border-radius: 100px;

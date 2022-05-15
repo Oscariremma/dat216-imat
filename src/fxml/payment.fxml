@@ -50,10 +50,14 @@
                         </Label>
                      </children>
                   </Pane>
-                  <Label layoutX="297.0" layoutY="121.0" styleClass="title" text="Betalningssätt">
+                  <Label layoutX="297.0" layoutY="121.0" text="Betalningssätt">
                      <font>
                         <Font size="72.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="title" />
+                        <String fx:value="bigTitle" />
+                     </styleClass>
                   </Label>
                   <AnchorPane layoutX="297.0" layoutY="267.0" prefHeight="321.0" prefWidth="1100.0" styleClass="paymentBox">
                      <children>
@@ -61,15 +65,23 @@
                            <children>
                               <VBox fx:id="cardCredentials" layoutX="137.0" layoutY="117.0" prefHeight="150.0" prefWidth="830.0" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="117.0" />
                               <AnchorPane layoutX="10.0" layoutY="11.0" prefHeight="45.0" prefWidth="49.0" />
-                              <Label layoutX="115.0" layoutY="22.0" styleClass="cardLabel" text="Betala med kort">
+                              <Label layoutX="115.0" layoutY="22.0" text="Betala med kort">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
+                                 <styleClass>
+                                    <String fx:value="cardLabel" />
+                                    <String fx:value="cardTitle" />
+                                 </styleClass>
                               </Label>
-                              <Label layoutX="120.0" layoutY="61.0" styleClass="cardLabel" text="Fyll i kortuppgifter">
+                              <Label layoutX="120.0" layoutY="61.0" text="Fyll i kortuppgifter">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
+                                 <styleClass>
+                                    <String fx:value="cardLabel" />
+                                    <String fx:value="cardUnderTitle" />
+                                 </styleClass>
                               </Label>
                               <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="1013.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -92,15 +104,23 @@
                                     <AnchorPane fx:id="swishRadioButton" layoutX="9.0" layoutY="6.0" prefHeight="34.0" prefWidth="34.0" styleClass="radiobutton" AnchorPane.leftAnchor="20.0" />
                                  </children>
                               </AnchorPane>
-                              <Label layoutX="115.0" layoutY="22.0" styleClass="cardLabel" text="Swisha">
+                              <Label layoutX="115.0" layoutY="22.0" text="Swisha">
                                  <font>
                                     <Font size="24.0" />
                                  </font>
+                                 <styleClass>
+                                    <String fx:value="cardLabel" />
+                                    <String fx:value="swishTitle" />
+                                 </styleClass>
                               </Label>
-                              <Label layoutX="120.0" layoutY="61.0" styleClass="cardLabel" text="Betala direkt med mobilen">
+                              <Label layoutX="120.0" layoutY="61.0" text="Betala direkt med mobilen">
                                  <font>
                                     <Font size="20.0" />
                                  </font>
+                                 <styleClass>
+                                    <String fx:value="cardLabel" />
+                                    <String fx:value="swishUnderTitle" />
+                                 </styleClass>
                               </Label>
                               <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="1013.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

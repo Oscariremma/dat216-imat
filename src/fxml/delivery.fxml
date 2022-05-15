@@ -17,18 +17,26 @@
          <content>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="410.0" layoutY="147.0" styleClass="labels" text="Leverans">
+                  <Label layoutX="410.0" layoutY="147.0" text="Leverans">
                      <font>
                         <Font size="72.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="labels" />
+                        <String fx:value="bigTitle" />
+                     </styleClass>
                   </Label>
                   <Pane layoutX="410.0" layoutY="55.0" prefHeight="70.0" prefWidth="374.0" AnchorPane.topAnchor="46.0">
                      <children>
                         <Polygon fill="#18484b" layoutX="-534.0" layoutY="-196.0" points="534.0, 196.0, 534.0, 266.0, 702.0, 266.0, 742.0, 231.0, 702.0, 196.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Label layoutX="38.0" layoutY="18.0" styleClass="labels" text="Leverans" textFill="WHITE">
+                        <Label layoutX="38.0" layoutY="18.0" text="Leverans" textFill="WHITE">
                            <font>
                               <Font size="24.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="labels" />
+                              <String fx:value="progressBar" />
+                           </styleClass>
                         </Label>
                         <Polygon fill="WHITE" layoutX="-370.0" layoutY="-196.0" stroke="BLACK" strokeType="INSIDE">
                            <points>
@@ -46,17 +54,25 @@
                               <Double fx:value="196.0" />
                            </points>
                         </Polygon>
-                        <Label layoutX="212.0" layoutY="18.0" styleClass="labels" text="Betalning">
+                        <Label layoutX="212.0" layoutY="18.0" text="Betalning">
                            <font>
                               <Font size="24.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="labels" />
+                              <String fx:value="progressBar" />
+                           </styleClass>
                         </Label>
                      </children>
                   </Pane>
-                  <Label layoutX="410.0" layoutY="252.0" prefHeight="41.0" prefWidth="1239.0" styleClass="labels" text="Adressuppgifter - (Uppgifterna sparas automatiskt till nästa köp)">
+                  <Label layoutX="410.0" layoutY="252.0" prefHeight="41.0" prefWidth="1239.0" text="Adressuppgifter - (Uppgifterna sparas automatiskt till nästa köp)">
                      <font>
                         <Font size="32.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="labels" />
+                        <String fx:value="information" />
+                     </styleClass>
                   </Label>
                   <TextField fx:id="firstNameTextField" layoutX="410.0" layoutY="323.0" prefHeight="64.0" prefWidth="353.0">
                      <font>
@@ -78,27 +94,39 @@
                         <Font size="32.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="410.0" layoutY="546.0" styleClass="labels" text="Leveranstid">
+                  <Label layoutX="410.0" layoutY="546.0" text="Leveranstid">
                      <font>
                         <Font size="32.0" />
                      </font>
+                     <styleClass>
+                        <String fx:value="labels" />
+                        <String fx:value="information" />
+                     </styleClass>
                   </Label>
                   <AnchorPane layoutX="410.0" layoutY="607.0" prefHeight="231.0" prefWidth="414.0" styleClass="chooseBox">
                      <children>
-                        <Label layoutX="142.0" layoutY="7.0" styleClass="labels" text="Välj dag">
+                        <Label layoutX="142.0" layoutY="7.0" text="Välj dag">
                            <font>
                               <Font size="32.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="labels" />
+                              <String fx:value="information" />
+                           </styleClass>
                         </Label>
                         <FlowPane fx:id="dayFlowPane" layoutX="2.0" layoutY="60.0" prefHeight="173.0" prefWidth="411.0" styleClass="daysFlowPane" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="59.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="907.0" layoutY="607.0" prefHeight="231.0" prefWidth="740.0" styleClass="chooseBox">
                      <children>
-                        <Label layoutX="315.0" layoutY="8.0" styleClass="labels" text="Välj tid">
+                        <Label layoutX="315.0" layoutY="8.0" text="Välj tid">
                            <font>
                               <Font size="32.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="labels" />
+                              <String fx:value="information" />
+                           </styleClass>
                         </Label>
                         <FlowPane fx:id="timeFlowPane" layoutX="1.0" layoutY="54.0" prefHeight="175.0" prefWidth="737.0" styleClass="timesFlowPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                      </children>
@@ -106,10 +134,14 @@
                   <AnchorPane layoutX="410.0" layoutY="910.0" prefHeight="44.0" prefWidth="212.0">
                      <children>
                         <Polygon fill="#18484b" layoutX="-477.0" layoutY="-198.0" points="689.0, 198.0, 689.0, 254.0, 510.0, 254.0, 477.0, 226.0, 510.0, 198.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Label layoutX="63.0" layoutY="5.0" styleClass="labels" text="Tillbaka" textFill="WHITE">
+                        <Label layoutX="63.0" layoutY="5.0" text="Tillbaka" textFill="WHITE">
                            <font>
                               <Font size="32.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="labels" />
+                              <String fx:value="back" />
+                           </styleClass>
                         </Label>
                      </children>
                   </AnchorPane>
@@ -125,10 +157,14 @@
                   <AnchorPane fx:id="nextPaymentAnchorPane" layoutX="1386.0" layoutY="910.0" prefHeight="56.0" prefWidth="300.0">
                      <children>
                         <Polygon fill="#18484b" layoutX="361.0" layoutY="-202.0" points="-361.0, 202.0, -361.0, 258.0, -44.0, 258.0, -12.0, 230.0, -44.0, 202.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Label layoutX="29.0" layoutY="10.0" prefHeight="41.0" prefWidth="281.0" styleClass="labels" text="Nästa - Betalning" textFill="WHITE">
+                        <Label layoutX="29.0" layoutY="10.0" prefHeight="41.0" prefWidth="281.0" text="Nästa - Betalning" textFill="WHITE">
                            <font>
                               <Font size="32.0" />
                            </font>
+                           <styleClass>
+                              <String fx:value="labels" />
+                              <String fx:value="next" />
+                           </styleClass>
                         </Label>
                      </children>
                   </AnchorPane>
