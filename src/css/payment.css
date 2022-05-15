@@ -3,7 +3,7 @@
     src: url('../LexendDeca-Regular.ttf');
 }
 
-.progressLabel, .title, .cardLabel{
+.progressLabel, .title, .cardLabel, .paymentLabel{
     -fx-font-family: "Lexend Deca";
 }
 
@@ -21,3 +21,4 @@
     -fx-background-color: #18484b;
     -fx-background-radius: 100px;
 }
+

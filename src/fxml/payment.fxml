@@ -3,83 +3,133 @@
 <?import java.lang.Double?>
 <?import java.lang.String?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
 
-
-<fx:root prefHeight="930.0" prefWidth="1920.0" stylesheets="@../css/payment.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root prefHeight="1091.0" prefWidth="1920.0" stylesheets="@../css/payment.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane layoutX="420.0" layoutY="65.0" prefHeight="70.0" prefWidth="374.0">
-         <children>
-            <Polygon fill="WHITE" layoutX="-534.0" layoutY="-196.0" points="534.0, 196.0, 534.0, 266.0, 702.0, 266.0, 742.0, 231.0, 702.0, 196.0" stroke="BLACK" strokeType="INSIDE" />
-            <Label layoutX="38.0" layoutY="18.0" styleClass="progressLabel" text="Leverans">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Polygon fill="#18484b" layoutX="-370.0" layoutY="-196.0" stroke="BLACK" strokeType="INSIDE">
-               <points>
-                  <Double fx:value="534.0" />
-                  <Double fx:value="196.0" />
-                  <Double fx:value="560.0" />
-                  <Double fx:value="231.0" />
-                  <Double fx:value="534.0" />
-                  <Double fx:value="266.0" />
-                  <Double fx:value="702.0" />
-                  <Double fx:value="266.0" />
-                  <Double fx:value="742.0" />
-                  <Double fx:value="231.0" />
-                  <Double fx:value="702.0" />
-                  <Double fx:value="196.0" />
-               </points>
-            </Polygon>
-            <Label layoutX="212.0" layoutY="18.0" styleClass="progressLabel" text="Betalning" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-         </children>
-      </Pane>
-      <Label layoutX="420.0" layoutY="184.0" styleClass="title" text="Betalningssätt">
-         <font>
-            <Font size="72.0" />
-         </font>
-      </Label>
-      <AnchorPane layoutX="427.0" layoutY="312.0" prefHeight="321.0" prefWidth="1100.0" styleClass="paymentBox">
-         <children>
-            <AnchorPane fx:id="cardPayment" layoutX="79.0" layoutY="-14.0" prefHeight="119.0" prefWidth="881.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ScrollPane prefHeight="562.0" prefWidth="888.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane prefHeight="1091.0" prefWidth="1920.0">
                <children>
-                  <VBox fx:id="cardCredentials" layoutX="137.0" layoutY="117.0" prefHeight="14.0" prefWidth="830.0" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="117.0" />
-                  <AnchorPane layoutX="10.0" layoutY="11.0" prefHeight="45.0" prefWidth="49.0" />
-                  <Label layoutX="115.0" layoutY="22.0" styleClass="cardLabel" text="Betala med kort">
+                  <Pane layoutX="297.0" layoutY="45.0" prefHeight="70.0" prefWidth="374.0">
+                     <children>
+                        <Polygon fill="WHITE" layoutX="-534.0" layoutY="-196.0" points="534.0, 196.0, 534.0, 266.0, 702.0, 266.0, 742.0, 231.0, 702.0, 196.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Label layoutX="38.0" layoutY="18.0" styleClass="progressLabel" text="Leverans">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <Polygon fill="#18484b" layoutX="-370.0" layoutY="-196.0" stroke="BLACK" strokeType="INSIDE">
+                           <points>
+                              <Double fx:value="534.0" />
+                              <Double fx:value="196.0" />
+                              <Double fx:value="560.0" />
+                              <Double fx:value="231.0" />
+                              <Double fx:value="534.0" />
+                              <Double fx:value="266.0" />
+                              <Double fx:value="702.0" />
+                              <Double fx:value="266.0" />
+                              <Double fx:value="742.0" />
+                              <Double fx:value="231.0" />
+                              <Double fx:value="702.0" />
+                              <Double fx:value="196.0" />
+                           </points>
+                        </Polygon>
+                        <Label layoutX="212.0" layoutY="18.0" styleClass="progressLabel" text="Betalning" textFill="WHITE">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <Label layoutX="297.0" layoutY="121.0" styleClass="title" text="Betalningssätt">
                      <font>
-                        <Font size="24.0" />
+                        <Font size="72.0" />
                      </font>
                   </Label>
-                  <Label layoutX="120.0" layoutY="61.0" styleClass="cardLabel" text="Fyll i kortuppgifter">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="1013.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../img/creditCard.png" />
-                     </image>
-                  </ImageView>
-                  <AnchorPane layoutX="20.0" layoutY="21.0" prefHeight="34.0" prefWidth="34.0">
-                     <styleClass>
-                        <String fx:value="radiobutton" />
-                        <String fx:value="selectedRadioButton" />
-                     </styleClass>
+                  <AnchorPane layoutX="297.0" layoutY="267.0" prefHeight="321.0" prefWidth="1100.0" styleClass="paymentBox">
+                     <children>
+                        <AnchorPane fx:id="cardPayment" layoutX="79.0" layoutY="-14.0" prefHeight="119.0" prefWidth="881.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox fx:id="cardCredentials" layoutX="137.0" layoutY="117.0" prefHeight="150.0" prefWidth="830.0" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="117.0" />
+                              <AnchorPane layoutX="10.0" layoutY="11.0" prefHeight="45.0" prefWidth="49.0" />
+                              <Label layoutX="115.0" layoutY="22.0" styleClass="cardLabel" text="Betala med kort">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="120.0" layoutY="61.0" styleClass="cardLabel" text="Fyll i kortuppgifter">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="1013.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/creditCard.png" />
+                                 </image>
+                              </ImageView>
+                              <AnchorPane fx:id="cardRadioButton" layoutX="20.0" layoutY="21.0" prefHeight="34.0" prefWidth="34.0" AnchorPane.leftAnchor="20.0">
+                                 <styleClass>
+                                    <String fx:value="radiobutton" />
+                                    <String fx:value="selectedRadioButton" />
+                                 </styleClass>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="swishPayment" layoutY="293.0" prefHeight="119.0" prefWidth="881.0">
+                           <children>
+                              <VBox fx:id="swish" layoutX="137.0" layoutY="117.0" prefHeight="104.0" prefWidth="830.0" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="117.0" />
+                              <AnchorPane layoutX="10.0" layoutY="11.0" prefHeight="45.0" prefWidth="49.0">
+                                 <children>
+                                    <AnchorPane fx:id="swishRadioButton" layoutX="9.0" layoutY="6.0" prefHeight="34.0" prefWidth="34.0" styleClass="radiobutton" AnchorPane.leftAnchor="20.0" />
+                                 </children>
+                              </AnchorPane>
+                              <Label layoutX="115.0" layoutY="22.0" styleClass="cardLabel" text="Swisha">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="120.0" layoutY="61.0" styleClass="cardLabel" text="Betala direkt med mobilen">
+                                 <font>
+                                    <Font size="20.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="1013.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../img/swish.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </AnchorPane>
+                        <Line endX="1071.0" layoutX="-22.0" layoutY="281.0" startX="106.0" />
+                     </children>
                   </AnchorPane>
+                  <AnchorPane fx:id="nextPaymentAnchorPane" layoutX="1088.0" layoutY="901.0" prefHeight="56.0" prefWidth="300.0">
+                     <children>
+                        <Polygon fill="#18484b" layoutX="361.0" layoutY="-202.0" points="-361.0, 202.0, -361.0, 258.0, -44.0, 258.0, -12.0, 230.0, -44.0, 202.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Label layoutX="106.0" layoutY="5.0" prefHeight="47.0" prefWidth="107.0" styleClass="paymentLabel" text="Betala" textFill="WHITE">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                  <Label fx:id="paymentCost" layoutX="1088.0" layoutY="852.0" styleClass="paymentLabel" text="Totalkostnad: 55 kr">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
-         </children>
-      </AnchorPane>
+         </content>
+      </ScrollPane>
    </children>
 </fx:root>
