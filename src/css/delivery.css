@@ -80,3 +80,7 @@
     -fx-background-color: white;
     -fx-background-radius: 20px;
 }
+
+.subAnchorPane{
+    -fx-padding: 0 0 100px 0;
+}

@@ -31,6 +31,7 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
     ModalProductInfoController modalProductInfoController = new ModalProductInfoController();
     CartController cartController = new CartController();
     PaymentController paymentController = new PaymentController();
+    ConfirmationController confirmationController = new ConfirmationController();
 
     private static final double categoriesSidePanelWidth = 370;
 
@@ -59,6 +60,7 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
         CartController.registernavigationRequestListener(this);
         DeliveryController.registernavigationRequestListener(this);
         PaymentController.registernavigationRequestListener(this);
+        ConfirmationController.registernavigationRequestListener(this);
 
         goToHome();
     }
@@ -220,8 +222,8 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
     }
 
     public void goToCheckoutDone(){
-        //todo
-        goToHome();
+        confirmationController.refresh();
+        setViewTo(confirmationController, false);
     }
 
     @Override

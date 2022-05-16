@@ -50,8 +50,8 @@ public class DeliveryController extends AnchorPane {
     public static List<DeliveryDateController> deliveryDates = new ArrayList<>();
     public static List<DeliveryTimeController> deliveryTimes = new ArrayList<>();
 
-    public static LocalDate deliveryDate;
-    public static String deliveryTime;
+    private static LocalDate deliveryDate;
+    private static String deliveryTime;
 
     private static List<NavigationRequestListener> navigationRequestListeners = new ArrayList<>();
 
@@ -89,6 +89,21 @@ public class DeliveryController extends AnchorPane {
         nextPaymentAnchorPane.setOnMouseClicked(mouseEvent -> triggerNavigationRequest(new NavigationRequest(NavigationType.Payment, null)));
         backButtonAnchorPane.setOnMouseClicked(mouseEvent -> triggerNavigationRequest(new NavigationRequest(NavigationType.Back, null)));
 
+    }
+
+    public static LocalDate getDeliveryDate(){
+        return DeliveryController.deliveryDate;
+    }
+    public static String getDeliveryTime(){
+        return DeliveryController.deliveryTime;
+    }
+
+    public static void setDeliveryDate(LocalDate date){
+        DeliveryController.deliveryDate = date;
+    }
+
+    public static void setDeliveryTime(String time){
+        DeliveryController.deliveryTime = time;
     }
 
     private void textfieldChangeListener() {
