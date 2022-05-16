@@ -1,9 +1,0 @@
-@font-face {
-    font-family: "Lexend Deca";
-    src: url('../LexendDeca-Regular.ttf');
-}
-
-.swishBox{
-    -fx-font-family: "Lexend Deca";
-    -fx-background-radius: 15px;
-}

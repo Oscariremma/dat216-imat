@@ -3,6 +3,7 @@ package controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
@@ -12,10 +13,10 @@ import java.io.IOException;
 public class PaymentController extends AnchorPane {
 
     @FXML
-    VBox cardCredentials;
+    AnchorPane cardCredentials;
 
     @FXML
-    VBox swish;
+    TextField swish;
 
     @FXML
     AnchorPane cardPayment;
@@ -36,9 +37,6 @@ public class PaymentController extends AnchorPane {
     Boolean swishSelected = false;
     Boolean cardSelected = true;
 
-    CardPaymentController cardPaymentBox = new CardPaymentController();
-    SwishPaymentController swishPaymentBox = new SwishPaymentController();
-
     public PaymentController(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/payment.fxml"));
         fxmlLoader.setRoot(this);
@@ -51,7 +49,7 @@ public class PaymentController extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
-        cardCredentials.getChildren().add(cardPaymentBox);
+        swishPayment.getChildren().remove(swish);
 
         cardPayment.setOnMouseClicked(mouseEvent -> cardClicked());
         swishPayment.setOnMouseClicked(mouseEvent -> swishClicked());
@@ -61,8 +59,8 @@ public class PaymentController extends AnchorPane {
 
     private void swishClicked() {
         if (!swishSelected){
-            cardCredentials.getChildren().clear();
-            swish.getChildren().add(swishPaymentBox);
+            cardPayment.getChildren().remove(cardCredentials);
+            swishPayment.getChildren().add(swish);
             swishRadioButton.getStyleClass().add("selectedRadioButton");
             cardRadioButton.getStyleClass().remove("selectedRadioButton");
             swishSelected = true;
@@ -73,8 +71,8 @@ public class PaymentController extends AnchorPane {
 
     private void cardClicked() {
         if (!cardSelected){
-            swish.getChildren().clear();
-            cardCredentials.getChildren().add(cardPaymentBox);
+            swishPayment.getChildren().remove(swish);
+            cardPayment.getChildren().add(cardCredentials);
             cardRadioButton.getStyleClass().add("selectedRadioButton");
             swishRadioButton.getStyleClass().remove("selectedRadioButton");
             swishSelected = false;
