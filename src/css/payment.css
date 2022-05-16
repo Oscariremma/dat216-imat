@@ -62,3 +62,11 @@
 .swishBox{
     -fx-background-radius: 15px;
 }
+
+.swishOuterAnchorPane{
+    -fx-padding: 0 0 30 0;
+}
+
+.cardOuterAnchorPane{
+    -fx-padding: 0 0 30 0;
+}
