@@ -8,7 +8,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
@@ -61,112 +63,120 @@
                   </Label>
                   <AnchorPane layoutX="297.0" layoutY="267.0" prefHeight="465.0" prefWidth="1125.0" styleClass="paymentBox">
                      <children>
-                        <AnchorPane fx:id="cardPayment" layoutX="3.0" layoutY="3.0" prefWidth="1122.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="1.0">
+                        <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <AnchorPane layoutX="10.0" layoutY="11.0" prefHeight="45.0" prefWidth="49.0" />
-                              <Label layoutX="115.0" layoutY="22.0" text="Betala med kort">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="cardLabel" />
-                                    <String fx:value="cardTitle" />
-                                 </styleClass>
-                              </Label>
-                              <Label layoutX="120.0" layoutY="61.0" text="Fyll i kortuppgifter">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="cardLabel" />
-                                    <String fx:value="cardUnderTitle" />
-                                 </styleClass>
-                              </Label>
-                              <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="1013.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/creditCard.png" />
-                                 </image>
-                              </ImageView>
-                              <AnchorPane fx:id="cardRadioButton" layoutX="20.0" layoutY="21.0" prefHeight="34.0" prefWidth="34.0" AnchorPane.leftAnchor="20.0">
-                                 <styleClass>
-                                    <String fx:value="radiobutton" />
-                                    <String fx:value="selectedRadioButton" />
-                                 </styleClass>
-                              </AnchorPane>
-                              <AnchorPane fx:id="cardCredentials" layoutX="120.0" layoutY="106.0" prefHeight="150.0" prefWidth="830.0" styleClass="cardPaymentBox">
+                              <AnchorPane fx:id="cardPayment" prefWidth="1122.0">
                                  <children>
-                                    <TextField layoutX="4.0" layoutY="4.0" prefHeight="69.0" prefWidth="824.0" promptText="Kortnummer" styleClass="cardnumber" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                    <AnchorPane layoutX="10.0" layoutY="11.0" prefHeight="45.0" prefWidth="49.0" />
+                                    <Label layoutX="115.0" layoutY="22.0" text="Betala med kort">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="cardLabel" />
+                                          <String fx:value="cardTitle" />
+                                       </styleClass>
+                                    </Label>
+                                    <Label layoutX="120.0" layoutY="61.0" text="Fyll i kortuppgifter">
                                        <font>
                                           <Font size="20.0" />
                                        </font>
-                                    </TextField>
-                                    <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="21.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                                       <styleClass>
+                                          <String fx:value="cardLabel" />
+                                          <String fx:value="cardUnderTitle" />
+                                       </styleClass>
+                                    </Label>
+                                    <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="1013.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
                                        <image>
                                           <Image url="@../img/creditCard.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField layoutX="7.0" layoutY="77.0" prefHeight="69.0" prefWidth="403.0" promptText="MM/ÅÅ" styleClass="cardMonth" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="415.0">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </TextField>
-                                    <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="21.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../img/event.png" />
-                                       </image>
-                                    </ImageView>
-                                    <TextField layoutX="415.0" layoutY="78.0" prefHeight="69.0" prefWidth="409.0" promptText="CVC" styleClass="cardCvc" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="415.0" AnchorPane.rightAnchor="0.0">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </TextField>
-                                    <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="435.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../img/lock.png" />
-                                       </image>
-                                    </ImageView>
+                                    <AnchorPane fx:id="cardRadioButton" layoutX="20.0" layoutY="21.0" prefHeight="34.0" prefWidth="34.0" AnchorPane.leftAnchor="20.0">
+                                       <styleClass>
+                                          <String fx:value="radiobutton" />
+                                          <String fx:value="selectedRadioButton" />
+                                       </styleClass>
+                                    </AnchorPane>
+                                    <AnchorPane fx:id="cardCredentials" layoutX="120.0" layoutY="106.0" prefHeight="150.0" prefWidth="830.0" styleClass="cardPaymentBox">
+                                       <children>
+                                          <TextField layoutX="4.0" layoutY="4.0" prefHeight="69.0" prefWidth="824.0" promptText="Kortnummer" styleClass="cardnumber" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </TextField>
+                                          <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="21.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../img/creditCard.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextField layoutX="7.0" layoutY="77.0" prefHeight="69.0" prefWidth="403.0" promptText="MM/ÅÅ" styleClass="cardMonth" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="415.0">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </TextField>
+                                          <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="21.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../img/event.png" />
+                                             </image>
+                                          </ImageView>
+                                          <TextField layoutX="415.0" layoutY="78.0" prefHeight="69.0" prefWidth="409.0" promptText="CVC" styleClass="cardCvc" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="415.0" AnchorPane.rightAnchor="0.0">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </TextField>
+                                          <ImageView fitHeight="32.0" fitWidth="32.0" layoutX="435.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../img/lock.png" />
+                                             </image>
+                                          </ImageView>
+                                       </children>
+                                    </AnchorPane>
                                  </children>
                               </AnchorPane>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="swishPayment" layoutY="293.0" prefWidth="1122.0">
-                           <children>
-                              <AnchorPane layoutX="10.0" layoutY="11.0" prefHeight="45.0" prefWidth="49.0">
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                                  <children>
-                                    <AnchorPane fx:id="swishRadioButton" layoutX="9.0" layoutY="6.0" prefHeight="34.0" prefWidth="34.0" styleClass="radiobutton" AnchorPane.leftAnchor="20.0" />
+                                    <Line endX="1071.0" startX="106.0" />
+                                 </children>
+                              </HBox>
+                              <AnchorPane fx:id="swishPayment" prefWidth="1122.0">
+                                 <children>
+                                    <AnchorPane layoutX="10.0" layoutY="11.0" prefHeight="45.0" prefWidth="49.0">
+                                       <children>
+                                          <AnchorPane fx:id="swishRadioButton" layoutX="9.0" layoutY="6.0" prefHeight="34.0" prefWidth="34.0" styleClass="radiobutton" AnchorPane.leftAnchor="20.0" />
+                                       </children>
+                                    </AnchorPane>
+                                    <Label layoutX="115.0" layoutY="22.0" text="Swisha">
+                                       <font>
+                                          <Font size="24.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="cardLabel" />
+                                          <String fx:value="swishTitle" />
+                                       </styleClass>
+                                    </Label>
+                                    <Label layoutX="120.0" layoutY="61.0" text="Betala direkt med mobilen">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                       <styleClass>
+                                          <String fx:value="cardLabel" />
+                                          <String fx:value="swishUnderTitle" />
+                                       </styleClass>
+                                    </Label>
+                                    <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="1013.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../img/swish.png" />
+                                       </image>
+                                    </ImageView>
+                                    <TextField fx:id="swish" layoutX="120.0" layoutY="96.0" prefHeight="58.0" prefWidth="838.0" promptText="Telefonnummer" styleClass="swishBox">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </TextField>
                                  </children>
                               </AnchorPane>
-                              <Label layoutX="115.0" layoutY="22.0" text="Swisha">
-                                 <font>
-                                    <Font size="24.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="cardLabel" />
-                                    <String fx:value="swishTitle" />
-                                 </styleClass>
-                              </Label>
-                              <Label layoutX="120.0" layoutY="61.0" text="Betala direkt med mobilen">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                                 <styleClass>
-                                    <String fx:value="cardLabel" />
-                                    <String fx:value="swishUnderTitle" />
-                                 </styleClass>
-                              </Label>
-                              <ImageView fitHeight="45.0" fitWidth="45.0" layoutX="1013.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../img/swish.png" />
-                                 </image>
-                              </ImageView>
-                              <TextField fx:id="swish" layoutX="120.0" layoutY="96.0" prefHeight="58.0" prefWidth="838.0" promptText="Telefonnummer" styleClass="swishBox">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </TextField>
                            </children>
-                        </AnchorPane>
-                        <Line endX="1071.0" layoutX="-22.0" layoutY="281.0" startX="106.0" />
+                        </VBox>
                      </children>
                   </AnchorPane>
                   <AnchorPane fx:id="nextPaymentAnchorPane" layoutX="1088.0" layoutY="901.0" prefHeight="56.0" prefWidth="300.0">
