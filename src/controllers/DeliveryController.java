@@ -1,5 +1,6 @@
 package controllers;
 
+import interfaces.NavigationRequestListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
@@ -7,6 +8,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
+import structs.NavigationRequest;
+import structs.NavigationType;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -40,12 +43,17 @@ public class DeliveryController extends AnchorPane {
     @FXML
     TextField postCodeTextField;
 
+    @FXML AnchorPane nextPaymentAnchorPane;
+    @FXML AnchorPane backButtonAnchorPane;
+
 
     public static List<DeliveryDateController> deliveryDates = new ArrayList<>();
     public static List<DeliveryTimeController> deliveryTimes = new ArrayList<>();
 
     public static LocalDate deliveryDate;
     public static String deliveryTime;
+
+    private static List<NavigationRequestListener> navigationRequestListeners = new ArrayList<>();
 
     public DeliveryController(){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/delivery.fxml"));
@@ -78,6 +86,9 @@ public class DeliveryController extends AnchorPane {
         deliveryDates.get(0).Select();
         deliveryTimes.get(0).Select();
 
+        nextPaymentAnchorPane.setOnMouseClicked(mouseEvent -> triggerNavigationRequest(new NavigationRequest(NavigationType.Payment, null)));
+        backButtonAnchorPane.setOnMouseClicked(mouseEvent -> triggerNavigationRequest(new NavigationRequest(NavigationType.Back, null)));
+
     }
 
     private void textfieldChangeListener() {
@@ -105,5 +116,19 @@ public class DeliveryController extends AnchorPane {
         addressTextField.setText(IMatDataHandler.getInstance().getCustomer().getAddress());
         postCodeTextField.setText(IMatDataHandler.getInstance().getCustomer().getPostCode());
 
+    }
+
+    public static void registernavigationRequestListener(NavigationRequestListener listener){
+        navigationRequestListeners.add(listener);
+    }
+
+    public void triggerNavigationRequest(NavigationRequest request){
+        for (NavigationRequestListener listener : navigationRequestListeners) {
+            try {
+                listener.goToNavigationRequest(request);
+            }catch (Exception e){
+                System.out.println(e);
+            }
+        }
     }
 }

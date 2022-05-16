@@ -104,6 +104,10 @@ public class ModalProductInfoController extends AnchorPane implements ShoppingCa
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         if (product == null) return;
+        if (cartEvent.getShoppingItem() == null){
+            forceRefreshCartStatus();
+            return;
+        }
         //Ignore other items
         if (cartEvent.getShoppingItem().getProduct().getProductId() != product.getProductId()) return;
 

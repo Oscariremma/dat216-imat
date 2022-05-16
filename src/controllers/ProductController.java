@@ -91,6 +91,11 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
+        if (cartEvent.getShoppingItem() == null){
+            forceRefreshCartStatus();
+            return;
+        }
+
         //Ignore other items
         if (cartEvent.getShoppingItem().getProduct().getProductId() != product.getProductId()) return;
 

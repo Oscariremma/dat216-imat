@@ -57,8 +57,10 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
         ProductController.registernavigationRequestListener(this);
         OrderHistoryRow.registernavigationRequestListener(this);
         CartController.registernavigationRequestListener(this);
+        DeliveryController.registernavigationRequestListener(this);
+        PaymentController.registernavigationRequestListener(this);
 
-        goToPayment();
+        goToHome();
     }
 
     private void setViewTo(AnchorPane pane, boolean showCategories){
@@ -206,22 +208,20 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
 
     public void goToDelivery(){
         if (navigationHistory.size() == 0 || navigationHistory.peek().navigationType() != NavigationType.Delivery)
-            navigationHistory.add(new NavigationRequest(NavigationType.Cart, null));
+            navigationHistory.add(new NavigationRequest(NavigationType.Delivery, null));
         setViewTo(deliveryController, false);
     }
 
     public void goToPayment(){
         if (navigationHistory.size() == 0 || navigationHistory.peek().navigationType() != NavigationType.Payment)
-            navigationHistory.add(new NavigationRequest(NavigationType.Cart, null));
+            navigationHistory.add(new NavigationRequest(NavigationType.Payment, null));
         //todo
         setViewTo(paymentController, false);
     }
 
     public void goToCheckoutDone(){
-        if (navigationHistory.size() == 0 || navigationHistory.peek().navigationType() != NavigationType.CheckoutDone)
-            navigationHistory.add(new NavigationRequest(NavigationType.Cart, null));
         //todo
-        setViewTo(deliveryController, false);
+        goToHome();
     }
 
     @Override
