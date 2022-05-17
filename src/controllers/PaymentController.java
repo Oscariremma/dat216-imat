@@ -6,10 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.cse.dat216.project.CartEvent;
-import se.chalmers.cse.dat216.project.CreditCard;
-import se.chalmers.cse.dat216.project.IMatDataHandler;
-import se.chalmers.cse.dat216.project.ShoppingCartListener;
+import se.chalmers.cse.dat216.project.*;
 import structs.NavigationRequest;
 import structs.NavigationType;
 
@@ -65,6 +62,8 @@ public class PaymentController extends AnchorPane implements ShoppingCartListene
             throw new RuntimeException(exception);
         }
 
+        IMatDataHandler.getInstance().getShoppingCart().addShoppingCartListener(this);
+
         swishPayment.getChildren().remove(swish);
 
         cardPayment.setOnMouseClicked(mouseEvent -> cardClicked());
@@ -116,13 +115,15 @@ public class PaymentController extends AnchorPane implements ShoppingCartListene
     private void placeOrder(){
         //todo check valid input before placing?
         savePaymentInfo();
-        IMatDataHandler.getInstance().placeOrder();
         triggerNavigationRequest(new NavigationRequest(NavigationType.CheckoutDone, null));
+        IMatDataHandler.getInstance().placeOrder();
     }
 
     private void savePaymentInfo(){
         CreditCard card = IMatDataHandler.getInstance().getCreditCard();
+        Customer customer = IMatDataHandler.getInstance().getCustomer();
 
+        customer.setMobilePhoneNumber(swish.getText());
         card.setCardNumber(cardNumberTextField.getText());
         try {
             card.setVerificationCode(Integer.parseInt(cardCVCTextField.getText()));

@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "Lexend Deca";
+    src: url('../LexendDeca-Regular.ttf');
+}
+
+.labels{
+    -fx-font-family: "Lexend Deca";
+}
+
+.backToStartButton{
+    -fx-background-radius: 350px;
+    -fx-background-color: #18484B;
+    -fx-font-size: 50px;
+}

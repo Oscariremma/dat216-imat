@@ -64,7 +64,7 @@ public class DeliveryDateController extends AnchorPane implements Selectable {
         day.getStyleClass().add("selectedLabel");
         date.getStyleClass().add("selectedLabel");
         item.getStyleClass().add("selected");
-        DeliveryController.deliveryDate = completeDate;
+        DeliveryController.setDeliveryDate(completeDate);
     }
 
     @Override

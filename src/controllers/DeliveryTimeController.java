@@ -40,7 +40,6 @@ public class DeliveryTimeController extends AnchorPane implements Selectable {
 
     private void clicked(){
         this.Select();
-        DeliveryController.deliveryTime = this.deliveryTime;
     }
 
     @Override
@@ -48,6 +47,7 @@ public class DeliveryTimeController extends AnchorPane implements Selectable {
         DeliveryController.deselectAllTimes();
         timeLabel.getStyleClass().add("selectedLabel");
         timeItem.getStyleClass().add("selected");
+        DeliveryController.setDeliveryTime(this.deliveryTime);
     }
 
     @Override

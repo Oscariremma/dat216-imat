@@ -7,7 +7,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import se.chalmers.cse.dat216.project.CartEvent;
 import se.chalmers.cse.dat216.project.IMatDataHandler;
+import se.chalmers.cse.dat216.project.ShoppingCartListener;
 import structs.NavigationRequest;
 import structs.NavigationType;
 
@@ -20,13 +22,16 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class DeliveryController extends AnchorPane {
+public class DeliveryController extends AnchorPane implements ShoppingCartListener {
 
     @FXML
     FlowPane dayFlowPane;
 
     @FXML
     Label deliveryCost;
+
+    @FXML
+    Label deliveryTotalCost;
 
     @FXML
     FlowPane timeFlowPane;
@@ -50,8 +55,8 @@ public class DeliveryController extends AnchorPane {
     public static List<DeliveryDateController> deliveryDates = new ArrayList<>();
     public static List<DeliveryTimeController> deliveryTimes = new ArrayList<>();
 
-    public static LocalDate deliveryDate;
-    public static String deliveryTime;
+    private static LocalDate deliveryDate;
+    private static String deliveryTime;
 
     private static List<NavigationRequestListener> navigationRequestListeners = new ArrayList<>();
 
@@ -65,6 +70,8 @@ public class DeliveryController extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+
+        IMatDataHandler.getInstance().getShoppingCart().addShoppingCartListener(this);
 
         for (int i = 0; i < 8; i++){
             DeliveryDateController item = new DeliveryDateController((LocalDateTime.parse(LocalDateTime.now().plusDays(i + 1).toString()).getDayOfMonth()), LocalDateTime.parse(LocalDateTime.now().plusDays(i + 1).toString()).getDayOfWeek(), (LocalDate.parse(LocalDate.now().plusDays(i + 1).toString())));
@@ -89,6 +96,26 @@ public class DeliveryController extends AnchorPane {
         nextPaymentAnchorPane.setOnMouseClicked(mouseEvent -> triggerNavigationRequest(new NavigationRequest(NavigationType.Payment, null)));
         backButtonAnchorPane.setOnMouseClicked(mouseEvent -> triggerNavigationRequest(new NavigationRequest(NavigationType.Back, null)));
 
+        refreshPage();
+    }
+
+    public void refreshPage(){
+        deliveryTotalCost.setText("Totalkostnad: " + (String.format("%.2f", IMatDataHandler.getInstance().getShoppingCart().getTotal() + 25)) + " kr");
+    }
+
+    public static LocalDate getDeliveryDate(){
+        return DeliveryController.deliveryDate;
+    }
+    public static String getDeliveryTime(){
+        return DeliveryController.deliveryTime;
+    }
+
+    public static void setDeliveryDate(LocalDate date){
+        DeliveryController.deliveryDate = date;
+    }
+
+    public static void setDeliveryTime(String time){
+        DeliveryController.deliveryTime = time;
     }
 
     private void textfieldChangeListener() {
@@ -130,5 +157,10 @@ public class DeliveryController extends AnchorPane {
                 System.out.println(e);
             }
         }
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        refreshPage();
     }
 }
