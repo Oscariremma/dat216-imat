@@ -39,17 +39,59 @@ public class CategoriesSidePanelController extends AnchorPane implements Navigat
         }
 
         MainCategoryEntryController tmp = new MainCategoryEntryController(new MainCategoryEntryRecord(Arrays.asList(
-                new SubCategoryEntryRecord(ProductCategory.BERRY, "Berry"),
-                new SubCategoryEntryRecord(ProductCategory.BREAD, "Bread"),
-                new SubCategoryEntryRecord(ProductCategory.CABBAGE, "Sallad")),
-                "Test"), this);
+                new SubCategoryEntryRecord(ProductCategory.CABBAGE, "Sallad"),
+                new SubCategoryEntryRecord(ProductCategory.VEGETABLE_FRUIT, "Grönt och Gott"),
+                new SubCategoryEntryRecord(ProductCategory.ROOT_VEGETABLE, "Rotfrukt"),
+                new SubCategoryEntryRecord(ProductCategory.POTATO_RICE,"Ris och Potatis")),
+                "Grönsaker"), this);
         categoryVBox.getChildren().add(tmp);
         registerSelectableMainCategory(tmp);
         tmp = new MainCategoryEntryController(new MainCategoryEntryRecord(Arrays.asList(
-                new SubCategoryEntryRecord(ProductCategory.BERRY, "Berry"),
-                new SubCategoryEntryRecord(ProductCategory.BREAD, "Bread"),
-                new SubCategoryEntryRecord(ProductCategory.CABBAGE, "Sallad")),
-                "Test 2"), this);
+                new SubCategoryEntryRecord(ProductCategory.FRUIT, "Frukt"),
+                new SubCategoryEntryRecord(ProductCategory.EXOTIC_FRUIT, "Exotisk Frukt"),
+                new SubCategoryEntryRecord(ProductCategory.MELONS, "Meloner"),
+                new SubCategoryEntryRecord(ProductCategory.CITRUS_FRUIT, "Citrus Frukt"),
+                new SubCategoryEntryRecord(ProductCategory.BERRY, "Bär")),
+                "Frukt & Bär"), this);
+        registerSelectableMainCategory(tmp);
+        categoryVBox.getChildren().add(tmp);
+        tmp = new MainCategoryEntryController(new MainCategoryEntryRecord(Arrays.asList(
+                new SubCategoryEntryRecord(ProductCategory.DAIRIES, "Mejeri och Ägg")),
+                "Mejeri & Ägg"), this);
+        registerSelectableMainCategory(tmp);
+        categoryVBox.getChildren().add(tmp);
+        tmp = new MainCategoryEntryController(new MainCategoryEntryRecord(Arrays.asList(
+                new SubCategoryEntryRecord(ProductCategory.BREAD, "Bröd"),
+                new SubCategoryEntryRecord(ProductCategory.FLOUR_SUGAR_SALT, "Mjöl"),
+                new SubCategoryEntryRecord(ProductCategory.NUTS_AND_SEEDS, "Frön och Nötter")),
+                "Bröd & Bageri"), this);
+        registerSelectableMainCategory(tmp);
+        categoryVBox.getChildren().add(tmp);
+        tmp = new MainCategoryEntryController(new MainCategoryEntryRecord(Arrays.asList(
+                new SubCategoryEntryRecord(ProductCategory.MEAT, "Kött"),
+                new SubCategoryEntryRecord(ProductCategory.FISH, "Fisk")),
+                "Kött & Fisk"), this);
+        registerSelectableMainCategory(tmp);
+        categoryVBox.getChildren().add(tmp);
+        tmp = new MainCategoryEntryController(new MainCategoryEntryRecord(Arrays.asList(
+                new SubCategoryEntryRecord(ProductCategory.HOT_DRINKS, "Varm dryck"),
+                new SubCategoryEntryRecord(ProductCategory.COLD_DRINKS, "Kall dryck")),
+                "Dryck"), this);
+        registerSelectableMainCategory(tmp);
+        categoryVBox.getChildren().add(tmp);
+        tmp = new MainCategoryEntryController(new MainCategoryEntryRecord(Arrays.asList(
+                new SubCategoryEntryRecord(ProductCategory.POD, "Baljväxter"),
+                new SubCategoryEntryRecord(ProductCategory.HERB, "Örter")),
+                "Baljväxter & Örter"), this);
+        registerSelectableMainCategory(tmp);
+        categoryVBox.getChildren().add(tmp);
+        tmp = new MainCategoryEntryController(new MainCategoryEntryRecord(Arrays.asList(
+                new SubCategoryEntryRecord(ProductCategory.PASTA, "Pasta"),
+                new SubCategoryEntryRecord(ProductCategory.POTATO_RICE, "Potatis och Ris"),
+                new SubCategoryEntryRecord(ProductCategory.FLOUR_SUGAR_SALT, "Mjöl, Socker, Salt"),
+                new SubCategoryEntryRecord(ProductCategory.BREAD, "Bröd"),
+                new SubCategoryEntryRecord(ProductCategory.NUTS_AND_SEEDS, "Frön och nötter")),
+                "Skafferi"), this);
         registerSelectableMainCategory(tmp);
         categoryVBox.getChildren().add(tmp);
 
