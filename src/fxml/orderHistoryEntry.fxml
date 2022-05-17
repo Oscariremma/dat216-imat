@@ -7,63 +7,42 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1400.0" stylesheets="@../css/orderHistoryEntry.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root stylesheets="@../css/orderHistoryEntry.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="orderHistoryCollapsed" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="1400.0" styleClass="orderHistoryEntry" AnchorPane.bottomAnchor="455.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="orderHistoryOpen" maxWidth="1.7976931348623157E308" minHeight="230.0" styleClass="orderHistoryEntry" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label fx:id="orderHistoryName" styleClass="bigText" text="Kasse 1" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="16.0">
-               <font>
-                  <Font size="42.0" />
-               </font>
-            </Label>
-            <Label fx:id="orderHistoryDate" styleClass="smallText" text="YYYY/MM/DD" AnchorPane.leftAnchor="440.0" AnchorPane.topAnchor="32.0">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="orderHistoryTotal" styleClass="smallText" text="123kr - 123 Artiklar " AnchorPane.leftAnchor="860.0" AnchorPane.topAnchor="32.0">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <ImageView pickOnBounds="true" preserveRatio="true" rotate="180.0" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="1327.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="41.0">
-               <image>
-                  <Image url="@../img/Polygon-triangel.png" />
-               </image>
-            </ImageView>
-            <Pane fx:id="orderHistoryOpenButton" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="130.0" styleClass="openCloseButtonBorders" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Button fx:id="orderHistoryBuyButton" layoutX="987.0" layoutY="459.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="350.0" styleClass="buttons" text="Lägg till allt i kassen" AnchorPane.bottomAnchor="39.0" AnchorPane.rightAnchor="30.0" />
+            <VBox fx:id="entryRowVBox" layoutX="35.0" layoutY="128.0" prefWidth="947.0" styleClass="entryRowVBox" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="418.0" AnchorPane.topAnchor="128.0" />
+            <Pane layoutY="94.0" prefHeight="7.0" prefWidth="1401.0" styleClass="line" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="orderHistoryOpen" prefHeight="550.0" prefWidth="1400.0" styleClass="orderHistoryEntry" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="orderHistoryCollapsed" maxWidth="1.7976931348623157E308" prefHeight="95.0" styleClass="orderHistoryEntry" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="orderHistoryBuyButton" layoutX="987.0" layoutY="459.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="350.0" styleClass="buttons" text="Köp " AnchorPane.bottomAnchor="39.0" AnchorPane.rightAnchor="30.0" />
-            <Button fx:id="orderHistoryPrintButton" layoutX="992.0" layoutY="361.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="350.0" styleClass="buttons" text="Skriv Ut" AnchorPane.bottomAnchor="125.0" AnchorPane.rightAnchor="30.0" />
-            <ImageView layoutX="1334.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="41.0">
-               <image>
-                  <Image url="@../img/Polygon-triangel.png" />
-               </image>
-            </ImageView>
-            <Label fx:id="orderNameLabel" layoutX="51.0" layoutY="21.0" styleClass="bigText" text="Kasse 1" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="16.0">
+            <Label fx:id="orderNameLabel" mouseTransparent="true" styleClass="bigText" text="Kasse 1" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="16.0">
                <font>
                   <Font size="42.0" />
                </font>
             </Label>
-            <Label fx:id="orderDateLabel" layoutX="376.0" layoutY="42.0" styleClass="smallText" text="YYYY/MM/DD" AnchorPane.leftAnchor="440.0" AnchorPane.topAnchor="32.0">
+            <Label fx:id="orderDateLabel" mouseTransparent="true" styleClass="smallText" text="YYYY/MM/DD" AnchorPane.leftAnchor="440.0" AnchorPane.topAnchor="32.0">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="orderTotalLabel" layoutX="769.0" layoutY="43.0" styleClass="smallText" text="123kr - 123 Artiklar " AnchorPane.leftAnchor="860.0" AnchorPane.topAnchor="32.0">
+            <Label fx:id="orderTotalLabel" mouseTransparent="true" prefWidth="500.0" styleClass="smallText" text="123kr - 123 Artiklar " AnchorPane.leftAnchor="860.0" AnchorPane.topAnchor="32.0">
                <font>
                   <Font size="24.0" />
                </font>
             </Label>
-            <Pane fx:id="orderHistoryCloseButton" layoutX="1266.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="95.0" prefWidth="130.0" styleClass="openCloseButtonBorders" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-            <VBox fx:id="entryRowVBox" layoutX="40.0" layoutY="122.0" prefHeight="383.0" prefWidth="947.0" styleClass="entryRowVBox" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="413.0" AnchorPane.topAnchor="122.0" />
-            <Line endX="727.0" layoutX="673.0" layoutY="95.0" startX="-673.0" />
+            <Pane fx:id="orderHistoryOpenButton" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mouseTransparent="true" prefHeight="95.0" prefWidth="130.0" styleClass="openCloseButtonBorders" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <ImageView fx:id="arrowImageView" layoutX="56.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../img/Polygon-triangel.png" />
+                     </image>
+                  </ImageView>
+               </children></Pane>
          </children>
       </AnchorPane>
    </children>

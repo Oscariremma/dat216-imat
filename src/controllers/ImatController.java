@@ -222,6 +222,7 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
     public void goToCheckoutDone(){
         //todo
         goToHome();
+        orderHistoryController.refreshOrders();
     }
 
     @Override

@@ -47,6 +47,7 @@ public class OrderHistoryController extends AnchorPane implements NavigationRequ
     }
 
     public void refreshOrders(){
+        orderHistoryVBox.getChildren().clear();
         if (IMatDataHandler.getInstance().getOrders().isEmpty()){
             if (!getChildren().contains(nothingHereVBox)) getChildren().add(nothingHereVBox);
             return;

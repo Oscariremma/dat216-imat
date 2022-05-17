@@ -38,7 +38,7 @@ public class OrderHistoryRow extends AnchorPane {
         }
 
         nameAndAmountLabel.setText(noDecimals.format(item.getAmount()) + "x " + item.getProduct().getName());
-        priceLabel.setText(twoDecimals.format(item.getTotal()));
+        priceLabel.setText(twoDecimals.format(item.getTotal()) + " kr");
 
         setOnMouseClicked(mouseEvent -> {
             triggerNavigationRequest(new NavigationRequest(NavigationType.ShowModalInfo, new Object[]{item.getProduct()}));

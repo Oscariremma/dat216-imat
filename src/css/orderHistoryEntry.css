@@ -51,3 +51,14 @@
     -fx-border-width: 0 2px 0 0;
 
 }
+
+.line{
+    -fx-border-width: 1 0 0 0;
+    -fx-border-color: black;
+}
+
+.rowRootPane{
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: black;
+    -fx-border-style: dashed;
+}
