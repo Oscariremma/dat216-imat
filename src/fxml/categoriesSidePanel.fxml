@@ -6,9 +6,9 @@
 
 <fx:root prefHeight="1000.0" prefWidth="370.0" styleClass="rootBackground" stylesheets="@../css/categories.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" layoutX="72.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="677.0" prefWidth="266.0" styleClass="rootBackground" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ScrollPane fx:id="scrollPane" fitToWidth="true" hbarPolicy="NEVER" layoutX="36.0" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="302.0" styleClass="rootBackground" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="0.0">
          <content>
-            <VBox fx:id="categoryVBox" prefHeight="992.0" prefWidth="253.0" styleClass="mainCategoryVBox" />
+            <VBox fx:id="categoryVBox" prefHeight="992.0" prefWidth="302.0" styleClass="mainCategoryVBox" />
          </content></ScrollPane>
    </children>
 </fx:root>
