@@ -9,6 +9,7 @@
 
 .logoName{
     -fx-text-fill: white;
+    -fx-font-size: 36;
 }
 
 .navItem{
