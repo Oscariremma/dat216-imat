@@ -3,10 +3,8 @@ package controllers;
 import interfaces.*;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.*;
 
 import javafx.scene.layout.AnchorPane;
@@ -17,7 +15,7 @@ import structs.BreadcrumbItem;
 import structs.NavigationRequest;
 import structs.NavigationType;
 
-public class ImatController extends AnchorPane implements HeaderNavigationListener, NavigationRequestListener {
+public class ImatController extends AnchorPane implements HeaderNavigationListener, NavigationRequestListener, FavoriteEventListener {
 
     @FXML AnchorPane contentRootPane;
 
@@ -32,6 +30,8 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
     CartController cartController = new CartController();
     PaymentController paymentController = new PaymentController();
     ConfirmationController confirmationController = new ConfirmationController();
+
+    private static List<FavoriteEventListener> favoriteEventListeners = new ArrayList<>();
 
     private static final double categoriesSidePanelWidth = 370;
 
@@ -61,8 +61,25 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
         DeliveryController.registernavigationRequestListener(this);
         PaymentController.registernavigationRequestListener(this);
         ConfirmationController.registernavigationRequestListener(this);
+        registerFavoriteListener(this);
 
         goToHome();
+    }
+
+    public static void registerFavoriteListener(FavoriteEventListener favoriteEventListener){
+        if (!favoriteEventListeners.contains(favoriteEventListener)){
+            favoriteEventListeners.add(favoriteEventListener);
+        }
+    }
+
+    public static void raiseFavoritesChangedEvent(){
+        for (FavoriteEventListener listener : favoriteEventListeners) {
+            try {
+                listener.refreshFavoriteStatus();
+            }catch (Exception e){
+                System.out.println(e);
+            }
+        }
     }
 
     private void setViewTo(AnchorPane pane, boolean showCategories){
@@ -244,5 +261,13 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
                 IMatDataHandler.getInstance().findProducts(quarry),
                 Arrays.asList(homeWithNav, new BreadcrumbItem("Sökresultat", null)));
         setViewTo(productsGridViewController, true);
+    }
+
+    @Override
+    public void refreshFavoriteStatus() {
+        //If we are on the favorite page, refresh the favorites
+        if (navigationHistory.size() > 0 && navigationHistory.peek().navigationType() == NavigationType.Favorites){
+            productsGridViewController.setContent("Favoriter", IMatDataHandler.getInstance().favorites(), Arrays.asList(homeWithNav, new BreadcrumbItem("Favoriter", null)));
+        }
     }
 }

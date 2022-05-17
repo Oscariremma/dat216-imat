@@ -1,5 +1,6 @@
 package controllers;
 
+import interfaces.FavoriteEventListener;
 import interfaces.NavigationRequestListener;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +18,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProductController extends AnchorPane implements ShoppingCartListener {
+public class ProductController extends AnchorPane implements ShoppingCartListener, FavoriteEventListener {
 
 
     @FXML Label productPriceLabel;
@@ -51,12 +52,14 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
             throw new RuntimeException(exception);
         }
 
+        ImatController.registerFavoriteListener(this);
+
         this.product = product;
 
         productNameLabel.setText(product.getName());
         productPriceLabel.setText(product.getPrice() + " " + product.getUnit());
         productImageView.setImage(IMatDataHandler.getInstance().getFXImage(product));
-        updateFavoriteButtonIcon();
+        refreshFavoriteStatus();
         forceRefreshCartStatus();
 
         incrementButton.setOnMouseClicked((mouseEvent ->{
@@ -130,10 +133,10 @@ public class ProductController extends AnchorPane implements ShoppingCartListene
         }else {
             IMatDataHandler.getInstance().addFavorite(product);
         }
-        updateFavoriteButtonIcon();
+        ImatController.raiseFavoritesChangedEvent();
     }
 
-    private void updateFavoriteButtonIcon(){
+    public void refreshFavoriteStatus(){
         heartImageView.setImage(IMatDataHandler.getInstance().isFavorite(product)
                 ? filledHeartImage : outlineHeartImage);
     }
