@@ -145,7 +145,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Label fx:id="deliveryCost" layoutX="922.0" layoutY="915.0" prefHeight="47.0" prefWidth="432.0" text="Leveranskostnad: 25:-">
+                  <Label fx:id="deliveryCost" layoutX="918.0" layoutY="878.0" prefHeight="47.0" prefWidth="432.0" text="Leveranskostnad: 25 kr" AnchorPane.leftAnchor="918.0">
                      <font>
                         <Font size="32.0" />
                      </font>
@@ -187,6 +187,15 @@
                      <font>
                         <Font size="20.0" />
                      </font>
+                  </Label>
+                  <Label fx:id="deliveryTotalCost" layoutX="918.0" layoutY="925.0" prefHeight="47.0" prefWidth="432.0" text="Totalkostnad: 25 kr" AnchorPane.leftAnchor="918.0">
+                     <font>
+                        <Font size="32.0" />
+                     </font>
+                     <styleClass>
+                        <String fx:value="labels" />
+                        <String fx:value="deliveryPrice" />
+                     </styleClass>
                   </Label>
                </children>
             </AnchorPane>
