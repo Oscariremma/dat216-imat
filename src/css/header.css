@@ -44,6 +44,14 @@
     -fx-arc-width: 50px;
 }
 
+.shoppingCartButton:hover{
+    -fx-cursor: hand;
+}
+
+.priceTagLabel,.amountTagLabel, .shoppingLabel{
+    -fx-font-size: 24;
+}
+
 .topBarBackground{
     -fx-background-color: #18484b;
 }
