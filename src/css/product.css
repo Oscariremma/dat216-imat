@@ -9,6 +9,12 @@
     -fx-background-radius: 10px;
 }
 
+.background:hover{
+    -fx-cursor: hand;
+}
+
+
+
 .heart{
     -fx-opacity: 0.7;
 }
