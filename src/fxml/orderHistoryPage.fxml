@@ -13,7 +13,7 @@
          <content>
             <AnchorPane prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <VBox fx:id="orderHistoryVBox" layoutX="69.0" layoutY="208.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="200.0" />
+                  <VBox fx:id="orderHistoryVBox" layoutX="69.0" layoutY="208.0" spacing="30.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="200.0" />
                   <Label fx:id="orderHistoryLabel" prefHeight="85.0" prefWidth="439.0" styleClass="title" text="Köphistorik" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="50.0" />
                   <Button fx:id="backButton" mnemonicParsing="false" styleClass="backButton" text="Tillbaka" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="65.0" />
                   <HBox fx:id="breadcrumbsHBox" alignment="CENTER_LEFT" layoutX="21.0" layoutY="14.0" prefHeight="42.0" prefWidth="600.0" stylesheets="@../css/breadcrumb.css" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="15.0" />

@@ -11,10 +11,10 @@
 
 <fx:root stylesheets="@../css/orderHistoryEntry.css" type="AnchorPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <AnchorPane fx:id="orderHistoryOpen" maxWidth="1.7976931348623157E308" minHeight="230.0" styleClass="orderHistoryEntry" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="orderHistoryOpen" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="230.0" styleClass="orderHistoryEntry" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Button fx:id="orderHistoryBuyButton" layoutX="987.0" layoutY="459.0" mnemonicParsing="false" prefHeight="65.0" prefWidth="350.0" styleClass="buttons" text="Lägg till allt i kassen" AnchorPane.bottomAnchor="39.0" AnchorPane.rightAnchor="30.0" />
-            <VBox fx:id="entryRowVBox" layoutX="35.0" layoutY="128.0" prefWidth="947.0" styleClass="entryRowVBox" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="418.0" AnchorPane.topAnchor="128.0" />
+            <VBox fx:id="entryRowVBox" layoutX="35.0" layoutY="128.0" maxHeight="1.7976931348623157E308" minHeight="0.0" prefWidth="947.0" styleClass="entryRowVBox" AnchorPane.bottomAnchor="39.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="418.0" AnchorPane.topAnchor="128.0" />
             <Pane layoutY="94.0" prefHeight="7.0" prefWidth="1401.0" styleClass="line" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0" />
          </children>
       </AnchorPane>
