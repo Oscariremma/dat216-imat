@@ -34,6 +34,8 @@ public class OrderHistoryEntryController extends AnchorPane {
 
     private final Order order;
 
+
+
     public OrderHistoryEntryController(Order order){
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/fxml/orderHistoryEntry.fxml"));
         fxmlLoader.setRoot(this);
@@ -46,20 +48,22 @@ public class OrderHistoryEntryController extends AnchorPane {
         }
 
         double total = 0;
-        double itemCount = 0;
+
 
         this.order = order;
-
+        double itemCount = 0;
         for (ShoppingItem item:order.getItems() ) {
             entryRowVBox.getChildren().add(new OrderHistoryRow(item));
             total += item.getTotal();
             itemCount += item.getAmount();
         }
 
+
+
         orderNameLabel.setText("Order " + order.getOrderNumber());
         orderDateLabel.setText(new SimpleDateFormat("yyyy/MM/dd").format(order.getDate()));
         orderTotalLabel.setText(new DecimalFormat("#.##").format(total) + "kr - " +
-                new DecimalFormat("#").format(itemCount) + ((itemCount == 1) ? "saker" : "sak"));
+                new DecimalFormat("#").format(itemCount) +  ((itemCount != 1) ? " saker" : " sak"));
 
         getChildren().remove(orderHistoryOpen);
         arrowImageView.setRotate(90);
@@ -73,9 +77,11 @@ public class OrderHistoryEntryController extends AnchorPane {
         if (expanded){
             getChildren().remove(orderHistoryOpen);
             arrowImageView.setRotate(90);
+            this.setMinHeight(-1);
             expanded = false;
         }else {
             getChildren().add(orderHistoryOpen);
+            this.setMinHeight(200+ (entryRowVBox.getChildren().size()*41)-20);
             orderHistoryOpen.toBack();
             arrowImageView.setRotate(180);
             expanded = true;
