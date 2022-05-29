@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.text.Font?>
@@ -15,97 +16,59 @@
    <children>
       <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="subAnchorPane">
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label layoutX="410.0" layoutY="147.0" text="Leverans">
-                     <font>
-                        <Font size="72.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="labels" />
-                        <String fx:value="bigTitle" />
-                     </styleClass>
-                  </Label>
-                  <Pane layoutX="410.0" layoutY="55.0" prefHeight="70.0" prefWidth="374.0" AnchorPane.topAnchor="46.0">
+                  <AnchorPane prefHeight="1148.0" prefWidth="1267.0" styleClass="subAnchorPane">
                      <children>
-                        <Polygon fill="#18484b" layoutX="-534.0" layoutY="-196.0" points="534.0, 196.0, 534.0, 266.0, 702.0, 266.0, 742.0, 231.0, 702.0, 196.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Label layoutX="38.0" layoutY="18.0" text="Leverans" textFill="WHITE">
+                        <Label layoutX="14.0" layoutY="143.0" text="Leverans">
                            <font>
-                              <Font size="24.0" />
+                              <Font size="72.0" />
                            </font>
                            <styleClass>
                               <String fx:value="labels" />
-                              <String fx:value="progressBar" />
+                              <String fx:value="bigTitle" />
                            </styleClass>
                         </Label>
-                        <Polygon fill="WHITE" layoutX="-370.0" layoutY="-196.0" stroke="BLACK" strokeType="INSIDE">
-                           <points>
-                              <Double fx:value="534.0" />
-                              <Double fx:value="196.0" />
-                               <Double fx:value="560.0" />
-                               <Double fx:value="231.0" />
-                              <Double fx:value="534.0" />
-                              <Double fx:value="266.0" />
-                              <Double fx:value="702.0" />
-                              <Double fx:value="266.0" />
-                              <Double fx:value="742.0" />
-                              <Double fx:value="231.0" />
-                              <Double fx:value="702.0" />
-                              <Double fx:value="196.0" />
-                           </points>
-                        </Polygon>
-                        <Label layoutX="212.0" layoutY="18.0" text="Betalning">
-                           <font>
-                              <Font size="24.0" />
-                           </font>
-                           <styleClass>
-                              <String fx:value="labels" />
-                              <String fx:value="progressBar" />
-                           </styleClass>
-                        </Label>
-                     </children>
-                  </Pane>
-                  <Label layoutX="410.0" layoutY="252.0" prefHeight="41.0" prefWidth="1239.0" text="Adressuppgifter - (Uppgifterna sparas automatiskt till nästa köp)">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="labels" />
-                        <String fx:value="information" />
-                     </styleClass>
-                  </Label>
-                  <TextField fx:id="firstNameTextField" layoutX="410.0" layoutY="323.0" prefHeight="64.0" prefWidth="353.0">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="addressTextField" layoutX="410.0" layoutY="435.0" prefHeight="64.0" prefWidth="353.0">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="lastNameTextField" layoutX="811.0" layoutY="323.0" prefHeight="64.0" prefWidth="353.0">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </TextField>
-                  <TextField fx:id="postCodeTextField" layoutX="811.0" layoutY="435.0" prefHeight="64.0" prefWidth="353.0">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                  </TextField>
-                  <Label layoutX="410.0" layoutY="546.0" text="Leveranstid">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="labels" />
-                        <String fx:value="information" />
-                     </styleClass>
-                  </Label>
-                  <AnchorPane layoutX="410.0" layoutY="607.0" prefHeight="231.0" prefWidth="414.0" styleClass="chooseBox">
-                     <children>
-                        <Label layoutX="142.0" layoutY="7.0" text="Välj dag">
+                        <Pane layoutX="14.0" layoutY="42.0" prefHeight="70.0" prefWidth="374.0" AnchorPane.topAnchor="42.0">
+                           <children>
+                              <Polygon fill="#18484b" layoutX="-534.0" layoutY="-196.0" points="534.0, 196.0, 534.0, 266.0, 702.0, 266.0, 742.0, 231.0, 702.0, 196.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Label layoutX="38.0" layoutY="18.0" text="Leverans" textFill="WHITE">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="labels" />
+                                    <String fx:value="progressBar" />
+                                 </styleClass>
+                              </Label>
+                              <Polygon fill="WHITE" layoutX="-370.0" layoutY="-196.0" stroke="BLACK" strokeType="INSIDE">
+                                 <points>
+                                    <Double fx:value="534.0" />
+                                    <Double fx:value="196.0" />
+                                     <Double fx:value="560.0" />
+                                     <Double fx:value="231.0" />
+                                    <Double fx:value="534.0" />
+                                    <Double fx:value="266.0" />
+                                    <Double fx:value="702.0" />
+                                    <Double fx:value="266.0" />
+                                    <Double fx:value="742.0" />
+                                    <Double fx:value="231.0" />
+                                    <Double fx:value="702.0" />
+                                    <Double fx:value="196.0" />
+                                 </points>
+                              </Polygon>
+                              <Label layoutX="212.0" layoutY="18.0" text="Betalning">
+                                 <font>
+                                    <Font size="24.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="labels" />
+                                    <String fx:value="progressBar" />
+                                 </styleClass>
+                              </Label>
+                           </children>
+                        </Pane>
+                        <Label layoutX="14.0" layoutY="248.0" prefHeight="41.0" prefWidth="1239.0" text="Adressuppgifter - (Uppgifterna sparas automatiskt till nästa köp)">
                            <font>
                               <Font size="32.0" />
                            </font>
@@ -114,12 +77,27 @@
                               <String fx:value="information" />
                            </styleClass>
                         </Label>
-                        <FlowPane fx:id="dayFlowPane" layoutX="2.0" layoutY="60.0" prefHeight="173.0" prefWidth="411.0" styleClass="daysFlowPane" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="59.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane layoutX="907.0" layoutY="607.0" prefHeight="231.0" prefWidth="740.0" styleClass="chooseBox">
-                     <children>
-                        <Label layoutX="315.0" layoutY="8.0" text="Välj tid">
+                        <TextField fx:id="firstNameTextField" layoutX="14.0" layoutY="319.0" prefHeight="64.0" prefWidth="353.0">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="addressTextField" layoutX="14.0" layoutY="431.0" prefHeight="64.0" prefWidth="353.0">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="lastNameTextField" layoutX="415.0" layoutY="319.0" prefHeight="64.0" prefWidth="353.0">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="postCodeTextField" layoutX="415.0" layoutY="431.0" prefHeight="64.0" prefWidth="353.0">
+                           <font>
+                              <Font size="32.0" />
+                           </font>
+                        </TextField>
+                        <Label layoutX="14.0" layoutY="542.0" text="Leveranstid">
                            <font>
                               <Font size="32.0" />
                            </font>
@@ -128,77 +106,104 @@
                               <String fx:value="information" />
                            </styleClass>
                         </Label>
-                        <FlowPane fx:id="timeFlowPane" layoutX="1.0" layoutY="54.0" prefHeight="175.0" prefWidth="737.0" styleClass="timesFlowPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane fx:id="backButtonAnchorPane" layoutX="410.0" layoutY="910.0" prefHeight="44.0" prefWidth="212.0" styleClass="outlineButton">
-                     <children>
-                        <Polygon fill="#18484b" layoutX="-477.0" layoutY="-198.0" mouseTransparent="true" points="689.0, 198.0, 689.0, 254.0, 510.0, 254.0, 477.0, 226.0, 510.0, 198.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Label layoutX="61.0" layoutY="8.0" mouseTransparent="true" text="Tillbaka" textFill="WHITE">
+                        <AnchorPane layoutX="14.0" layoutY="603.0" prefHeight="231.0" prefWidth="414.0" styleClass="chooseBox">
+                           <children>
+                              <Label layoutX="142.0" layoutY="7.0" text="Välj dag">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="labels" />
+                                    <String fx:value="information" />
+                                 </styleClass>
+                              </Label>
+                              <FlowPane fx:id="dayFlowPane" layoutX="2.0" layoutY="60.0" prefHeight="173.0" prefWidth="411.0" styleClass="daysFlowPane" AnchorPane.bottomAnchor="-1.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="59.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="511.0" layoutY="603.0" prefHeight="231.0" prefWidth="740.0" styleClass="chooseBox">
+                           <children>
+                              <Label layoutX="315.0" layoutY="8.0" text="Välj tid">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="labels" />
+                                    <String fx:value="information" />
+                                 </styleClass>
+                              </Label>
+                              <FlowPane fx:id="timeFlowPane" layoutX="1.0" layoutY="54.0" prefHeight="175.0" prefWidth="737.0" styleClass="timesFlowPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="backButtonAnchorPane" layoutX="14.0" layoutY="906.0" prefHeight="44.0" prefWidth="212.0" styleClass="outlineButton">
+                           <children>
+                              <Polygon fill="#18484b" layoutX="-477.0" layoutY="-198.0" mouseTransparent="true" points="689.0, 198.0, 689.0, 254.0, 510.0, 254.0, 477.0, 226.0, 510.0, 198.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Label layoutX="61.0" layoutY="8.0" mouseTransparent="true" text="Tillbaka" textFill="WHITE">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="labels" />
+                                    <String fx:value="back" />
+                                 </styleClass>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label fx:id="deliveryCost" layoutX="428.0" layoutY="896.0" prefHeight="47.0" prefWidth="432.0" text="Leveranskostnad: 25 kr" AnchorPane.leftAnchor="428.0">
                            <font>
                               <Font size="32.0" />
                            </font>
                            <styleClass>
                               <String fx:value="labels" />
-                              <String fx:value="back" />
+                              <String fx:value="deliveryPrice" />
                            </styleClass>
                         </Label>
-                     </children>
-                  </AnchorPane>
-                  <Label fx:id="deliveryCost" layoutX="918.0" layoutY="878.0" prefHeight="47.0" prefWidth="432.0" text="Leveranskostnad: 25 kr" AnchorPane.leftAnchor="918.0">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="labels" />
-                        <String fx:value="deliveryPrice" />
-                     </styleClass>
-                  </Label>
-                  <AnchorPane fx:id="nextPaymentAnchorPane" layoutX="1386.0" layoutY="910.0" prefHeight="56.0" prefWidth="300.0" styleClass="outlineButton">
-                     <children>
-                        <Polygon fill="#18484b" layoutX="361.0" layoutY="-202.0" mouseTransparent="true" points="-361.0, 202.0, -361.0, 258.0, -44.0, 258.0, -12.0, 230.0, -44.0, 202.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Label layoutX="34.0" layoutY="8.0" mouseTransparent="true" prefHeight="41.0" prefWidth="281.0" text="Nästa - Betalning" textFill="WHITE">
+                        <AnchorPane fx:id="nextPaymentAnchorPane" layoutX="904.0" layoutY="915.0" prefHeight="56.0" prefWidth="300.0" styleClass="outlineButton">
+                           <children>
+                              <Polygon fill="#18484b" layoutX="361.0" layoutY="-202.0" mouseTransparent="true" points="-361.0, 202.0, -361.0, 258.0, -44.0, 258.0, -12.0, 230.0, -44.0, 202.0" stroke="BLACK" strokeType="INSIDE" />
+                              <Label layoutX="34.0" layoutY="8.0" mouseTransparent="true" prefHeight="41.0" prefWidth="281.0" text="Nästa - Betalning" textFill="WHITE">
+                                 <font>
+                                    <Font size="32.0" />
+                                 </font>
+                                 <styleClass>
+                                    <String fx:value="labels" />
+                                    <String fx:value="next" />
+                                 </styleClass>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                        <Label layoutX="49.0" layoutY="304.0" styleClass="adressLabel" text="Förnamn*">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="450.0" layoutY="304.0" styleClass="adressLabel" text="Efternamn*">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="49.0" layoutY="416.0" styleClass="adressLabel" text="Gatuadress*">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="450.0" layoutY="416.0" styleClass="adressLabel" text="Postnummer*">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="deliveryTotalCost" layoutX="428.0" layoutY="939.0" prefHeight="47.0" prefWidth="432.0" text="Totalkostnad: 25 kr" AnchorPane.leftAnchor="428.0">
                            <font>
                               <Font size="32.0" />
                            </font>
                            <styleClass>
                               <String fx:value="labels" />
-                              <String fx:value="next" />
+                              <String fx:value="deliveryPrice" />
                            </styleClass>
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Label layoutX="445.0" layoutY="308.0" styleClass="adressLabel" text="Förnamn*">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="846.0" layoutY="308.0" styleClass="adressLabel" text="Efternamn*">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="445.0" layoutY="420.0" styleClass="adressLabel" text="Gatuadress*">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label layoutX="846.0" layoutY="420.0" styleClass="adressLabel" text="Postnummer*">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="deliveryTotalCost" layoutX="918.0" layoutY="925.0" prefHeight="47.0" prefWidth="432.0" text="Totalkostnad: 25 kr" AnchorPane.leftAnchor="918.0">
-                     <font>
-                        <Font size="32.0" />
-                     </font>
-                     <styleClass>
-                        <String fx:value="labels" />
-                        <String fx:value="deliveryPrice" />
-                     </styleClass>
-                  </Label>
                </children>
-            </AnchorPane>
+            </HBox>
          </content>
       </ScrollPane>
    </children>
