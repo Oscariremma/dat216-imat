@@ -13,6 +13,7 @@
     -fx-alignment: center;
     -fx-font-size: 20px;
     -fx-font-family: "Lexend Deca";
+    -fx-effect: null;
 }
 
 .selected{
@@ -22,4 +23,9 @@
 
 .selectedLabel{
     -fx-text-fill: white;
+}
+
+.dateAnchorPane:hover{
+    -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
 }

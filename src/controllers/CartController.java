@@ -74,6 +74,7 @@ public class CartController extends AnchorPane implements ShoppingCartListener, 
             cartVBox.getChildren().add(new CartItemController(item.getProduct(), this));
         }
 
+        updateCartTotal();
     }
 
     public static void registernavigationRequestListener(NavigationRequestListener listener){
@@ -97,6 +98,11 @@ public class CartController extends AnchorPane implements ShoppingCartListener, 
 
     private void updateCartTotal(){
         cartTotalLabel.setText("Totalt: " + new DecimalFormat("#.##").format(IMatDataHandler.getInstance().getShoppingCart().getTotal()) + " kr");
+        if (IMatDataHandler.getInstance().getShoppingCart().getItems().size() > 0){
+            nextButtonAnchorPane.setVisible(true);
+        }else {
+            nextButtonAnchorPane.setVisible(false);
+        }
     }
 
 }

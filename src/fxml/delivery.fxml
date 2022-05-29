@@ -131,7 +131,7 @@
                         <FlowPane fx:id="timeFlowPane" layoutX="1.0" layoutY="54.0" prefHeight="175.0" prefWidth="737.0" styleClass="timesFlowPane" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="backButtonAnchorPane" layoutX="410.0" layoutY="910.0" prefHeight="44.0" prefWidth="212.0">
+                  <AnchorPane fx:id="backButtonAnchorPane" layoutX="410.0" layoutY="910.0" prefHeight="44.0" prefWidth="212.0" styleClass="outlineButton">
                      <children>
                         <Polygon fill="#18484b" layoutX="-477.0" layoutY="-198.0" mouseTransparent="true" points="689.0, 198.0, 689.0, 254.0, 510.0, 254.0, 477.0, 226.0, 510.0, 198.0" stroke="BLACK" strokeType="INSIDE" />
                         <Label layoutX="61.0" layoutY="8.0" mouseTransparent="true" text="Tillbaka" textFill="WHITE">
@@ -154,10 +154,10 @@
                         <String fx:value="deliveryPrice" />
                      </styleClass>
                   </Label>
-                  <AnchorPane fx:id="nextPaymentAnchorPane" layoutX="1386.0" layoutY="910.0" prefHeight="56.0" prefWidth="300.0">
+                  <AnchorPane fx:id="nextPaymentAnchorPane" layoutX="1386.0" layoutY="910.0" prefHeight="56.0" prefWidth="300.0" styleClass="outlineButton">
                      <children>
                         <Polygon fill="#18484b" layoutX="361.0" layoutY="-202.0" mouseTransparent="true" points="-361.0, 202.0, -361.0, 258.0, -44.0, 258.0, -12.0, 230.0, -44.0, 202.0" stroke="BLACK" strokeType="INSIDE" />
-                        <Label layoutX="29.0" layoutY="10.0" mouseTransparent="true" prefHeight="41.0" prefWidth="281.0" text="Nästa - Betalning" textFill="WHITE">
+                        <Label layoutX="34.0" layoutY="8.0" mouseTransparent="true" prefHeight="41.0" prefWidth="281.0" text="Nästa - Betalning" textFill="WHITE">
                            <font>
                               <Font size="32.0" />
                            </font>

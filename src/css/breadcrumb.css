@@ -16,5 +16,5 @@
 
 .clickableBreadcrumb:hover{
     -fx-cursor: HAND;
-
+    -fx-text-fill: #2C2C2C;
 }

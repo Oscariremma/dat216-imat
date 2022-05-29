@@ -23,6 +23,11 @@
     -fx-font-family: "Lexend Deca";
 }
 
+.outlineButton:hover{
+    -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 15, 0.5, 0.0, 0.0);
+}
+
 .chooseBox{
     -fx-background-color: #F2F2F2;
     -fx-border-style: solid;

@@ -20,7 +20,7 @@
                   <Button fx:id="backButton" mnemonicParsing="false" styleClass="backButton" text="Tillbaka" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="65.0" />
                   <HBox fx:id="breadcrumbsHBox" alignment="CENTER_LEFT" layoutX="21.0" layoutY="14.0" prefHeight="42.0" prefWidth="600.0" stylesheets="@../css/breadcrumb.css" AnchorPane.leftAnchor="75.0" AnchorPane.topAnchor="15.0" />
                   <Label fx:id="cartTotalLabel" layoutX="1164.0" layoutY="765.0" prefHeight="47.0" prefWidth="306.0" styleClass="cartTotal" text="Totalt: 1234 kr" AnchorPane.bottomAnchor="116.0" AnchorPane.rightAnchor="78.0" />
-                  <AnchorPane fx:id="nextButtonAnchorPane" layoutX="1164.0" layoutY="831.0" prefHeight="56.0" prefWidth="300.0" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="35.0">
+                  <AnchorPane fx:id="nextButtonAnchorPane" layoutX="1164.0" layoutY="831.0" prefHeight="56.0" prefWidth="300.0" styleClass="nextButton" AnchorPane.bottomAnchor="40.0" AnchorPane.rightAnchor="35.0">
                      <children>
                         <Polygon fill="#18484b" layoutX="361.0" layoutY="-202.0" mouseTransparent="true" points="-361.0, 202.0, -361.0, 258.0, -44.0, 258.0, -12.0, 230.0, -44.0, 202.0" stroke="BLACK" strokeType="INSIDE" />
                         <Label layoutX="34.0" layoutY="8.0" mouseTransparent="true" prefHeight="41.0" prefWidth="281.0" styleClass="nextButtonLabel" text="Nästa - Kassan" textFill="WHITE">

@@ -25,10 +25,20 @@
     -fx-padding: 15 30 15 30;
 }
 
+.backButton:hover{
+    -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+}
+
 .incdecrementButton{
     -fx-border-radius: 100%;
     -fx-background-radius: 100%;
     -fx-background-color: #18484B;
+}
+
+.incdecrementButton:hover{
+    -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
 }
 
 .buttonCircle{
@@ -77,7 +87,17 @@
     -fx-border-color: #18484B;
 }
 
+.cartItemAnchorPane:hover{
+    -fx-cursor: HAND;
+    -fx-background-color: #DFDFDF;
+}
+
 .cartVBox{
     -fx-border-width: 3 0 0 0;
     -fx-border-color: #18484B;
+}
+
+.nextButton:hover{
+    -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
 }

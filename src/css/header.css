@@ -16,8 +16,15 @@
     -fx-font-size: 32px;
 }
 
-.logoName:hover, .navItem:hover{
+.logoName:hover{
     -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+    -fx-text-fill: #DFDFDF;
+}
+
+.navItem:hover{
+    -fx-cursor: HAND;
+    -fx-text-fill: #000000;
 }
 
 .shoppingLabel{
@@ -35,6 +42,10 @@
     -fx-font-family: "Lexend Deca";
 }
 
+.searchButton:hover{
+    -fx-cursor: HAND;
+}
+
 .shoppingCartButton{
     -fx-border-color: black;
     -fx-border-radius: 40px;
@@ -45,7 +56,9 @@
 }
 
 .shoppingCartButton:hover{
-    -fx-cursor: hand;
+    -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+    -fx-background-color: #DFDFDF;
 }
 
 .priceTagLabel,.amountTagLabel, .shoppingLabel{

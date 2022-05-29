@@ -242,6 +242,7 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
     public void goToCheckoutDone(){
         confirmationController.refresh();
         setViewTo(confirmationController, false);
+        clearDeliveryAndPaymentFromHistory();
     }
 
     @Override
@@ -269,5 +270,16 @@ public class ImatController extends AnchorPane implements HeaderNavigationListen
         if (navigationHistory.size() > 0 && navigationHistory.peek().navigationType() == NavigationType.Favorites){
             productsGridViewController.setContent("Favoriter", IMatDataHandler.getInstance().favorites(), Arrays.asList(homeWithNav, new BreadcrumbItem("Favoriter", null)));
         }
+    }
+
+    private void clearDeliveryAndPaymentFromHistory(){
+        List<NavigationRequest> itemsToRemove = new ArrayList<>();
+
+        for (NavigationRequest nav: navigationHistory) {
+            if (nav.navigationType() == NavigationType.Payment || nav.navigationType() == NavigationType.Delivery){
+                itemsToRemove.add(nav);
+            }
+        }
+        navigationHistory.removeAll(itemsToRemove);
     }
 }

@@ -12,6 +12,7 @@
 .timeLabel{
     -fx-font-family: "Lexend Deca";
     -fx-font-size: 20px;
+    -fx-effect: null;
 }
 
 .selected{
@@ -21,4 +22,9 @@
 
 .selectedLabel{
     -fx-text-fill: white;
+}
+
+.timeAnchorPane:hover{
+    -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
 }

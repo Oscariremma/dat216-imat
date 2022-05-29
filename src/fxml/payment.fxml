@@ -179,7 +179,7 @@
                         </VBox>
                      </children>
                   </AnchorPane>
-                  <AnchorPane fx:id="nextPaymentAnchorPane" layoutX="1088.0" layoutY="901.0" prefHeight="56.0" prefWidth="300.0" AnchorPane.bottomAnchor="134.0" AnchorPane.rightAnchor="483.0">
+                  <AnchorPane fx:id="nextPaymentAnchorPane" layoutX="1088.0" layoutY="901.0" prefHeight="56.0" prefWidth="300.0" styleClass="outlineButton" AnchorPane.bottomAnchor="134.0" AnchorPane.rightAnchor="483.0">
                      <children>
                         <Polygon fill="#18484b" layoutX="361.0" layoutY="-202.0" points="-361.0, 202.0, -361.0, 258.0, -44.0, 258.0, -12.0, 230.0, -44.0, 202.0" stroke="BLACK" strokeType="INSIDE" />
                         <Label layoutX="106.0" layoutY="5.0" prefHeight="47.0" prefWidth="107.0" styleClass="paymentLabel" text="Betala" textFill="WHITE">
@@ -194,7 +194,7 @@
                         <Font size="32.0" />
                      </font>
                   </Label>
-                  <AnchorPane fx:id="backButtonAnchorPane" layoutX="297.0" layoutY="901.0" prefHeight="44.0" prefWidth="212.0">
+                  <AnchorPane fx:id="backButtonAnchorPane" layoutX="297.0" layoutY="901.0" prefHeight="44.0" prefWidth="212.0" styleClass="outlineButton">
                      <children>
                         <Polygon fill="#18484b" layoutX="-477.0" layoutY="-198.0" mouseTransparent="true" points="689.0, 198.0, 689.0, 254.0, 510.0, 254.0, 477.0, 226.0, 510.0, 198.0" stroke="BLACK" strokeType="INSIDE" />
                         <Label layoutX="60.0" layoutY="8.0" mouseTransparent="true" styleClass="paymentLabel" text="Tillbaka" textFill="WHITE">

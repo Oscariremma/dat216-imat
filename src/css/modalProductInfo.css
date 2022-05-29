@@ -22,6 +22,11 @@
     -fx-font-family: "Lexend Deca";
 }
 
+.addButton:hover{
+    -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+}
+
 .productPriceLabel{
     -fx-font-size: 24;
     -fx-font-family: "Lexend Deca";
@@ -65,8 +70,18 @@
     -fx-background-color: #18484B;
 }
 
+.incdecrementButton:hover{
+    -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
+}
+
 .buttonCircle{
     -fx-fill: #E3E3E3;
+}
+
+.buttonCircle:hover{
+    -fx-cursor: HAND;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.5, 0.0, 0.0);
 }
 
 .incdecrementLabel{
@@ -79,3 +94,4 @@
     -fx-font-size: 40;
     -fx-font-family: "Lexend Deca";
 }
+

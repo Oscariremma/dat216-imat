@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -18,7 +19,7 @@
             <Pane layoutY="94.0" prefHeight="7.0" prefWidth="1401.0" styleClass="line" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="orderHistoryCollapsed" maxWidth="1.7976931348623157E308" prefHeight="95.0" styleClass="orderHistoryEntry" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane fx:id="orderHistoryCollapsed" maxWidth="1.7976931348623157E308" prefHeight="95.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label fx:id="orderNameLabel" mouseTransparent="true" styleClass="bigText" text="Kasse 1" AnchorPane.bottomAnchor="17.0" AnchorPane.leftAnchor="40.0" AnchorPane.topAnchor="16.0">
                <font>
@@ -44,6 +45,10 @@
                   </ImageView>
                </children></Pane>
          </children>
+         <styleClass>
+            <String fx:value="orderHistoryEntry" />
+            <String fx:value="toppart" />
+         </styleClass>
       </AnchorPane>
    </children>
 </fx:root>
